@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.1)  1 MAY 2024 18:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.1)  1 MAY 2024 20:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -701,88 +701,111 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@expandcount=\count340
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))
+))) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count341
+\lst@gtempboxa=\box76
+\lst@token=\toks50
+\lst@length=\count342
+\lst@currlwidth=\dimen290
+\lst@column=\count343
+\lst@pos=\count344
+\lst@lostspace=\dimen291
+\lst@width=\dimen292
+\lst@newlines=\count345
+\lst@lineno=\count346
+\lst@maxwidth=\dimen293
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
+\c@lstnumber=\count347
+\lst@skipnumbers=\count348
+\lst@framebox=\box77
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/02/21 1.10 listings configuration
+))
+Package: listings 2024/02/21 1.10 (Carsten Heinz)
+
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 60.
+(hyperref)                setting the option has no effect on input line 108.
 
-Package hyperref Info: Option `unicode' set `false' on input line 60.
+Package hyperref Info: Option `unicode' set `false' on input line 108.
 
 Package hyperref Warning: Option `pdftitle' has already been used,
-(hyperref)                setting the option has no effect on input line 60.
+(hyperref)                setting the option has no effect on input line 108.
 
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 60.
+(hyperref)                setting the option has no effect on input line 108.
 
 
 Package hyperref Warning: Option `pdfsubject' has already been used,
-(hyperref)                setting the option has no effect on input line 60.
+(hyperref)                setting the option has no effect on input line 108.
 
 
 Package hyperref Warning: Option `pdfcreator' has already been used,
-(hyperref)                setting the option has no effect on input line 60.
+(hyperref)                setting the option has no effect on input line 108.
 
 
 Package hyperref Warning: Option `pdfproducer' has already been used,
-(hyperref)                setting the option has no effect on input line 60.
+(hyperref)                setting the option has no effect on input line 108.
 
 
 Package hyperref Warning: Option `pdfkeywords' has already been used,
-(hyperref)                setting the option has no effect on input line 60.
+(hyperref)                setting the option has no effect on input line 108.
 
-Package hyperref Info: Option `pdfnewwindow' set `true' on input line 60.
-Package hyperref Info: Option `colorlinks' set `true' on input line 60.
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 108.
+Package hyperref Info: Option `colorlinks' set `true' on input line 108.
 \@nomenclaturefile=\write5
 \openout5 = `document.nlo'.
 
-Package nomencl Info: Writing nomenclature file document.nlo on input line 88.
+Package nomencl Info: Writing nomenclature file document.nlo on input line 136.
 \@indexfile=\write6
 \openout6 = `document.idx'.
 
 Writing index file document.idx
-(./document.aux (./subtex/Fedlap.aux) (./subtex/h_nyilatkozat.aux) (./subtex/tv_nyilatkozat.aux) (./subtex/Koszonetnyilvanitas.aux) (./subtex/Abstract.aux) (./subtex/Jelolesjegyzek.aux) (./mysubtex/Fejezet1.aux) (./mysubtex/Fejezet3.aux) (./mysubtex/Fejezet4.aux) (./subtex/files.aux))
+No file document.aux.
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
- (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+(/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count341
-\scratchdimen=\dimen290
-\scratchbox=\box76
-\nofMPsegments=\count342
-\nofMParguments=\count343
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count344
-\MPscratchDim=\dimen291
-\MPnumerator=\count345
-\makeMPintoPDFobject=\count346
-\everyMPtoPDFconversion=\toks51
+\scratchcounter=\count349
+\scratchdimen=\dimen294
+\scratchbox=\box78
+\nofMPsegments=\count350
+\nofMParguments=\count351
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count352
+\MPscratchDim=\dimen295
+\MPnumerator=\count353
+\makeMPintoPDFobject=\count354
+\everyMPtoPDFconversion=\toks52
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 150.
- (./document.out) (./document.out)
+Package hyperref Info: Link coloring ON on input line 198.
 \@outlinefile=\write7
 \openout7 = `document.out'.
 
@@ -796,11 +819,14 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count355
+Package tocbasic Info: setting babel extension for `lol' on input line 198.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/base/report.cls
 LaTeX Info: Redefining \cal on input line 577.
 LaTeX Info: Redefining \mit on input line 578.
@@ -814,17 +840,17 @@ LaTeX Info: Redefining \mit on input line 578.
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}])
 
 pdfTeX warning: pdflatex (file ./Temakiiras.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Temakiiras.pdf, id=91, 597.55246pt x 845.07724pt>
+<Temakiiras.pdf, id=19, 597.55246pt x 845.07724pt>
 File: Temakiiras.pdf Graphic file (type pdf)
 <use Temakiiras.pdf>
-Package pdftex.def Info: Temakiiras.pdf  used on input line 156.
+Package pdftex.def Info: Temakiiras.pdf  used on input line 204.
 (pdftex.def)             Requested size: 597.551pt x 845.07518pt.
 
 
 pdfTeX warning: pdflatex (file ./Temakiiras.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: Temakiiras.pdf Graphic file (type pdf)
 <use Temakiiras.pdf>
-Package pdftex.def Info: Temakiiras.pdf  used on input line 156.
+Package pdftex.def Info: Temakiiras.pdf  used on input line 204.
 (pdftex.def)             Requested size: 597.551pt x 845.07518pt.
 
 
@@ -832,32 +858,32 @@ pdfTeX warning: pdflatex (file ./Temakiiras.pdf): PDF inclusion: found PDF versi
 
 
 pdfTeX warning: pdflatex (file ./Temakiiras.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Temakiiras.pdf, id=94, page=1, 597.55246pt x 845.07724pt>
+<Temakiiras.pdf, id=22, page=1, 597.55246pt x 845.07724pt>
 File: Temakiiras.pdf Graphic file (type pdf)
 <use Temakiiras.pdf, page 1>
-Package pdftex.def Info: Temakiiras.pdf , page1 used on input line 156.
+Package pdftex.def Info: Temakiiras.pdf , page1 used on input line 204.
 (pdftex.def)             Requested size: 597.551pt x 845.07518pt.
 File: Temakiiras.pdf Graphic file (type pdf)
 <use Temakiiras.pdf, page 1>
-Package pdftex.def Info: Temakiiras.pdf , page1 used on input line 156.
+Package pdftex.def Info: Temakiiras.pdf , page1 used on input line 204.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
 File: Temakiiras.pdf Graphic file (type pdf)
 <use Temakiiras.pdf, page 1>
-Package pdftex.def Info: Temakiiras.pdf , page1 used on input line 156.
+Package pdftex.def Info: Temakiiras.pdf , page1 used on input line 204.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
 File: Temakiiras.pdf Graphic file (type pdf)
 <use Temakiiras.pdf, page 1>
-Package pdftex.def Info: Temakiiras.pdf , page1 used on input line 156.
+Package pdftex.def Info: Temakiiras.pdf , page1 used on input line 204.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.156 	\includepdf{Temakiiras.pdf}
+l.204 	\includepdf{Temakiiras.pdf}
                                   
 File: Temakiiras.pdf Graphic file (type pdf)
 <use Temakiiras.pdf, page 1>
-Package pdftex.def Info: Temakiiras.pdf , page1 used on input line 156.
+Package pdftex.def Info: Temakiiras.pdf , page1 used on input line 204.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
  [1
 
@@ -907,96 +933,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-\openout2 = `subtex/Koszonetnyilvanitas.aux'.
-
- (./subtex/Koszonetnyilvanitas.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--2
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6--7
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
-
- []
-
-)
-Underfull \hbox (badness 10000) in paragraph at lines 10--164
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--164
-
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+No file document.toc.
+\tf@toc=\write8
+\openout8 = `document.toc'.
 
 [4
 
 
 
 ]
-\openout2 = `subtex/Abstract.aux'.
+\openout2 = `subtex/Jelolesjegyzek.aux'.
 
- (./subtex/Abstract.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--2
-
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[5
-
-
-
-{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 31--32
-
- []
-
-)
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[6] (./document.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+ (./subtex/Jelolesjegyzek.tex (./document.nls
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
-\tf@toc=\write8
-\openout8 = `document.toc'.
-
- [7
-
-
-
-]
-\openout2 = `subtex/Jelolesjegyzek.aux'.
-
- (./subtex/Jelolesjegyzek.tex (./document.nls)) [8
+))) [5
 
 
 
@@ -1027,32 +983,71 @@ File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodepartlowerbox=\box77
-\pgfnodeparttwobox=\box78
-\pgfnodepartthreebox=\box79
-\pgfnodepartfourbox=\box80
-\pgfnodeparttwentybox=\box81
-\pgfnodepartnineteenbox=\box82
-\pgfnodeparteighteenbox=\box83
-\pgfnodepartseventeenbox=\box84
-\pgfnodepartsixteenbox=\box85
-\pgfnodepartfifteenbox=\box86
-\pgfnodepartfourteenbox=\box87
-\pgfnodepartthirteenbox=\box88
-\pgfnodeparttwelvebox=\box89
-\pgfnodepartelevenbox=\box90
-\pgfnodeparttenbox=\box91
-\pgfnodepartninebox=\box92
-\pgfnodeparteightbox=\box93
-\pgfnodepartsevenbox=\box94
-\pgfnodepartsixbox=\box95
-\pgfnodepartfivebox=\box96
+\pgfnodepartlowerbox=\box79
+\pgfnodeparttwobox=\box80
+\pgfnodepartthreebox=\box81
+\pgfnodepartfourbox=\box82
+\pgfnodeparttwentybox=\box83
+\pgfnodepartnineteenbox=\box84
+\pgfnodeparteighteenbox=\box85
+\pgfnodepartseventeenbox=\box86
+\pgfnodepartsixteenbox=\box87
+\pgfnodepartfifteenbox=\box88
+\pgfnodepartfourteenbox=\box89
+\pgfnodepartthirteenbox=\box90
+\pgfnodeparttwelvebox=\box91
+\pgfnodepartelevenbox=\box92
+\pgfnodeparttenbox=\box93
+\pgfnodepartninebox=\box94
+\pgfnodeparteightbox=\box95
+\pgfnodepartsevenbox=\box96
+\pgfnodepartsixbox=\box97
+\pgfnodepartfivebox=\box98
 ))) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\arrowsize=\dimen292
+\arrowsize=\dimen296
 )) (./mysubtex/folyamat_diagram.tex)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6
+
+
+
+
+]
+
+LaTeX Warning: Reference `fig:folyamat_diagram' on page 7 undefined on input line 17.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[7])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[8]
+\openout2 = `mysubtex/Fejezet3.aux'.
+
+ (./mysubtex/Fejezet3.tex
+2. fejezet.
+
+LaTeX Warning: Citation `godotengineGodotEngine' on page 9 undefined on input line 9.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1066,6 +1061,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
+
+LaTeX Warning: Citation `khronosOpenXRHighperformance' on page 10 undefined on input line 20.
+
+
+LaTeX Warning: Citation `godotengineGDScriptReference' on page 10 undefined on input line 34.
+
+
+LaTeX Warning: Citation `godotengineGodotEngine' on page 10 undefined on input line 34.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1082,12 +1086,257 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11]
-\openout2 = `mysubtex/Fejezet3.aux'.
+\openout2 = `mysubtex/Fejezet4.aux'.
 
- (./mysubtex/Fejezet3.tex
-2. fejezet.
+ (./mysubtex/Fejezet4.tex
+3. fejezet.
+<img/asztal_4x4.png, id=150, 1517.67pt x 985.6825pt>
+File: img/asztal_4x4.png Graphic file (type png)
+<use img/asztal_4x4.png>
+Package pdftex.def Info: img/asztal_4x4.png  used on input line 7.
+(pdftex.def)             Requested size: 424.51517pt x 275.70345pt.
+
+LaTeX Warning: Reference `img:asztal' on page 12 undefined on input line 14.
+
+<img/asztal_4x4_card_flipped.png, id=152, 1517.67pt x 985.6825pt>
+File: img/asztal_4x4_card_flipped.png Graphic file (type png)
+<use img/asztal_4x4_card_flipped.png>
+Package pdftex.def Info: img/asztal_4x4_card_flipped.png  used on input line 18.
+(pdftex.def)             Requested size: 424.51517pt x 275.70345pt.
+
+LaTeX Warning: Reference `img:kartya_fliped' on page 12 undefined on input line 22.
+
+
+LaTeX Warning: Reference `img:non_pair' on page 12 undefined on input line 24.
+
+<img/asztal_4x4_non_pair.png, id=153, 1517.67pt x 985.6825pt>
+File: img/asztal_4x4_non_pair.png Graphic file (type png)
+<use img/asztal_4x4_non_pair.png>
+Package pdftex.def Info: img/asztal_4x4_non_pair.png  used on input line 26.
+(pdftex.def)             Requested size: 424.51517pt x 275.70345pt.
+
+LaTeX Warning: Reference `img:pair' on page 12 undefined on input line 33.
+
+
+LaTeX Warning: Reference `img:pair_gone' on page 12 undefined on input line 33.
+
+<img/asztal_4x4_pair.png, id=154, 1517.67pt x 985.6825pt>
+File: img/asztal_4x4_pair.png Graphic file (type png)
+<use img/asztal_4x4_pair.png>
+Package pdftex.def Info: img/asztal_4x4_pair.png  used on input line 36.
+(pdftex.def)             Requested size: 424.51517pt x 275.70345pt.
+<img/asztal_4x4_pair_eltunik.png, id=155, 1517.67pt x 985.6825pt>
+File: img/asztal_4x4_pair_eltunik.png Graphic file (type png)
+<use img/asztal_4x4_pair_eltunik.png>
+Package pdftex.def Info: img/asztal_4x4_pair_eltunik.png  used on input line 42.
+(pdftex.def)             Requested size: 424.51517pt x 275.70345pt.
+<img/menu.png, id=156, 1517.67pt x 985.6825pt>
+File: img/menu.png Graphic file (type png)
+<use img/menu.png>
+Package pdftex.def Info: img/menu.png  used on input line 48.
+(pdftex.def)             Requested size: 424.51517pt x 275.70345pt.
+
+LaTeX Warning: Reference `img:menu' on page 12 undefined on input line 54.
+
+
+LaTeX Warning: Citation `godotengineNodesScenes' on page 12 undefined on input line 57.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might als
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[12
+
+
+
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13 <./img/asztal_4x4.png> <./img/asztal_4x4_card_flipped.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[14 <./img/asztal_4x4_non_pair.png> <./img/asztal_4x4_pair.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15 <./img/asztal_4x4_pair_eltunik.png> <./img/menu.png>]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 61.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+<img/menu_scene_tree.png, id=189, 422.57875pt x 545.03625pt>
+File: img/menu_scene_tree.png Graphic file (type png)
+<use img/menu_scene_tree.png>
+Package pdftex.def Info: img/menu_scene_tree.png  used on input line 75.
+(pdftex.def)             Requested size: 424.51517pt x 547.54652pt.
+
+
+LaTeX Warning: Reference `img:menu_scene' on page 16 undefined on input line 79.
+
+
+LaTeX Warning: Citation `godotengineMeshInstance3D' on page 16 undefined on input line 79.
+
+
+LaTeX Warning: Reference `code:button_pressed_signal' on page 16 undefined on input line 79.
+
+<img/basic_field_scene_structure.png, id=190, 425.59pt x 301.125pt>
+File: img/basic_field_scene_structure.png Graphic file (type png)
+<use img/basic_field_scene_structure.png>
+Package pdftex.def Info: img/basic_field_scene_structure.png  used on input line 85.
+(pdftex.def)             Requested size: 424.51517pt x 300.37988pt.
+
+LaTeX Warning: Reference `img:basic_scene' on page 16 undefined on input line 102.
+
+
+LaTeX Warning: Reference `code:calculate_coordinate' on page 16 undefined on input line 102.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17 <./img/menu_scene_tree.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18 <./img/basic_field_scene_structure.png>]
+
+LaTeX Warning: Reference `code:make_deck' on page 19 undefined on input line 112.
+
+
+Overfull \hbox (3.79527pt too wide) in paragraph at lines 113--114
+[]\T1/cmr/m/n/12 Folyamatosan fi-gye-li, hogy mely [][][][]-ok van-nak még já-ték-ban a lstin-line|cards|
+ []
+
+
+LaTeX Warning: Reference `code:talalat' on page 19 undefined on input line 114.
+
+./mysubtex/Fejezet4.tex:144: Undefined control sequence.
+<recently read> \centeringx 
+                            
+l.144     \centeringx
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20] (./document.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+\T1/cmtt/m/n/12 org / en / stable / tutorials / scripting / gdscript / gdscript _ basics . html$[][]\T1/cmr/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
+\T1/cmtt/m/n/12 org / en / stable / getting _ started / step _ by _ step / nodes _ and _ scenes . html$[][]\T1/cmr/m/n/12 .
+ []
+
+) [21
+
+
+
+]
+No file document.lof.
+\tf@lof=\write9
+\openout9 = `document.lof'.
+
+[22
+
+]
+No file document.lot.
+\tf@lot=\write10
+\openout10 = `document.lot'.
+
+[23
+
+] 
+enddocument/afterlastpage: lastpage setting LastPage.
+(./document.aux (./subtex/Fedlap.aux) (./subtex/h_nyilatkozat.aux) (./subtex/tv_nyilatkozat.aux) (./subtex/Jelolesjegyzek.aux) (./mysubtex/Fejezet1.aux) (./mysubtex/Fejezet3.aux) (./mysubtex/Fejezet4.aux))
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `document.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `document.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  7F37E4D4F31EEEAF66707AD23B6DAE6E;1380.
+
+Package lastpage Warning: Rerun to get the references right on input line 241.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 37656 strings out of 474116
+ 704890 string characters out of 5743683
+ 2204187 words of memory out of 5000000
+ 59244 multiletter control sequences out of 15000+600000
+ 569967 words of font info for 64 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 110i,17n,117p,803b,2752s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on document.pdf (24 pages, 4781426 bytes).
+PDF statistics:
+ 386 PDF objects out of 1000 (max. 8388607)
+ 271 compressed objects within 3 object streams
+ 125 named destinations out of 1000 (max. 500000)
+ 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+

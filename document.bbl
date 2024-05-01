@@ -12,4 +12,12 @@ G.~Engine, ``{G}odot {E}ngine - {F}ree and open source 2{D} and 3{D} game engine
 ``{G}{D}{S}cript reference --- docs.godotengine.org.'' \url{https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html}.
 \newblock [Accessed 01-05-2024].
 
+\bibitem{godotengineNodesScenes}
+``{N}odes and {S}cenes --- docs.godotengine.org.'' \url{https://docs.godotengine.org/en/stable/getting_started/step_by_step/nodes_and_scenes.html}.
+\newblock [Accessed 01-05-2024].
+
+\bibitem{godotengineMeshInstance3D}
+``{M}esh{I}nstance3{D} --- docs.godotengine.org.'' \url{https://docs.godotengine.org/en/stable/classes/class_meshinstance3d.html}.
+\newblock [Accessed 01-05-2024].
+
 \end{thebibliography}

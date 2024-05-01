@@ -1,0 +1,22 @@
+\BOOKMARK [0][-]{chapter*.2}{Jelölésjegyzék}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Bevezetés}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Projekt célja}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Projet bemutatása}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.2.1}{Kutatómunka}{section.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.2.2}{Játék megtervezése}{section.1.2}% 6
+\BOOKMARK [2][-]{subsection.1.2.3}{Játék lefejlesztése}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.4}{Adatgyűjtés és VR támogatás}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.5}{AI betanítása}{section.1.2}% 9
+\BOOKMARK [2][-]{subsection.1.2.6}{AI játszatása}{section.1.2}% 10
+\BOOKMARK [0][-]{chapter.2}{Felhasznált technológiák}{}% 11
+\BOOKMARK [1][-]{section.2.1}{Godot Engine}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.2}{OpenXR}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.3}{GDscript}{chapter.2}% 14
+\BOOKMARK [0][-]{chapter.3}{A játék működése}{}% 15
+\BOOKMARK [1][-]{section.3.1}{Játék ismertetése}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.2}{Struktúrális felépítés}{chapter.3}% 17
+\BOOKMARK [2][-]{subsection.3.2.1}{Menü}{section.3.2}% 18
+\BOOKMARK [2][-]{subsection.3.2.2}{Basic Scene}{section.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.2.3}{Deck}{section.3.2}% 20
+\BOOKMARK [2][-]{subsection.3.2.4}{Card}{section.3.2}% 21
+\BOOKMARK [0][-]{chapter*.16}{Irodalomjegyzék}{}% 22

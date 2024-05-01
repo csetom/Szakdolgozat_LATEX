@@ -3,34 +3,165 @@
 \thispagestyle{fancy}
 \pagestyle{fancy}
 \section{Játék ismertetése}
-A játék melyet lefeljleszettem, a közismert memória játék. A játékot lehet egyedül, vagy akár többen is játszani.
-
-A játékban, egy asztalon 6, 8, 10 vagy 12 pár kártya található, képpel lefelé fordítva ahogyan az a \ref{img:asztal}. ábrán is látható.
-A kártyák előlapján betűk találhatók. Egyjátékos esetben a játékos célja, hogy minél kevesebb kártyapár megfordításából megtalálja az összes memória párt. Többjátékos esetben, hogy ő szerezze a legtöbb pontot, vagyis több kártyapárt fordítson fel, mint az ellenfelei.
-
-Ahhoz, hogy egy kártyát megfordítson, a játékosnak rá kell kattintania. Ekkor láthatóvá válik, mely betűhöz tartozik a memória elemhez (\ref{img:kartya_fliped}. ábra). 
-A megfordított kártyához választani kell egy másikat. A játékosnak törekednie kell, hogy korábbi ismeretei alapján, hogy a következőre a választott kártya előlapján ugyanaz a betű szerepeljen, mint a már felfordított memória lapon, vagyis egy párt fordítson fel. 
-Értelemszerűen ez az első felfordításkor nem lehetséges, hiszen nincs korábbi ismerete a játékról (\ref{img:non_pair}. ábra).
-
-Ha a felfordított kártyák nem alkotnak párt, akkor a kártyák maguktól visszafordulnak pár másodperc elteltével. Ez után egyszemélyes játék esetén esetén végrehajtunk egy újabb fordítást. Többjátékos esetén a következő játékos végezheti el a körét. 
-
-Ha párt alkotnak, akkor a kártyákat magunkhoz vehetjük. Ez mutatja a pontunkat, mely csak többjátékos esetben fog számítani.
-
-
-
-
 \begin{figure}
     \includegraphics[width=\textwidth]{img/asztal_4x4.png}
     \caption{4x4-es memóriajáték kezdő állapota}
     \label{img:asztal}
 \end{figure}
+
+A játék melyet lefeljleszettem, a közismert memória játék. A játékot lehet egyedül, vagy akár többen is játszani.
+
+A játékban, egy asztalon meghatározott számú kártya pár található, képpel lefelé fordítva ahogyan az a \ref{img:asztal}. ábrán is látható.
+A kártyák előlapján betűk találhatók. Egyjátékos esetben a játékos célja, hogy minél kevesebb kártyapár megfordításából megtalálja az összes memória párt. Többjátékos esetben, hogy ő szerezze a legtöbb pontot, vagyis több kártyapárt fordítson fel, mint az ellenfelei.
+
 \begin{figure}
     \includegraphics[width=\textwidth]{img/asztal_4x4_card_flipped.png}
     \caption{4x4-es memóriajáték egy kártya ki van választva}
     \label{img:kartya_fliped}
 \end{figure}
+Ahhoz, hogy egy kártyát megfordítson, a játékosnak rá kell kattintania. Ekkor láthatóvá válik, mely betűhöz tartozik a memória elemhez (\ref{img:kartya_fliped}. ábra). 
+A megfordított kártyához választani kell egy másikat. A játékosnak törekednie kell, hogy korábbi ismeretei alapján, a következőre a választott kártya előlapján ugyanaz a betű szerepeljen, mint a már felfordított memória lapon, vagyis egy párt fordítson fel. 
+Értelemszerűen ez az első felfordításkor nem lehetséges, hiszen nincs korábbi ismerete a játékról (\ref{img:non_pair}. ábra).
 \begin{figure}
     \includegraphics[width=\textwidth]{img/asztal_4x4_non_pair.png}
     \caption{4x4-es memóriajáték. Mivel a betűk nem azonosak, ezér ez nem egy pár, visszafordítjuk a kártyákat.}
     \label{img:non_pair}
 \end{figure}
+
+Ha a felfordított kártyák nem alkotnak párt, akkor a kártyák maguktól visszafordulnak pár másodperc elteltével. Ez után egyszemélyes játék esetén esetén végrehajtunk egy újabb fordítást. Többjátékos esetén a következő játékos végezheti el a körét. 
+
+Ha párt alkotnak (\ref{img:pair}. ábra), akkor a kártyák eltűnnek a játékmezőről  (\ref{img:pair_gone}. ábra). Többjátékos esetben a felfordított játékos kap egy pontot, és egy újabb fordítással folytatja a körét, mindaddig, míg egy nem párt fordít.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{img/asztal_4x4_pair.png}
+    \caption{A kiválasztott kártyák párt alkotnak}
+    \label{img:pair}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{img/asztal_4x4_pair_eltunik.png}
+    \caption{Eltűnik a pár az asztalról}
+    \label{img:pair_gone}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{img/menu.png}
+    \caption{A játék menüje}
+    \label{img:menu}  
+\end{figure}
+
+Amint az összes kártya eltűnik az asztalról, a játék véget ér, és visszakerülünk a menübe.
+A játékba több nehézségi szintet tettünk, melyet a menüből érhetünk el (\ref{img:menu}. ábra). A különböző menüpontok, a kártyák számának elhelyezkedését jelölik.
+
+\section{Struktúrális felépítés}
+A memória játék a Godot elveinek megfelelően Node-okból és Scene-ekből \cite{godotengineNodesScenes} áll. A Scene-ek struktúrája a következő.
+\subsection{Menü}
+\begin{figure}
+    \centering
+    \begin{lstlisting}[language=GDScript]
+    func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
+        if event is InputEventMouseButton:
+            if (event.button_index == MOUSE_BUTTON_LEFT && event.pressed == true):
+                emit_signal("button_pressed")
+    
+    func set_number_label_text(new_label_text: String):
+        number_label.text = new_label_text;
+    \end{lstlisting}
+    \caption{A menü gombja  \lstinline{button_pressed} signal-t emittál}
+    \label{code:button_pressed_signal}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{img/menu_scene_tree.png}
+    \caption{A játék menü Scene-jének struktúrája}
+    \label{img:menu_scene}  
+\end{figure}
+A Játék menüje (\ref{img:menu_scene}. ábra), a következő módon épül fel. A Gombok olyan MeshInstance3D Node-ok \cite{godotengineMeshInstance3D}, melyekre ha a játékos rákattint, akkor emittálnak egy \lstinline{button_pressed()} signal-t (\ref{code:button_pressed_signal}. ábra).
+A MenuScene kódjában hallgatózunk erre külön külön a gombokra. A megfelelő gomb megnyomásával beállítjuk a \lstinline{Constant.CARD_PAIR_NUMBER} globális változót, mely segítségével létrehozzuk a \lstinline{basic_scene}-t.
+
+\subsection{Basic Scene}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{img/basic_field_scene_structure.png}
+    \caption{A játéktér Scene struktúrális felépítése}
+    \label{img:basic_scene}  
+\end{figure}
+\begin{figure}
+    \centering
+    \begin{lstlisting}[language=GDScript]
+        func _calculate_coordinate(i, j):
+        return Vector3(
+            TABLE.position.x + (((CARD_WIDTH  + MARGO) * CARD_SCALE) * i ) - (((CARD_WIDTH * CARD_ROW) - (CARD_WIDTH) + (MARGO*(CARD_ROW-1)))*CARD_SCALE / 2),
+            TABLE.position.y,
+            TABLE.position.z + (((CARD_HEIGHT  + MARGO) * CARD_SCALE) * j ) - (((CARD_HEIGHT * CARD_COLUMN) - (CARD_HEIGHT) + (MARGO*(CARD_COLUMN-1)))*CARD_SCALE / 2)
+        )
+    \end{lstlisting}
+    \caption{Kártyák koordinátájának kiszámítása}
+    \label{code:calculate_coordinate}
+\end{figure}
+A Basic Scene (\ref{img:basic_scene}. ábra) struktúrája dinamikusan épül fel a \lstinline{Card} Scene-ekből, melyet a \lstinline|Deck| globális objektum ad oda a \lstinline|Basic Scene| -nek. A scene kiszámolja, az előre beállított kártya szélesség, magasság és margó konstansok alapján, hogy a megkapott kártyák számát, a \lstinline|CardMarker| -höz képest hova kell lerakni (\ref{code:calculate_coordinate}. ábra)
+
+Amint a \lstinline|Deck| objektum elküldi a \lstinline{cards_empty} signal-t, vagyis a játék végét, vagy ha a játékos megnyomja a Menü gombot, a játék visszatér a menübe. 
+
+Más feladata nincs. 
+
+
+\subsection{Deck}
+A \lstinline|Deck| egy olyan globális objektum, mely a program futása során bármikor elérhető. A feladatai: 
+\begin{enumerate}
+\item Létrehozni a kártyákat, a játék kezdetekor (\ref{code:make_deck}. ábra)
+\item Folyamatosan figyeli, hogy mely \lstinline|Card|-ok vannak még játékban a lstinline|cards| tömbben.
+\item Kezeli a kártyák felfordítását. Ha két kártya azonos, akkor azokat kiveszi a listájából (\ref{code:talalat}. ábra).
+\item Lementeni a játékos minden lépését a data tömbbe a memóriába. 
+\item Figyeli a játék végét.
+\item Lementeni a data tömböt egy JSON file-ba a játék végével.
+\end{enumerate}
+
+\begin{figure}
+    \centering
+    \begin{lstlisting}[language=GDScript]
+    func make_deck(card_pair_number: int, card_scene: PackedScene):
+        data.card_pair_number = card_pair_number;
+        cards.clear();
+        for i in range(0, card_pair_number):
+            var word = "";
+            while ABC.find(word) > - 1 or word == "":
+                word = generate_word('abcdefghijklmnopqrst', 1).to_upper();
+            ABC.push_back(word);
+            var card = card_scene.instantiate();
+            #call_deferred("add_child", card);
+            if card.has_method("set_label"):
+                card.set_label(word);
+            cards.push_back(card);
+            cards.push_back(card.duplicate());
+        cards.shuffle();
+        data.card_labels = ABC;
+    \end{lstlisting}
+    \caption{Létrehozzuk a kártyákat}
+    \label{code:make_deck}
+\end{figure}
+\begin{figure}
+    \centeringx
+    \begin{lstlisting}[language=GDScript]
+func talalat():
+	if (chosenA.get_label() == chosenB.get_label()):
+		cards.remove_at(cards.find(chosenA));
+		cards.remove_at(cards.find(chosenB));
+		chosenA.queue_free();
+		chosenB.queue_free();
+	else:
+		chosenA.play_card_reflip_animation();
+		chosenB.play_card_reflip_animation();
+	chosenA = null;
+	chosenB = null;
+	can_flip = true;
+	if cards.size() == 0 :
+		cards_empty.emit()
+		save_data()
+    \end{lstlisting}
+    \caption{Figyeljük a találatot}
+    \label{code:talalat}
+\end{figure}
+
+
+\subsection{Card}

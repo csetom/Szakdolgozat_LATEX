@@ -1,8 +1,16 @@
 \select@language {magyar} \addvspace {10\p@ }
-\select@language {magyar} \contentsline {figure}{\numberline {1.1.}{\ignorespaces Projekt folyamatábrája}}{10}{figure.caption.3}%
+\select@language {magyar} \contentsline {figure}{\numberline {1.1.}{\ignorespaces Projekt folyamatábrája}}{7}{figure.caption.3}%
 \select@language {magyar} \addvspace {10\p@ }
 \select@language {magyar} \addvspace {10\p@ }
-\select@language {magyar} \contentsline {figure}{\numberline {3.1.}{\ignorespaces 4x4-es memóriajáték kezdő állapota}}{16}{figure.caption.4}%
-\select@language {magyar} \contentsline {figure}{\numberline {3.2.}{\ignorespaces 4x4-es memóriajáték egy kártya ki van választva}}{16}{figure.caption.5}%
-\select@language {magyar} \contentsline {figure}{\numberline {3.3.}{\ignorespaces 4x4-es memóriajáték. Mivel a betűk nem azonosak, ezér ez nem egy pár, visszafordítjuk a kártyákat.}}{17}{figure.caption.6}%
-\select@language {magyar} \addvspace {10\p@ }
+\select@language {magyar} \contentsline {figure}{\numberline {3.1.}{\ignorespaces 4x4-es memóriajáték kezdő állapota}}{13}{figure.caption.4}%
+\select@language {magyar} \contentsline {figure}{\numberline {3.2.}{\ignorespaces 4x4-es memóriajáték egy kártya ki van választva}}{13}{figure.caption.5}%
+\select@language {magyar} \contentsline {figure}{\numberline {3.3.}{\ignorespaces 4x4-es memóriajáték. Mivel a betűk nem azonosak, ezér ez nem egy pár, visszafordítjuk a kártyákat.}}{14}{figure.caption.6}%
+\select@language {magyar} \contentsline {figure}{\numberline {3.4.}{\ignorespaces A kiválasztott kártyák párt alkotnak}}{14}{figure.caption.7}%
+\select@language {magyar} \contentsline {figure}{\numberline {3.5.}{\ignorespaces Eltűnik a pár az asztalról}}{15}{figure.caption.8}%
+\select@language {magyar} \contentsline {figure}{\numberline {3.6.}{\ignorespaces A játék menüje}}{15}{figure.caption.9}%
+\select@language {magyar} \contentsline {figure}{\numberline {3.7.}{\ignorespaces A menü gombja \lstinline {button_pressed} signal-t emittál}}{16}{figure.caption.10}%
+\select@language {magyar} \contentsline {figure}{\numberline {3.8.}{\ignorespaces A játék menü Scene-jének struktúrája}}{17}{figure.caption.11}%
+\select@language {magyar} \contentsline {figure}{\numberline {3.9.}{\ignorespaces A játéktér Scene struktúrális felépítése}}{18}{figure.caption.12}%
+\select@language {magyar} \contentsline {figure}{\numberline {3.10.}{\ignorespaces Kártyák koordinátájának kiszámítása}}{18}{figure.caption.13}%
+\select@language {magyar} \contentsline {figure}{\numberline {3.11.}{\ignorespaces Létrehozzuk a kártyákat}}{19}{figure.caption.14}%
+\select@language {magyar} \contentsline {figure}{\numberline {3.12.}{\ignorespaces Figyeljük a találatot}}{20}{figure.caption.15}%

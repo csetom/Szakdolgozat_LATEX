@@ -27,6 +27,54 @@
 \usepackage{longtable}
 \usepackage{url}
 \usepackage{tikz}
+\usepackage{listings}
+
+\lstdefinelanguage{GDScript}{
+  morekeywords={
+    onready, tool, signal, extends, func, var, const, return,
+    break, continue, if, elif, else, for, while, match, case, in, 
+    and, or, not, pass, preload, is, as, self, true, false, null,
+    export, setget, static, enum, class,
+	func, if, is, true, false, emit_signal, MOUSE_BUTTON_LEFT, 
+    InputEventMouseButton, new_label_text, String
+  },
+  sensitive=true,
+  morecomment=[l]{\#},
+  morestring=[b]",
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{
+	style=mystyle,
+    basicstyle=\ttfamily\footnotesize,
+    basicstyle=\ttfamily,
+    breaklines=true,
+    numbers=left,
+    numberstyle=\tiny,
+    frame=single
+}
+
 
 
 \setlength{\parindent}{12pt}
@@ -161,9 +209,9 @@
 	\include{subtex/tv_nyilatkozat}
 	%\includepdf{Temavezetoi_nyilatkozat.pdf}
 	%köszönetnyilvánítás csatolása
-	\include{subtex/Koszonetnyilvanitas}
+	%\include{subtex/Koszonetnyilvanitas}
 	%tartalmi összefoglalók csatolása, ami magyar és angol nyelven az Abstract.tex fájlban lesz megírva
-	\include{subtex/Abstract}
+	%\include{subtex/Abstract}
 	%Tartalomjegyzéket a Tex generálja, nem kell szerkeszteni
 	\tableofcontents\vfill
 	\addtocontents{toc}{\protect\thispagestyle{empty}}
@@ -183,7 +231,7 @@
 	%megjelenés sorrendjében építi fel az irodalomjegyzéket
 	\bibliographystyle{ieeetr}
 	% a következő sor a dolgozat digitális mellékletének a tartalmát csatolja a dolgozathoz, ezt a fájllistát a files.tex fájlban kell megírni
-	\include{subtex/files}
+	%\include{subtex/files}
 	% a dolgozatban az ábrajegyzéket el kell helyezni, ezt a TeX automatikusan előállítja és a következő sor határása elhelyezi a dokumentumban
 	\listoffigures
 	%Ha vannak táblázatok is, akkor ezeket is listába gyűjtjük, és a következő utasítással az ábrajegyzéket követően a dolgozatba legeneráltatjuk. Ha nincs rá szükség, a százalék jellel a sor elején érvénytelenítjük a parancsot vagy töröljük a sort
