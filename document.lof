@@ -2,6 +2,7 @@
 \select@language {magyar} \contentsline {figure}{\numberline {1.1.}{\ignorespaces Projekt folyamatábrája}}{10}{figure.caption.3}%
 \select@language {magyar} \addvspace {10\p@ }
 \select@language {magyar} \addvspace {10\p@ }
-\select@language {magyar} \addvspace {10\p@ }
-\select@language {magyar} \addvspace {10\p@ }
+\select@language {magyar} \contentsline {figure}{\numberline {3.1.}{\ignorespaces 4x4-es memóriajáték kezdő állapota}}{16}{figure.caption.4}%
+\select@language {magyar} \contentsline {figure}{\numberline {3.2.}{\ignorespaces 4x4-es memóriajáték egy kártya ki van választva}}{16}{figure.caption.5}%
+\select@language {magyar} \contentsline {figure}{\numberline {3.3.}{\ignorespaces 4x4-es memóriajáték. Mivel a betűk nem azonosak, ezér ez nem egy pár, visszafordítjuk a kártyákat.}}{17}{figure.caption.6}%
 \select@language {magyar} \addvspace {10\p@ }

@@ -1,3 +1,15 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{godotengineGodotEngine}
+G.~Engine, ``{G}odot {E}ngine - {F}ree and open source 2{D} and 3{D} game engine --- godotengine.org.'' \url{https://godotengine.org/}.
+\newblock [Accessed 01-05-2024].
+
+\bibitem{khronosOpenXRHighperformance}
+``{O}pen{X}{R} - {H}igh-performance access to {A}{R} and {V}{R} —collectively known as {X}{R}— platforms and devices --- khronos.org.'' \url{https://www.khronos.org/OpenXR/}.
+\newblock [Accessed 01-05-2024].
+
+\bibitem{godotengineGDScriptReference}
+``{G}{D}{S}cript reference --- docs.godotengine.org.'' \url{https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html}.
+\newblock [Accessed 01-05-2024].
 
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.1)  1 MAY 2024 16:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.1)  1 MAY 2024 18:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -741,7 +741,7 @@ Package nomencl Info: Writing nomenclature file document.nlo on input line 88.
 \openout6 = `document.idx'.
 
 Writing index file document.idx
-(./document.aux (./subtex/Fedlap.aux) (./subtex/h_nyilatkozat.aux) (./subtex/tv_nyilatkozat.aux) (./subtex/Koszonetnyilvanitas.aux) (./subtex/Abstract.aux) (./subtex/Jelolesjegyzek.aux) (./mysubtex/Fejezet1.aux) (./mysubtex/Fejezet2.aux) (./mysubtex/Fejezet3.aux) (./subtex/Fejezet4.aux) (./subtex/Fejezet5.aux) (./subtex/files.aux))
+(./document.aux (./subtex/Fedlap.aux) (./subtex/h_nyilatkozat.aux) (./subtex/tv_nyilatkozat.aux) (./subtex/Koszonetnyilvanitas.aux) (./subtex/Abstract.aux) (./subtex/Jelolesjegyzek.aux) (./mysubtex/Fejezet1.aux) (./mysubtex/Fejezet3.aux) (./mysubtex/Fejezet4.aux) (./subtex/files.aux))
 \openout1 = `document.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 150.
@@ -814,7 +814,7 @@ LaTeX Info: Redefining \mit on input line 578.
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}])
 
 pdfTeX warning: pdflatex (file ./Temakiiras.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Temakiiras.pdf, id=95, 597.55246pt x 845.07724pt>
+<Temakiiras.pdf, id=91, 597.55246pt x 845.07724pt>
 File: Temakiiras.pdf Graphic file (type pdf)
 <use Temakiiras.pdf>
 Package pdftex.def Info: Temakiiras.pdf  used on input line 156.
@@ -832,7 +832,7 @@ pdfTeX warning: pdflatex (file ./Temakiiras.pdf): PDF inclusion: found PDF versi
 
 
 pdfTeX warning: pdflatex (file ./Temakiiras.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Temakiiras.pdf, id=98, page=1, 597.55246pt x 845.07724pt>
+<Temakiiras.pdf, id=94, page=1, 597.55246pt x 845.07724pt>
 File: Temakiiras.pdf Graphic file (type pdf)
 <use Temakiiras.pdf, page 1>
 Package pdftex.def Info: Temakiiras.pdf , page1 used on input line 156.
@@ -1082,130 +1082,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11]
-\openout2 = `mysubtex/Fejezet2.aux'.
-
- (./mysubtex/Fejezet2.tex
-2. fejezet.
-)
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[12
-
-
-
-
-]
 \openout2 = `mysubtex/Fejezet3.aux'.
 
  (./mysubtex/Fejezet3.tex
-3. fejezet.
-)
+2. fejezet.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[13
-
-
-
-
-]
-\openout2 = `subtex/Fejezet4.aux'.
-
- (./subtex/Fejezet4.tex
-4. fejezet.
-)
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[14
-
-
-
-
-]
-\openout2 = `subtex/Fejezet5.aux'.
-
- (./subtex/Fejezet5.tex
-5. fejezet.
-)
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.04742pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.04742pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-3.04742pt}.
-
-[15
-
-
-
-
-] (./document.bbl
-
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
-
-) [16
-
-
-
-]
-\openout2 = `subtex/files.aux'.
-
- (./subtex/files.tex
-6. fejezet.
-[17
-
-
-]) [18] (./document.lof)
-\tf@lof=\write9
-\openout9 = `document.lof'.
-
- [19
-
-
-
-] (./document.lot)
-\tf@lot=\write10
-\openout10 = `document.lot'.
-
- [20
-
-] 
-enddocument/afterlastpage: lastpage setting LastPage.
-(./document.aux (./subtex/Fedlap.aux) (./subtex/h_nyilatkozat.aux) (./subtex/tv_nyilatkozat.aux) (./subtex/Koszonetnyilvanitas.aux) (./subtex/Abstract.aux) (./subtex/Jelolesjegyzek.aux) (./mysubtex/Fejezet1.aux) (./mysubtex/Fejezet2.aux) (./mysubtex/Fejezet3.aux) (./subtex/Fejezet4.aux) (./subtex/Fejezet5.aux) (./subtex/files.aux))
- ***********
-LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-02-20>
- ***********
-Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: A87E94B516E3219EEAB957CD72E321D4;1214.
- ) 
-Here is how much of TeX's memory you used:
- 35926 strings out of 474116
- 682114 string characters out of 5743683
- 1936187 words of memory out of 5000000
- 57549 multiletter control sequences out of 15000+600000
- 569225 words of font info for 63 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 110i,17n,117p,803b,2752s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
-Output written on document.pdf (21 pages, 382734 bytes).
-PDF statistics:
- 328 PDF objects out of 1000 (max. 8388607)
- 235 compressed objects within 3 object streams
- 44 named destinations out of 1000 (max. 500000)
- 197 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+(fancyhdr)                You might als

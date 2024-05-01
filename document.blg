@@ -8,44 +8,41 @@ A level-1 auxiliary file: subtex/Koszonetnyilvanitas.aux
 A level-1 auxiliary file: subtex/Abstract.aux
 A level-1 auxiliary file: subtex/Jelolesjegyzek.aux
 A level-1 auxiliary file: mysubtex/Fejezet1.aux
-A level-1 auxiliary file: mysubtex/Fejezet2.aux
 A level-1 auxiliary file: mysubtex/Fejezet3.aux
-A level-1 auxiliary file: subtex/Fejezet4.aux
-A level-1 auxiliary file: subtex/Fejezet5.aux
+A level-1 auxiliary file: mysubtex/Fejezet4.aux
 The style file: ieeetr.bst
 A level-1 auxiliary file: subtex/files.aux
-I found no \citation commands---while reading file document.aux
 Database file #1: mybib.bib
-You've used 0 entries,
+You've used 3 entries,
             1876 wiz_defined-function locations,
-            489 strings with 3728 characters,
-and the built_in function-call counts, 20 in all, are:
-= -- 0
-> -- 0
+            501 strings with 4310 characters,
+and the built_in function-call counts, 378 in all, are:
+= -- 37
+> -- 6
 < -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 9
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 4
+- -- 1
+* -- 12
+:= -- 52
+add.period$ -- 6
+call.type$ -- 3
+change.case$ -- 3
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 3
+duplicate$ -- 12
+empty$ -- 55
+format.name$ -- 1
+if$ -- 99
 int.to.chr$ -- 0
-int.to.str$ -- 0
+int.to.str$ -- 3
 missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+newline$ -- 15
+num.names$ -- 1
+pop$ -- 23
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 9
 stack$ -- 0
 substring$ -- 0
 swap$ -- 0
@@ -54,7 +51,6 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+while$ -- 1
+width$ -- 4
+write$ -- 27
