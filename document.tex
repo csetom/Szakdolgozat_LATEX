@@ -1,0 +1,193 @@
+\documentclass[12pt,a4paper,oneside]{report}        % Single-side
+%\documentclass[12pt,a4paper,twoside]{report}  		% Duplex
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{anysize}
+\newcommand\magyarOptions{chapterhead=unchanged}
+\usepackage[magyar]{babel}
+\usepackage{sectsty}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{pdfpages}
+\usepackage[intoc]{nomencl}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[a-2b,mathxmp]{pdfx}
+\usepackage{longtable}
+\usepackage{url}
+\usepackage{tikz}
+
+
+\setlength{\parindent}{12pt}
+\setlength{\parskip}{0pt}
+
+\renewcommand{\baselinestretch}{1.5}
+\titlespacing*{\section}
+{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+
+\marginsize{35.4mm}{25.4mm}{25.4mm}{25.4mm} % anysize package
+
+\titleformat{\chapter}[display]{\fontsize{14}{15} \bfseries}{\thechapter. \chaptername}{15pt}{}
+\sectionfont{\fontsize{12}{15}\bfseries}
+\subsectionfont{\fontsize{12}{15}\bfseries}
+
+\hypersetup{
+	bookmarks=true,            % show bookmarks bar?
+	unicode=false,             % non-Latin characters in Acrobats bookmarks
+	pdftitle={},        % title
+	pdfauthor={},    % author
+	pdfsubject={}, % subject of the document
+	pdfcreator={},   % creator of the document
+	pdfproducer={Producer},    % producer of the document
+	pdfkeywords={keywords},    % list of keywords
+	pdfnewwindow=true,         % links in new window
+	colorlinks=true,           % false: boxed links; true: colored links
+	linkcolor=black,           % color of internal links
+	citecolor=black,           % color of links to bibliography
+	filecolor=black,           % color of file links
+	urlcolor=black             % color of external links
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\fancyhead[C]{\leftmark}
+
+\fancypagestyle{plain}{%
+	\fancyhf{}%
+	\fancyfoot[C]{\thepage}%
+	\fancyhead{}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+\renewcommand{\chaptermark}[1]{%
+	\markboth{#1}{}}
+\renewcommand{\headrulewidth}{\iffloatpage{0pt}{0.4pt}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+%alairasok beszurasa nyilatkozatokra
+\newcommand*{\SignatureAndDate}[1]{%
+\par\noindent\makebox[3.5in]{}\hfill\makebox[2.0in]{\dotfill}%
+\par\noindent\makebox[3.5in]{}\hfill\makebox[1.8in]{#1}
+}%
+
+\renewcommand{\nomname}{Jelölésjegyzék}
+
+\makenomenclature
+\makeindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% adatok: FONTOS, HOGY MINDEGYIK ADAT UTÁN LEGYEN SPACE! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\myuni{Pannon Egyetem }
+\def\mykar{Műszaki Informatikai Kar }
+\def\mytanszek{\textbf{\textcolor{red}{<<tanszék>>}} } %többi tanszék?
+\def\mycim{\textbf{\textcolor{red}{<<A szakdolgozat címe - a témakiírással egyezően>>}} }
+\def\myszak{\textbf{\textcolor{red}{<<szak>>}} } %Mérnökinformatikus/Gazdaságinformatikus/Programtervező Informatikus/ Villamosmérnöki
+\def\mynev{\textbf{\textcolor{red}{<<hallgató neve>>}} }
+\def\myev{\textbf{\textcolor{red}{<<végzés éve>>}} }
+\def\mytemavezeto{\textbf{\textcolor{red}{<<témavezető neve>>}} }
+\def\mykonzulens{\textbf{\textcolor{red}{<<külső konzulens neve>>, <<intézménye>> }} }
+\def\mydate{\textbf{\textcolor{red}{<<év. hónap nap>> }} }
+\def\myvaros{\textbf{\textcolor{red}{<<hely>>}} }
+\def\myvegzettseg{\textbf{\textcolor{red}{<<végzettség>>}} }
+\def\mydolgozat{\textbf{\textcolor{red}{<<szak-/diplomadolgozat>>}} }
+
+%%%%%%%%% kitöltendő - komment kitöRlése után ez kerül be a dolgozatba, és nem a piros fenti rész %%%%%%%%%%%%%%
+%%%%%% FONTOS, HOGY MINDEGYIK ADAT UTÁN LEGYEN SPACE! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% A még nem biztos (pl pontos dátum az aláírásnál) részt érdemes még kikommentelve hagyni, így pirossal marad bent a végéig %%%%%%%%
+\def\mycim{3D memóriajáték tervezése mesterséges intelligenciával }
+\def\mynev{Csesznák Tamás Levente }
+\def\myev{2024 }
+\def\mytemavezeto{Szabó Patrícia }
+%\def\mykonzulens{<<külső konzulens neve>>, <<intézménye>> }
+\def\mydate{2024.05.01 }
+\def\myvaros{Veszprém }
+
+
+%%%%%%%%% tanszék - megfelelő elől kivenni a kommentet %%%%%%%%%%%%%%%%%%%%%%%
+%\def\mytanszek{Alkalmazott Informatikai }
+\def\mytanszek{Informatikai Rendszerek és Alkalmazásai }
+%\def\mytanszek{Matematika }
+%\def\mytanszek{Rendszer- és Számítástudományi }
+%\def\mytanszek{Villamosmérnöki és Információs Rendszerek }
+
+
+%%%%%%%%% szakok - megfelelő elől kivenni a kommentet %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %% Gazdaságinformatikus BSc
+%\def\myszak{Gazdaságinformatikus BSc} \def\myvegzettseg{gazdaságinformatikus } \def\mydolgozat{SZAKDOLGOZAT}
+    
+    %% Mérnökinformatikus BSc
+\def\myszak{Mérnökinformatikus BSc} \def\myvegzettseg{mérnökinformatikus } \def\mydolgozat{SZAKDOLGOZAT}
+    
+    %% Programtervező informatikus BSc
+%\def\myszak{Programtervező informatikus BSc} \def\myvegzettseg{programtervező informatikus } \def\mydolgozat{SZAKDOLGOZAT}
+
+    %% Villamosmérnöki BSc
+%\def\myszak{Villamosmérnöki BSc} \def\myvegzettseg{villamosmérnöki } \def\mydolgozat{SZAKDOLGOZAT}
+
+    %% Mérnökinformatikus MSc
+%\def\myszak{Mérnökinformatikus MSc} \def\myvegzettseg{okleveles mérnökinformatikus } \def\mydolgozat{DIPLOMADOLGOZAT}
+
+    %% Programtervező informatikus MSc
+%\def\myszak{Programtervező informatikus MSc} \def\myvegzettseg{okleveles programtervező informatikus } \def\mydolgozat{DIPLOMADOLGOZAT}
+
+
+
+
+%itt kerülnek becsatolásra a dolgozat egymást követő fejezetei
+\begin{document}
+	\pagenumbering{arabic}
+	\onehalfspacing
+	%a fedlappal kezdj
+	\include{subtex/Fedlap}
+	%a szkennelt témakiírás a következő, amit pdf-ben csatolunk
+	\includepdf{Temakiiras.pdf}
+	%saját nyilatkozatod nyomtatva, aláírva, pdf-be szkennelve csatolandó. A szerkeszthető részt tartalmazó  h_nyilatkozat.tex fájlt nem kell becsatolni, miután az aláírt nyilatkozat csatolásra kerül
+	\include{subtex/h_nyilatkozat}
+	%\includepdf{Hallgatoi_nyilatkozat.pdf}
+	%témavezetőd nyilatkozata nyomtatva, aláírva, pdf-be szkennelve csatolandó. A szerkeszthető oldalt ki kell kapcsolni majd, ha a szkennelt témavezetői nyilatkozatot beszúrta. A beszúráshoz vegye le a % jelet a 94-es és 98-as sorok elől.
+	\include{subtex/tv_nyilatkozat}
+	%\includepdf{Temavezetoi_nyilatkozat.pdf}
+	%köszönetnyilvánítás csatolása
+	\include{subtex/Koszonetnyilvanitas}
+	%tartalmi összefoglalók csatolása, ami magyar és angol nyelven az Abstract.tex fájlban lesz megírva
+	\include{subtex/Abstract}
+	%Tartalomjegyzéket a Tex generálja, nem kell szerkeszteni
+	\tableofcontents\vfill
+	\addtocontents{toc}{\protect\thispagestyle{empty}}
+	\pagestyle{empty}
+	%rövidítések jegyzése a Jelolesjegyzek.tex fájlban szerkesztendő
+	\include{subtex/Jelolesjegyzek}
+	%dolgozat fejezetei, amit a HALLGATÓ MEGÍR. A fejezetek tetszőleges néven létrehozhatók, fejezetnev.tex formátumban, a dokumentumba befordításuk az itt megadott sorrendben történik.
+	\include{mysubtex/Fejezet1}
+	\include{mysubtex/Fejezet2}
+	\include{mysubtex/Fejezet3}
+	\include{subtex/Fejezet4}
+	\include{subtex/Fejezet5}
+	%Irodalomjegyzék generálása a dolgozatba a következő sorok hatására történik, szerkeszteni nem kell. A hivatkozott források gyűjteményét a mybib.bib nevű fájlban kell kialakítani
+	\bibliography{mybib}
+	\pagestyle{plain}
+	\addcontentsline{toc}{chapter}{Irodalomjegyzék}
+	%megjelenés sorrendjében építi fel az irodalomjegyzéket
+	\bibliographystyle{ieeetr}
+	% a következő sor a dolgozat digitális mellékletének a tartalmát csatolja a dolgozathoz, ezt a fájllistát a files.tex fájlban kell megírni
+	\include{subtex/files}
+	% a dolgozatban az ábrajegyzéket el kell helyezni, ezt a TeX automatikusan előállítja és a következő sor határása elhelyezi a dokumentumban
+	\listoffigures
+	%Ha vannak táblázatok is, akkor ezeket is listába gyűjtjük, és a következő utasítással az ábrajegyzéket követően a dolgozatba legeneráltatjuk. Ha nincs rá szükség, a százalék jellel a sor elején érvénytelenítjük a parancsot vagy töröljük a sort
+	\listoftables
+	
+	
+\end{document}
