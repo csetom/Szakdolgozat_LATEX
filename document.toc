@@ -1,23 +1,24 @@
 \select@language {magyar} \thispagestyle {empty}
-\select@language {magyar} \contentsline {chapter}{\nonumberline Jelölésjegyzék}{5}{chapter*.2}%
-\select@language {magyar} \contentsline {chapter}{\numberline {1}Bevezetés}{6}{chapter.1}%
-\select@language {magyar} \contentsline {section}{\numberline {1.1}Projekt célja}{6}{section.1.1}%
-\select@language {magyar} \contentsline {section}{\numberline {1.2}Projet bemutatása}{7}{section.1.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {1.2.1}Kutatómunka}{8}{subsection.1.2.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {1.2.2}Játék megtervezése}{8}{subsection.1.2.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {1.2.3}Játék lefejlesztése}{8}{subsection.1.2.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {1.2.4}Adatgyűjtés és VR támogatás}{8}{subsection.1.2.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {1.2.5}AI betanítása}{8}{subsection.1.2.5}%
-\select@language {magyar} \contentsline {subsection}{\numberline {1.2.6}AI játszatása}{8}{subsection.1.2.6}%
-\select@language {magyar} \contentsline {chapter}{\numberline {2}Felhasznált technológiák}{9}{chapter.2}%
-\select@language {magyar} \contentsline {section}{\numberline {2.1}Godot Engine}{9}{section.2.1}%
-\select@language {magyar} \contentsline {section}{\numberline {2.2}OpenXR}{10}{section.2.2}%
-\select@language {magyar} \contentsline {section}{\numberline {2.3}GDscript}{10}{section.2.3}%
-\select@language {magyar} \contentsline {chapter}{\numberline {3}A játék működése}{12}{chapter.3}%
-\select@language {magyar} \contentsline {section}{\numberline {3.1}Játék ismertetése}{12}{section.3.1}%
-\select@language {magyar} \contentsline {section}{\numberline {3.2}Struktúrális felépítés}{16}{section.3.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.2.1}Menü}{16}{subsection.3.2.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.2.2}Basic Scene}{16}{subsection.3.2.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.2.3}Deck}{19}{subsection.3.2.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.2.4}Card}{19}{subsection.3.2.4}%
-\select@language {magyar} \contentsline {chapter}{Irodalomjegyzék}{21}{chapter*.16}%
+\select@language {magyar} \contentsline {chapter}{\nonumberline Jelölésjegyzék}{2}{chapter*.2}%
+\select@language {magyar} \contentsline {chapter}{\numberline {1}Bevezetés}{3}{chapter.1}%
+\select@language {magyar} \contentsline {section}{\numberline {1.1}Projekt célja}{3}{section.1.1}%
+\select@language {magyar} \contentsline {section}{\numberline {1.2}Projet bemutatása}{3}{section.1.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.2.1}Kutatómunka}{4}{subsection.1.2.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.2.2}Játék megtervezése}{5}{subsection.1.2.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.2.3}Játék fejlesztése}{5}{subsection.1.2.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.2.4}Adatgyűjtés és VR támogatás}{5}{subsection.1.2.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.2.5}AI betanítása}{5}{subsection.1.2.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.2.6}AI játszatása}{5}{subsection.1.2.6}%
+\select@language {magyar} \contentsline {chapter}{\numberline {2}Irodalomkutatás}{6}{chapter.2}%
+\select@language {magyar} \contentsline {chapter}{\numberline {3}Felhasznált technológiák}{7}{chapter.3}%
+\select@language {magyar} \contentsline {section}{\numberline {3.1}Godot Engine}{7}{section.3.1}%
+\select@language {magyar} \contentsline {section}{\numberline {3.2}OpenXR}{8}{section.3.2}%
+\select@language {magyar} \contentsline {section}{\numberline {3.3}GDscript}{8}{section.3.3}%
+\select@language {magyar} \contentsline {chapter}{\numberline {4}A játék működése}{10}{chapter.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4.1}Játék ismertetése}{10}{section.4.1}%
+\select@language {magyar} \contentsline {section}{\numberline {4.2}Struktúrális felépítés}{12}{section.4.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.2.1}Menü}{12}{subsection.4.2.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.2.2}Basic Scene}{14}{subsection.4.2.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.2.3}Deck}{15}{subsection.4.2.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.2.4}Card}{16}{subsection.4.2.4}%
+\select@language {magyar} \contentsline {chapter}{Irodalomjegyzék}{18}{chapter*.16}%

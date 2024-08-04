@@ -1,16 +1,17 @@
 \begin{thebibliography}{1}
 
-\bibitem{godotengineGodotEngine}
-G.~Engine, ``{G}odot {E}ngine - {F}ree and open source 2{D} and 3{D} game engine --- godotengine.org.'' \url{https://godotengine.org/}.
-\newblock [Accessed 01-05-2024].
+\bibitem{4634261}
+B.-T. Zhang, ``Cognitive learning and the multimodal memory game: Toward human-level machine learning,'' in {\em 2008 IEEE International Joint Conference on Neural Networks (IEEE World Congress on Computational Intelligence)}, pp.~3261--3267, 2008.
 
-\bibitem{khronosOpenXRHighperformance}
-``{O}pen{X}{R} - {H}igh-performance access to {A}{R} and {V}{R} —collectively known as {X}{R}— platforms and devices --- khronos.org.'' \url{https://www.khronos.org/OpenXR/}.
-\newblock [Accessed 01-05-2024].
+\bibitem{pmlr-v37-clark15}
+C.~Clark and A.~Storkey, ``Training deep convolutional neural networks to play go,'' in {\em Proceedings of the 32nd International Conference on Machine Learning} (F.~Bach and D.~Blei, eds.), vol.~37 of {\em Proceedings of Machine Learning Research}, (Lille, France), pp.~1766--1774, PMLR, 07--09 Jul 2015.
 
-\bibitem{godotengineGDScriptReference}
-``{G}{D}{S}cript reference --- docs.godotengine.org.'' \url{https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html}.
-\newblock [Accessed 01-05-2024].
+\bibitem{bhatia2014recurrent}
+S.~Bhatia and R.~Golman, ``A recurrent neural network for game theoretic decision making,'' in {\em Proceedings of the Annual Meeting of the Cognitive Science Society}, vol.~36, 2014.
+
+\bibitem{boyan1992modular}
+J.~A. Boyan, {\em Modular neural networks for learning context-dependent game strategies}.
+\newblock University of Cambridge. Computer Laboratory, 1992.
 
 \bibitem{godotengineNodesScenes}
 ``{N}odes and {S}cenes --- docs.godotengine.org.'' \url{https://docs.godotengine.org/en/stable/getting_started/step_by_step/nodes_and_scenes.html}.

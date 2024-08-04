@@ -28,6 +28,8 @@
 \usepackage{url}
 \usepackage{tikz}
 \usepackage{listings}
+\usepackage{subcaption}
+\usepackage[section]{placeins}
 
 \lstdefinelanguage{GDScript}{
   morekeywords={
@@ -201,12 +203,12 @@
 	%a fedlappal kezdj
 	\include{subtex/Fedlap}
 	%a szkennelt témakiírás a következő, amit pdf-ben csatolunk
-	\includepdf{Temakiiras.pdf}
+	%\includepdf{Temakiiras.pdf}
 	%saját nyilatkozatod nyomtatva, aláírva, pdf-be szkennelve csatolandó. A szerkeszthető részt tartalmazó  h_nyilatkozat.tex fájlt nem kell becsatolni, miután az aláírt nyilatkozat csatolásra kerül
-	\include{subtex/h_nyilatkozat}
+	%\include{subtex/h_nyilatkozat}
 	%\includepdf{Hallgatoi_nyilatkozat.pdf}
 	%témavezetőd nyilatkozata nyomtatva, aláírva, pdf-be szkennelve csatolandó. A szerkeszthető oldalt ki kell kapcsolni majd, ha a szkennelt témavezetői nyilatkozatot beszúrta. A beszúráshoz vegye le a % jelet a 94-es és 98-as sorok elől.
-	\include{subtex/tv_nyilatkozat}
+	%\include{subtex/tv_nyilatkozat}
 	%\includepdf{Temavezetoi_nyilatkozat.pdf}
 	%köszönetnyilvánítás csatolása
 	%\include{subtex/Koszonetnyilvanitas}
@@ -220,7 +222,7 @@
 	\include{subtex/Jelolesjegyzek}
 	%dolgozat fejezetei, amit a HALLGATÓ MEGÍR. A fejezetek tetszőleges néven létrehozhatók, fejezetnev.tex formátumban, a dokumentumba befordításuk az itt megadott sorrendben történik.
 	\include{mysubtex/Fejezet1}
-	%\include{mysubtex/Fejezet2}
+	\include{mysubtex/Fejezet2}
 	\include{mysubtex/Fejezet3}
 	\include{mysubtex/Fejezet4}
 	%\include{subtex/Fejezet5}

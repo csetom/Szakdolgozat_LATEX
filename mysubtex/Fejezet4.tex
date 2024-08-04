@@ -3,60 +3,76 @@
 \thispagestyle{fancy}
 \pagestyle{fancy}
 \section{Játék ismertetése}
-\begin{figure}
-    \includegraphics[width=\textwidth]{img/asztal_4x4.png}
-    \caption{4x4-es memóriajáték kezdő állapota}
-    \label{img:asztal}
-\end{figure}
 
 A játék melyet lefeljleszettem, a közismert memória játék. A játékot lehet egyedül, vagy akár többen is játszani.
 
 A játékban, egy asztalon meghatározott számú kártya pár található, képpel lefelé fordítva ahogyan az a \ref{img:asztal}. ábrán is látható.
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{img/asztal_4x4.png}
+    \caption{4x4-es memóriajáték kezdő állapota}
+    \label{img:asztal}
+\end{figure}
 A kártyák előlapján betűk találhatók. Egyjátékos esetben a játékos célja, hogy minél kevesebb kártyapár megfordításából megtalálja az összes memória párt. Többjátékos esetben, hogy ő szerezze a legtöbb pontot, vagyis több kártyapárt fordítson fel, mint az ellenfelei.
 
-\begin{figure}
-    \includegraphics[width=\textwidth]{img/asztal_4x4_card_flipped.png}
-    \caption{4x4-es memóriajáték egy kártya ki van választva}
-    \label{img:kartya_fliped}
-\end{figure}
+
 Ahhoz, hogy egy kártyát megfordítson, a játékosnak rá kell kattintania. Ekkor láthatóvá válik, mely betűhöz tartozik a memória elemhez (\ref{img:kartya_fliped}. ábra). 
 A megfordított kártyához választani kell egy másikat. A játékosnak törekednie kell, hogy korábbi ismeretei alapján, a következőre a választott kártya előlapján ugyanaz a betű szerepeljen, mint a már felfordított memória lapon, vagyis egy párt fordítson fel. 
 Értelemszerűen ez az első felfordításkor nem lehetséges, hiszen nincs korábbi ismerete a játékról (\ref{img:non_pair}. ábra).
-\begin{figure}
-    \includegraphics[width=\textwidth]{img/asztal_4x4_non_pair.png}
-    \caption{4x4-es memóriajáték. Mivel a betűk nem azonosak, ezér ez nem egy pár, visszafordítjuk a kártyákat.}
+\begin{figure}[h]
+\begin{subfigure}[t]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{img/asztal_4x4_card_flipped.png}
+    \caption{Egy kártya ki van választva}
+    \label{img:kartya_fliped}
+\end{subfigure}
+\begin{subfigure}[t]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{img/asztal_4x4_non_pair.png}
+    \caption{Mivel a betűk nem azonosak, ezér ez nem egy pár, visszafordítjuk a kártyákat.}
     \label{img:non_pair}
+\end{subfigure}
+\caption{4x4-es játék, példa kör, amikor nem egy párt húzunk fel}
 \end{figure}
-
 Ha a felfordított kártyák nem alkotnak párt, akkor a kártyák maguktól visszafordulnak pár másodperc elteltével. Ez után egyszemélyes játék esetén esetén végrehajtunk egy újabb fordítást. Többjátékos esetén a következő játékos végezheti el a körét. 
 
-Ha párt alkotnak (\ref{img:pair}. ábra), akkor a kártyák eltűnnek a játékmezőről  (\ref{img:pair_gone}. ábra). Többjátékos esetben a felfordított játékos kap egy pontot, és egy újabb fordítással folytatja a körét, mindaddig, míg egy nem párt fordít.
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{img/asztal_4x4_pair.png}
-    \caption{A kiválasztott kártyák párt alkotnak}
-    \label{img:pair}
+Ha párt alkotnak (\ref{img:pair}. ábra), akkor a kártyák eltűnnek a játékmezőről  (\ref{img:pair_gone}. ábra).Többjátékos esetben a felfordított játékos kap egy pontot, és egy újabb fordítással folytatja a körét, mindaddig, míg egy nem párt fordít.
+\begin{figure}[H]
+    \begin{subfigure}[ct]{0.5\textwidth}
+        \includegraphics[width=\textwidth]{img/asztal_4x4_pair.png}
+        \caption{A kiválasztott kártyák párt alkotnak}
+        \label{img:pair}
+    \end{subfigure}
+    \begin{subfigure}[ct]{0.5\textwidth}
+        \includegraphics[width=\textwidth]{img/asztal_4x4_pair_eltunik.png}
+        \caption{Eltűnik a pár az asztalról}
+        \label{img:pair_gone}
+    \end{subfigure}
+    \caption{4x4-es játék, példa kör, amikor egy párt húzunk fel}
 \end{figure}
-\begin{figure}
+
+
+Amint az összes kártya eltűnik az asztalról, a játék véget ér, és visszakerülünk a menübe.
+A játékba több nehézségi szintet tettünk, melyet a menüből érhetünk el (\ref{img:menu}. ábra). A különböző menüpontok, a kártyák számának elhelyezkedését jelölik.
+\begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{img/asztal_4x4_pair_eltunik.png}
-    \caption{Eltűnik a pár az asztalról}
-    \label{img:pair_gone}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{img/menu.png}
+    \includegraphics[width=0.5\textwidth]{img/menu.png}
     \caption{A játék menüje}
     \label{img:menu}  
 \end{figure}
 
-Amint az összes kártya eltűnik az asztalról, a játék véget ér, és visszakerülünk a menübe.
-A játékba több nehézségi szintet tettünk, melyet a menüből érhetünk el (\ref{img:menu}. ábra). A különböző menüpontok, a kártyák számának elhelyezkedését jelölik.
-
 \section{Struktúrális felépítés}
 A memória játék a Godot elveinek megfelelően Node-okból és Scene-ekből \cite{godotengineNodesScenes} áll. A Scene-ek struktúrája a következő.
 \subsection{Menü}
-\begin{figure}
+
+
+A Játék menüje (\ref{img:menu_scene}. ábra), a következő módon épül fel. A Gombok olyan MeshInstance3D Node-ok \cite{godotengineMeshInstance3D}, melyekre ha a játékos rákattint, akkor emittálnak egy \lstinline{button_pressed()} signal-t (\ref{code:button_pressed_signal}. ábra).
+A MenuScene kódjában hallgatózunk erre külön külön a gombokra. A megfelelő gomb megnyomásával beállítjuk a \lstinline{Constant.CARD_PAIR_NUMBER} globális változót, mely segítségével létrehozzuk a \lstinline{basic_scene}-t.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/menu_scene_tree.png}
+    \caption{A játék menü Scene-jének struktúrája}
+    \label{img:menu_scene}  
+\end{figure}
+
+\begin{figure}[H]
     \centering
     \begin{lstlisting}[language=GDScript]
     func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
@@ -70,23 +86,18 @@ A memória játék a Godot elveinek megfelelően Node-okból és Scene-ekből \c
     \caption{A menü gombja  \lstinline{button_pressed} signal-t emittál}
     \label{code:button_pressed_signal}
 \end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{img/menu_scene_tree.png}
-    \caption{A játék menü Scene-jének struktúrája}
-    \label{img:menu_scene}  
-\end{figure}
-A Játék menüje (\ref{img:menu_scene}. ábra), a következő módon épül fel. A Gombok olyan MeshInstance3D Node-ok \cite{godotengineMeshInstance3D}, melyekre ha a játékos rákattint, akkor emittálnak egy \lstinline{button_pressed()} signal-t (\ref{code:button_pressed_signal}. ábra).
-A MenuScene kódjában hallgatózunk erre külön külön a gombokra. A megfelelő gomb megnyomásával beállítjuk a \lstinline{Constant.CARD_PAIR_NUMBER} globális változót, mely segítségével létrehozzuk a \lstinline{basic_scene}-t.
 
 \subsection{Basic Scene}
-\begin{figure}
+
+A Basic Scene (\ref{img:basic_scene}. ábra) struktúrája dinamikusan épül fel a \lstinline{Card} Scene-ekből, melyet a \lstinline|Deck| globális objektum ad oda a \lstinline|Basic Scene| -nek. 
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{img/basic_field_scene_structure.png}
+    \includegraphics[width=0.5\textwidth]{img/basic_field_scene_structure.png}
     \caption{A játéktér Scene struktúrális felépítése}
     \label{img:basic_scene}  
 \end{figure}
-\begin{figure}
+A scene kiszámolja, az előre beállított kártya szélesség, magasság és margó konstansok alapján, hogy a megkapott kártyák számát, a \lstinline|CardMarker| -höz képest hova kell lerakni (\ref{code:calculate_coordinate}. ábra)
+\begin{figure}[H]
     \centering
     \begin{lstlisting}[language=GDScript]
         func _calculate_coordinate(i, j):
@@ -99,8 +110,6 @@ A MenuScene kódjában hallgatózunk erre külön külön a gombokra. A megfelel
     \caption{Kártyák koordinátájának kiszámítása}
     \label{code:calculate_coordinate}
 \end{figure}
-A Basic Scene (\ref{img:basic_scene}. ábra) struktúrája dinamikusan épül fel a \lstinline{Card} Scene-ekből, melyet a \lstinline|Deck| globális objektum ad oda a \lstinline|Basic Scene| -nek. A scene kiszámolja, az előre beállított kártya szélesség, magasság és margó konstansok alapján, hogy a megkapott kártyák számát, a \lstinline|CardMarker| -höz képest hova kell lerakni (\ref{code:calculate_coordinate}. ábra)
-
 Amint a \lstinline|Deck| objektum elküldi a \lstinline{cards_empty} signal-t, vagyis a játék végét, vagy ha a játékos megnyomja a Menü gombot, a játék visszatér a menübe. 
 
 Más feladata nincs. 
@@ -117,7 +126,7 @@ A \lstinline|Deck| egy olyan globális objektum, mely a program futása során b
 \item Lementeni a data tömböt egy JSON file-ba a játék végével.
 \end{enumerate}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \begin{lstlisting}[language=GDScript]
     func make_deck(card_pair_number: int, card_scene: PackedScene):
@@ -140,8 +149,8 @@ A \lstinline|Deck| egy olyan globális objektum, mely a program futása során b
     \caption{Létrehozzuk a kártyákat}
     \label{code:make_deck}
 \end{figure}
-\begin{figure}
-    \centeringx
+\begin{figure}[h]
+    \centering
     \begin{lstlisting}[language=GDScript]
 func talalat():
 	if (chosenA.get_label() == chosenB.get_label()):
@@ -165,3 +174,32 @@ func talalat():
 
 
 \subsection{Card}
+A kartyak vagyis Card scene (\ref{img:card_tree}. ábra) rendelkezik egy \lstinline|labellel| amelyet a \lstinline|Deck| add neki, a kártya létrehozásakor. Ez mondja meg, hogy milyen kártya. 
+Egy játékmezőn pontosan két egyforma labellel rendelkező kártya szerepel(\ref{img:cards_has_pairs}. ábra).
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/cards_scene_tree.png}
+        \caption{A Card Scene struktúrája}
+        \label{img:card_tree}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/4x4_all_card_fliped.png}
+        \caption{4x4 kártya. Minden betűből csak egy pár szerepel}
+        \label{img:cards_has_pairs}  
+    \end{minipage}
+\end{figure}
+
+A kártya rendelkezik animációval is, melyet az AnimationTree (\ref{img:animation_tree}. ábra) kezel. 
+Ha rányomunk a kártyára, akkor lefut a \lstinline|card_flip_animation| function, vagyis az AnimationTree State Machine-nek odaadjuk azt az információt, mely szerint meg kell fordítani a kártyát. Az objektum elküldi önmagát a \lstinline|Deck|-nek, mint kiválasztott kártya. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{img/animation_tree.png}
+    \caption{A Card animáció fája}
+    \label{img:animation_tree}  
+\end{figure}
+
+
+
