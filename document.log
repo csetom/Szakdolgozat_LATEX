@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.1)  9 MAY 2024 21:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.1)  21 OCT 2024 16:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -736,65 +736,65 @@ Package: placeins 2005/04/18  v 2.2
 )
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 110.
+(hyperref)                setting the option has no effect on input line 111.
 
-Package hyperref Info: Option `unicode' set `false' on input line 110.
+Package hyperref Info: Option `unicode' set `false' on input line 111.
 
 Package hyperref Warning: Option `pdftitle' has already been used,
-(hyperref)                setting the option has no effect on input line 110.
+(hyperref)                setting the option has no effect on input line 111.
 
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 110.
+(hyperref)                setting the option has no effect on input line 111.
 
 
 Package hyperref Warning: Option `pdfsubject' has already been used,
-(hyperref)                setting the option has no effect on input line 110.
+(hyperref)                setting the option has no effect on input line 111.
 
 
 Package hyperref Warning: Option `pdfcreator' has already been used,
-(hyperref)                setting the option has no effect on input line 110.
+(hyperref)                setting the option has no effect on input line 111.
 
 
 Package hyperref Warning: Option `pdfproducer' has already been used,
-(hyperref)                setting the option has no effect on input line 110.
+(hyperref)                setting the option has no effect on input line 111.
 
 
 Package hyperref Warning: Option `pdfkeywords' has already been used,
-(hyperref)                setting the option has no effect on input line 110.
+(hyperref)                setting the option has no effect on input line 111.
 
-Package hyperref Info: Option `pdfnewwindow' set `true' on input line 110.
-Package hyperref Info: Option `colorlinks' set `true' on input line 110.
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 111.
+Package hyperref Info: Option `colorlinks' set `true' on input line 111.
 \@nomenclaturefile=\write5
 \openout5 = `document.nlo'.
 
-Package nomencl Info: Writing nomenclature file document.nlo on input line 138.
+Package nomencl Info: Writing nomenclature file document.nlo on input line 139.
 \@indexfile=\write6
 \openout6 = `document.idx'.
 
 Writing index file document.idx
-(./document.aux (./subtex/Fedlap.aux) (./subtex/Jelolesjegyzek.aux) (./mysubtex/Fejezet1.aux) (./mysubtex/Fejezet2.aux) (./mysubtex/Fejezet3.aux) (./mysubtex/Fejezet4.aux))
+No file document.aux.
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
- (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+(/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count351
 \scratchdimen=\dimen294
@@ -819,8 +819,7 @@ Package grfext Info: Graphics extension search list:
  (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 200.
- (./document.out) (./document.out)
+Package hyperref Info: Link coloring ON on input line 201.
 \@outlinefile=\write7
 \openout7 = `document.out'.
 
@@ -841,49 +840,34 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count357
-Package tocbasic Info: setting babel extension for `lol' on input line 200.
+Package tocbasic Info: setting babel extension for `lol' on input line 201.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/base/report.cls
 LaTeX Info: Redefining \cal on input line 577.
 LaTeX Info: Redefining \mit on input line 578.
 )
 \openout2 = `subtex/Fedlap.aux'.
 
- (./subtex/Fedlap.tex [1
 
-
-
-{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]) (./document.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+No file subtex/Fedlap.tex.
+No file document.toc.
 \tf@toc=\write8
 \openout8 = `document.toc'.
 
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.222 	\include{subtex/Jelolesjegyzek}
-                                       [1
+[1
 
 
 
-]
+
+
+
+{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
 \openout2 = `subtex/Jelolesjegyzek.aux'.
 
- (./subtex/Jelolesjegyzek.tex (./document.nls)) [2
 
-
-
-]
+No file subtex/Jelolesjegyzek.tex.
 \openout2 = `mysubtex/Fejezet1.aux'.
 
- (./mysubtex/Fejezet1.tex
+(./mysubtex/Fejezet1.tex
 1. fejezet.
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
 File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -932,7 +916,14 @@ File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \arrowsize=\dimen296
-)) (./mysubtex/folyamat_diagram.tex)
+))
+
+LaTeX Warning: Citation `4634261' on page 2 undefined on input line 10.
+
+
+LaTeX Warning: Reference `fig:folyamat_diagram' on page 2 undefined on input line 13.
+
+(./mysubtex/folyamat_diagram.tex)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -940,7 +931,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[3
+[2
+
 
 
 
@@ -953,7 +945,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4])
+[3])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -961,253 +953,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5]
+[4]
 \openout2 = `mysubtex/Fejezet2.aux'.
 
  (./mysubtex/Fejezet2.tex
 2. fejezet.
-)
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[6
-
-
-
-
-]
-\openout2 = `mysubtex/Fejezet3.aux'.
-
- (./mysubtex/Fejezet3.tex
-3. fejezet.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[7
-
-
-
-
-]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[8])
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[9]
-\openout2 = `mysubtex/Fejezet4.aux'.
-
- (./mysubtex/Fejezet4.tex
-4. fejezet.
-<img/asztal_4x4.png, id=188, 1517.67pt x 985.6825pt>
-File: img/asztal_4x4.png Graphic file (type png)
-<use img/asztal_4x4.png>
-Package pdftex.def Info: img/asztal_4x4.png  used on input line 11.
-(pdftex.def)             Requested size: 424.51517pt x 275.70345pt.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[10
-
-
-
-
- <./img/asztal_4x4.png>]
-<img/asztal_4x4_card_flipped.png, id=198, 1517.67pt x 985.6825pt>
-File: img/asztal_4x4_card_flipped.png Graphic file (type png)
-<use img/asztal_4x4_card_flipped.png>
-Package pdftex.def Info: img/asztal_4x4_card_flipped.png  used on input line 23.
-(pdftex.def)             Requested size: 212.25758pt x 137.8442pt.
-<img/asztal_4x4_non_pair.png, id=199, 1517.67pt x 985.6825pt>
-File: img/asztal_4x4_non_pair.png Graphic file (type png)
-<use img/asztal_4x4_non_pair.png>
-Package pdftex.def Info: img/asztal_4x4_non_pair.png  used on input line 28.
-(pdftex.def)             Requested size: 212.25758pt x 137.8442pt.
-
-Overfull \hbox (2.61049pt too wide) in paragraph at lines 22--32
-[][] [] 
- []
-
-<img/asztal_4x4_pair.png, id=202, 1517.67pt x 985.6825pt>
-File: img/asztal_4x4_pair.png Graphic file (type png)
-<use img/asztal_4x4_pair.png>
-Package pdftex.def Info: img/asztal_4x4_pair.png  used on input line 39.
-(pdftex.def)             Requested size: 212.25758pt x 137.8442pt.
-<img/asztal_4x4_pair_eltunik.png, id=203, 1517.67pt x 985.6825pt>
-File: img/asztal_4x4_pair_eltunik.png Graphic file (type png)
-<use img/asztal_4x4_pair_eltunik.png>
-Package pdftex.def Info: img/asztal_4x4_pair_eltunik.png  used on input line 44.
-(pdftex.def)             Requested size: 212.25758pt x 137.8442pt.
-
-Overfull \hbox (2.61049pt too wide) in paragraph at lines 38--48
-[]$[]$ $[]$ 
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[11 <./img/asztal_4x4_card_flipped.png> <./img/asztal_4x4_non_pair.png>]
-<img/menu.png, id=214, 1517.67pt x 985.6825pt>
-File: img/menu.png Graphic file (type png)
-<use img/menu.png>
-Package pdftex.def Info: img/menu.png  used on input line 56.
-(pdftex.def)             Requested size: 212.25758pt x 137.8442pt.
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 66.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-<img/menu_scene_tree.png, id=219, 422.57875pt x 545.03625pt>
-File: img/menu_scene_tree.png Graphic file (type png)
-<use img/menu_scene_tree.png>
-Package pdftex.def Info: img/menu_scene_tree.png  used on input line 70.
-(pdftex.def)             Requested size: 212.25758pt x 273.77325pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[12 <./img/asztal_4x4_pair.png> <./img/asztal_4x4_pair_eltunik.png> <./img/menu.png>]
-<img/basic_field_scene_structure.png, id=233, 425.59pt x 301.125pt>
-File: img/basic_field_scene_structure.png Graphic file (type png)
-<use img/basic_field_scene_structure.png>
-Package pdftex.def Info: img/basic_field_scene_structure.png  used on input line 95.
-(pdftex.def)             Requested size: 212.25758pt x 150.18535pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[13 <./img/menu_scene_tree.png>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[14 <./img/basic_field_scene_structure.png>]
-Overfull \hbox (3.79527pt too wide) in paragraph at lines 122--123
-[]\T1/cmr/m/n/12 Folyamatosan fi-gye-li, hogy mely [][][][]-ok van-nak még já-ték-ban a lstin-line|cards|
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[15]
-<img/cards_scene_tree.png, id=302, 261.97874pt x 273.02pt>
-File: img/cards_scene_tree.png Graphic file (type png)
-<use img/cards_scene_tree.png>
-Package pdftex.def Info: img/cards_scene_tree.png  used on input line 183.
-(pdftex.def)             Requested size: 191.03052pt x 199.0863pt.
-<img/4x4_all_card_fliped.png, id=303, 1517.67pt x 985.6825pt>
-File: img/4x4_all_card_fliped.png Graphic file (type png)
-<use img/4x4_all_card_fliped.png>
-Package pdftex.def Info: img/4x4_all_card_fliped.png  used on input line 189.
-(pdftex.def)             Requested size: 191.03052pt x 124.0673pt.
-<img/animation_tree.png, id=305, 1008.76875pt x 568.1225pt>
-File: img/animation_tree.png Graphic file (type png)
-<use img/animation_tree.png>
-Package pdftex.def Info: img/animation_tree.png  used on input line 199.
-(pdftex.def)             Requested size: 424.51517pt x 239.07793pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[16 <./img/cards_scene_tree.png> <./img/4x4_all_card_fliped.png>])
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[17 <./img/animation_tree.png>] (./document.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 17--19
-\T1/cmtt/m/n/12 org / en / stable / getting _ started / step _ by _ step / nodes _ and _ scenes . html$[][]\T1/cmr/m/n/12 .
- []
-
-) [18
-
-
-
-] (./document.lof)
-\tf@lof=\write9
-\openout9 = `document.lof'.
-
- [19
-
-] (./document.lot)
-\tf@lot=\write10
-\openout10 = `document.lot'.
-
- [20
-
-] 
-enddocument/afterlastpage: lastpage setting LastPage.
-(./document.aux (./subtex/Fedlap.aux) (./subtex/Jelolesjegyzek.aux) (./mysubtex/Fejezet1.aux) (./mysubtex/Fejezet2.aux) (./mysubtex/Fejezet3.aux) (./mysubtex/Fejezet4.aux))
- ***********
-LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-02-20>
- ***********
-Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 0894B42771901AFCE158E371BC43BADB;1430.
- ) 
-Here is how much of TeX's memory you used:
- 37893 strings out of 474116
- 709361 string characters out of 5743683
- 2205187 words of memory out of 5000000
- 59451 multiletter control sequences out of 15000+600000
- 571420 words of font info for 66 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 110i,12n,117p,803b,2752s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on document.pdf (21 pages, 5428537 bytes).
-PDF statistics:
- 451 PDF objects out of 1000 (max. 8388607)
- 376 compressed objects within 4 object streams
- 124 named destinations out of 1000 (max. 500000)
- 264 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+LaTeX Warning: Citation `pmlr-

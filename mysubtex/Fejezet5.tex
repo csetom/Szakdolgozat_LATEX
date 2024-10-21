@@ -1,0 +1,66 @@
+\chapter{Adatok gyüjtése a mesterséges inteligencia betanításához}
+\thispagestyle{fancy}
+\pagestyle{fancy}
+
+
+\section{Tervezés}
+Ahhoz hogy a mesterséges inteligenciát betanítsuk, szükségünk lesz a lehető legtöbb információra, amit képesek vagyunk egy adott menetről összegyüjteni.
+Egy adott játék a következőképpen néz ki:
+
+\begin{itemize}
+\item A játékos az eddigi tudása alapján, kiválasztja melyik sor és melyik oszlop kártyáját választja.
+\item Felfordítja a kiválasztott kártyát, ekkor megtudja, milyen betű szerepel rajta. 
+\item Ezen információ és az eddigi tudása alapján kiválasztja a következő kártyát a tábláról. Itt két lehetőssége van a játékosnak: 
+\begin{itemize}
+    \item Tudja vagy legalábbis nagy százalék valószínűséggel sejti, hogy melyik a párja a kártyának 
+    \item Egyáltalán nem, vagy kis valószínűséggel tudja, hol a párja, emiatt felfordít direkt olyan kártyát, melyről eddig semmi ismerete nincs. Vagyis ahogy én hívom, felfedezi a pályát.
+\end{itemize}
+\item Ha párok voltak, eltűnnek a tábláról a kártyák.
+\item A játékos ezt a folyamatot addig ismétli, míg el nem tűnik az összes kártya.
+\end{itemize}
+
+Amire szükségünk van a játék ismeretéhez tehát a következők: 
+\begin{itemize}
+    \item Hány kártya van a táblán. Mivel mindig egy $N \cdot N$ négynezetet rakunk ki, így ezt fixen ismerjük. 
+    \item Milyen betűk szerepelnek a leosztásban
+    \item Sorrendben, melyik sor és oszlop kártyái lettek felfodítva, és mi szerepelt a memória kártyán. 
+\end{itemize}
+
+    \centering
+A következő adatszerkezetet fogom használni: 
+\begin{figure}[h]
+
+ \begin{lstlisting}
+\{
+  "data": { 
+    "played_games": {
+      "6": [
+        {
+          "card_labels": ['A','B','C','D','E','F'], 
+          "card_pair_number": 6,
+          "card_selections": [ 
+            {
+              "chosen_first": true,
+              "label": "A",
+              "x": 0,
+              "y": 0
+            },
+            {
+                ...
+            },
+          ]
+        },
+        {
+            ...
+        }
+      ]
+    }
+  }
+}
+\end{lstlisting}
+\end{figure}
+\section{Próbálkozások}
+\subsection{Kiküldeni exportálva}
+\subsection{Oracle Cloud}
+\subsection{Fly.io}
+\section{Végleges megoldás}
