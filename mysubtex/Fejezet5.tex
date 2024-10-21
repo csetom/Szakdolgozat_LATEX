@@ -1,29 +1,31 @@
-\chapter{Adatok gyüjtése a mesterséges inteligencia betanításához}
+\chapter{Adatok gyűjtése a mesterséges intelligencia betanításához}
 \thispagestyle{fancy}
 \pagestyle{fancy}
 
-
 \section{Tervezés}
-Ahhoz hogy a mesterséges inteligenciát betanítsuk, szükségünk lesz a lehető legtöbb információra, amit képesek vagyunk egy adott menetről összegyüjteni.
+A mesterséges intelligencia hatékony betanításához elengedhetetlen, hogy a lehető legtöbb információt gyűjtsük össze egy adott játékmenet során.
+
 \subsection{Az adatszerkezet}
-Egy adott játék a következőképpen néz ki:
+Egy adott játékfolyamat az alábbi lépésekből áll:
+
 \begin{itemize}
-\item A játékos az eddigi tudása alapján, kiválasztja melyik sor és melyik oszlop kártyáját választja.
-\item Felfordítja a kiválasztott kártyát, ekkor megtudja, milyen betű szerepel rajta. 
-\item Ezen információ és az eddigi tudása alapján kiválasztja a következő kártyát a tábláról. Itt két lehetőssége van a játékosnak: 
+\item A játékos a korábbi ismeretei alapján kiválasztja, melyik sor és melyik oszlop kártyáját fordítja fel.
+\item A kártya felfordítása után a játékos megtudja, milyen betű található a kártyán.
+\item Az így megszerzett információ és a korábbi tudása alapján a játékos kiválasztja a következő kártyát a táblán. Itt két lehetősége van:
 \begin{itemize}
-    \item Tudja vagy legalábbis nagy százalék valószínűséggel sejti, hogy melyik a párja a kártyának 
-    \item Egyáltalán nem, vagy kis valószínűséggel tudja, hol a párja, emiatt felfordít direkt olyan kártyát, melyről eddig semmi ismerete nincs. Vagyis ahogy én hívom, felfedezi a pályát.
+\item A játékos tudja, vagy nagy valószínűséggel sejti, melyik kártya párja az előzőnek.
+\item A játékos nem tudja, vagy kis valószínűséggel sejti, hol található a párja, ezért olyan kártyát fordít fel, amiről még nincs információja, azaz felfedezi a pályát.
 \end{itemize}
-\item Ha párok voltak, eltűnnek a tábláról a kártyák.
-\item A játékos ezt a folyamatot addig ismétli, míg el nem tűnik az összes kártya.
+\item Ha a felfordított kártyák párt alkotnak, azok eltűnnek a tábláról.
+\item A játékos ezt a folyamatot addig ismétli, amíg az összes kártya el nem tűnik a tábláról.
 \end{itemize}
 
-Amire szükségünk van a játék ismeretéhez tehát a következők: 
+A játék teljes megértéséhez és a mesterséges intelligencia betanításához az alábbi adatokra van szükségünk:
+
 \begin{itemize}
-    \item Hány kártya van a táblán. Mivel mindig egy $N \cdot N$ négynezetet rakunk ki, így ezt fixen ismerjük. 
-    \item Milyen betűk szerepelnek a leosztásban
-    \item Sorrendben, melyik sor és oszlop kártyái lettek felfodítva, és mi szerepelt a memória kártyán. 
+\item A táblán található kártyák száma. Mivel mindig egy $N \cdot N$ négyzetet használunk, ezt az értéket fixen ismerjük.
+\item A leosztásban szereplő betűk.
+\item A kártyafordítások sorrendje: melyik sor és oszlop kártyái lettek felfordítva, valamint mi szerepelt a memória kártyán.
 \end{itemize}
 
 A következő adatszerkezetet fogom használni: 
@@ -64,33 +66,33 @@ A következő adatszerkezetet fogom használni:
 \end{figure}
 
 
-Magyarázat a \ref{saveJson}. ábrához a következő:
+A \ref{saveJson} ábra magyarázata a következő:
 \begin{description}
     \item[id] A játékos ID-je melyet megkap a játék elindításakor. 
-    \item[Played\_games] Játszott játékok, ahol a kulcs a darabszáma a kártya pároknak.
-    \item[6\:] Egy tömb, ahol az összes játszott játék szerepel, az adott kártyaszámra.
-    \item[card\_labels\:] Kártyák lehetséges labeljei. Összes card\_pair\_number darab.
-    \item[card\_pair\_number\:] A kártya párok száma, megegyezik a tömb kulcsával. A könnyebb adatkezelés érdekében duplikált adat.
-    \item[card\_selections\:] Az összes kártya húzása, a játék előrehaladtával, ez a tömb fog bővülni. 
-    \item[chosen\_first\:] Elsőnek lett-e választva. Kiszámolható a kártyaválasztás párosságából.
-    \item[label\:] A kártyára írt betű.
-    \item[X,Y\:] A kártya sor és oszlop koordinátái.
+    \item[Played\_games] Játszott játékok, ahol a kulcs a kártyapárok száma.
+    \item[6\:] Egy tömb, amely az adott kártyaszámú játékokat tartalmazza.
+    \item[card\_labels\:] A kártyák lehetséges címkéi. Ezek száma megegyezik a \lstinline{card_pair_number} értékével.
+    \item[card\_pair\_number\:] A kártyapárok száma, amely megegyezik a tömb kulcsával. Az adatok könnyebb kezelése érdekében ez az érték duplikálva van.
+    \item[card\_selections\:] Az összes kártyahúzás a játék során, ez a tömb a játék előrehaladtával bővül.
+    \item[chosen\_first\:] Megjelöli, hogy a kártyát elsőként választották-e. Ez az információ a kártyaválasztások párosságából kiszámítható.
+    \item[label\:] A kártyán szereplő betű.
+    \item[X,Y\:] A kártya sor- és oszlopkoordinátái.
 \end{description}
 \subsection{Játék felkészítése}
-Ahhoz, hogy a tervek szerint a lehető legtöbb emberhez el tudjam juttatni a játékot, a legkézenfekvőbb megoldásnak láttam, hogy HTML5-be exportáljam ki a játékot. 
-Ehhez apróbb átalakításokat kellett végrehajtanom, melyek első sorban vizuálitásban jelentek meg. 
+A tervek szerint a játékot a lehető legtöbb emberhez szeretném eljuttatni, ezért a legkézenfekvőbb megoldásnak a HTML5-be történő exportálást láttam. Ehhez néhány vizuális módosítást kellett végrehajtanom.
+Két fő lehetőségem volt, amelyekkel komolyabban foglalkoztam:
+\begin{enumerate}
+    \item 	Játék és HTML sablon átalakítása: A játékot és a hozzá tartozó HTML sablont átírni úgy, hogy a weboldal JavaScriptje segítségével a JSON fájlt lementsem, amit aztán valamilyen online felületen keresztül el tudnak küldeni nekem.
+\item	Fájl szerver létrehozása: Készítek egy fájl szervert, ahova a JSON-t minden sikeres játék után elküldöm egy HTTP kérés formájában.
 
-Itt több lehetősségem volt, melyet leszűkítettem kettőre amivel komolyabban foglalkoztam:
-Az egyik opcióm, hogy átírom a játékot, és a hozzá tartozó html template-et, mellyel kiexportáltam a játékot, hogy a Weblap javascriptjének segítségével, lementsem a JSON file-t, így azt el tudják majd küldeni nekem, valamilyen online felületen. 
-A másik opció, hogy készítek egy file szervert, ahova a JSON-t elküldöm minden sikeres játék után, egy HTTP Request formájában.
+\end{enumerate}
 
-Átgondolva a lehetősségeimet, úgy döntöttem, a file szervert választom, megvalósításnak, mivel így biztosan és automatikusan eljut hozzám az összes teszt adat.
 
-A játékhoz készíttem egy  \lstinline{http_client.gd} scriptet, melynek egyetlen feldata volt, hogy egy  \lstinline{HTTP POST} kérést küldjön el egy weboldalnak. A HTTP request body részébe beraktam a JSON file. Ezt a scriptet minden játék befejeztével aktiváltam. 
+Átgondolva a lehetőségeimet, a fájl szerver mellett döntöttem, mivel így az összes tesztadat biztosan és automatikusan eljut hozzám.
 
-Ahhoz, hogy a kérés mindig sikeres legyen, muszáj volt megcsinálnom, hogy az ha egy játékosnak nincs ID-je, akkor ha üresen hagyja a beviteli mezőt, egy random generált ID-t kapjon. Az ID-t a menü oldalon meg is jelenítettem, és másolhatóvá tettem. 
-A játék állását, vagyis azt, hogy melyik játékkal mennyit játszott a játékos, azt a lokális böngésző IndexedDB-jébe menti a Godot automatikusan. Így ha egy játékos akkor játszik, mikor éppen nem elérhető a szerver, később is el tudja küldeni a játszott játékainak statisztikáját.
-\begin{figure}[h]
+A játékhoz készítettem egy \lstinline{http_client.gd} szkriptet, amelynek egyetlen feladata egy \lstinline{HTTP POST} kérés elküldése egy weboldalnak. A HTTP kérés törzsében helyeztem el a JSON fájlt. Ezt a szkriptet minden játék befejezése után aktiváltam.
+
+Annak érdekében, hogy a kérés mindig sikeres legyen, biztosítanom kellett, hogy ha egy játékosnak nincs ID-je, akkor ha üresen hagyja a beviteli mezőt, egy véletlenszerűen generált ID-t kapjon. Az ID-t a menü oldalon megjelenítettem, és másolhatóvá tettem. A játék állását, vagyis azt, hogy melyik játékkal mennyit játszott a játékos, a Godot automatikusan a böngésző lokális IndexedDB-jébe menti. Így ha egy játékos akkor játszik, amikor a szerver nem elérhető, később is el tudja küldeni a játszott játékainak statisztikáját.\begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{img/menu_remake.png}
     \caption{Az átlakaított menü: másolható ID mező, és egy küldés gomb}
