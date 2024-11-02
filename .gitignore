@@ -13,7 +13,7 @@ mysubtex/*.aux
 *.cb
 *.cb2
 .*.lb
-
+subtex/Fejezet*.tex
 ## Intermediate documents:
 *.dvi
 *.xdv

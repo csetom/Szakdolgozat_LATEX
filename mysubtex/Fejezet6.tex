@@ -28,7 +28,7 @@ egy $N$ lépésből álló játéknak a tanításhoz felhasznált adatmennyiség
 
 \[\frac{N(N+1)}{2} = \frac{N^2+N}{2}\]
 
-Tehát látható, hogy exponenciálisan nő az adatok mennyisége. Annak érdekében, hogy ezt elkerüljem, a következő ötlettel áltam elő:
+Tehát látható, hogy négyzetesen nő az adatok mennyisége. Annak érdekében, hogy ezt elkerüljem, a következő ötlettel áltam elő:
 
 A hash-függvényeket az informatikában az 1980-as évek óta alkalmazzák arra, hogy bármilyen méretű adatot rögzített hosszúságúra alakítsanak át. Gyakorlati felhasználási területük például a fájlok ellenőrzése, mivel ha két fájl tartalma teljesen megegyezik, akkor az azokból képzett hash is azonos lesz. Ez különösen hasznos, amikor dokumentumokat töltünk fel egy fájlszerverre, mivel így könnyen ellenőrizhető, hogy a fájl már létezik-e a szerveren, és elkerülhető a duplikált tárolás.
 
@@ -102,12 +102,14 @@ Az adatok transformálását a program futása közben, felhasználás előtt k�
 \end{itemize}
 
 \begin{figure}[h]
+    \center
     \includegraphics[width=0.75\textwidth]{img/JSON_TO_SHA256.png}
     \caption{Kód részlet, amely leképezi a $key$ által megadott játék lépéseit egy hash tömbbé. A hash-ek mellett a következő lépéssel tér vissza.}
     \label{code:json_to_hash}
 \end{figure}
 
 \begin{figure}[h]
+    \center
     \includegraphics[width=0.75\textwidth]{img/hash_to_bit.png}
     \caption{Kód részlet. Az SHA256 hash hexadecimális string bitsorozattá konvertálása.}
     \label{code:hash_to_bit}
@@ -115,12 +117,86 @@ Az adatok transformálását a program futása közben, felhasználás előtt k�
 
 \section{A tanító algoritmus}
 
+\subsection{A model elkészítése}
 A TensorFlow része a Keras API, mely segítségével könnyedén és egyszerűen létre tudok hozni szekvenciális modelt (\ref{code:tensor}. ábra). A model bemeneti rétege egy 256 nagyságú tömböt vár, melyben bitek találhatók. 
 
-A következő két réteghez egy 128 és egy 64 neuront tartalmazó teljesen kapcsolodó (Dense) réteget használok. Dense layer azt jelenti, hogy a réteg összes neuronja kapcsolodik az előző réteg összes neuronjával. Ez a neuron típus gyarkan használt előre csatolt neurális hálóknál. Az aktivációs függvény amit ezekhez a rétegekhez használok az az úgynevezett ReLU(Rectified Linear Unit) függvény, mely a következő képpen néz ki: 
-\ 
+A következő két réteghez egy 128 és egy 64 neuront tartalmazó teljesen kapcsolodó (Dense) réteget használok. Dense layer azt jelenti, hogy a réteg összes neuronja kapcsolodik az előző réteg összes neuronjával. Ez a neuron típus gyarkan használt előre csatolt neurális hálóknál.
+Az aktivációs függvény amit ezekhez a rétegekhez használok az az úgynevezett 
+ReLU (Rectified Linear Unit) függvény, mely a következő képpen néz ki:
+\[ \text{ReLU}(x) = \max(0, x) \]
+ami azt jelenti, hogy ha bemeneti érték, vagyis $x$ pozitív, akkor $x$-et adja vissza, ha negatív, akkor 0-t. 
+
+
 \begin{figure}[h]
     \includegraphics[width=0.75\textwidth]{img/Tensor.png}
     \caption{Kód részlet. A tanító algoritmus}
     \label{code:tensor}
+\end{figure}
+
+Az aktivációs függvények célja, hogy nemlinearitást vigyenek a modellbe, lehetővé téve a bonyolult mintázatok felismerését az adatokban. 
+Ha nem használnánk aktivációs függvényeket, a modell kimenete csak az inputok egyszerű lineáris kombinációja lenne, ami korlátozná a modell képességeit a komplex kapcsolatok megragadásában.
+A ReLU ezért olyan népszerű a mélytanulásban, mert csökkenti a gradientek eltűnésének problémáját, így gyorsabb tanulást és jobb teljesítményt tesz lehetővé.
+
+A kimeneti réteghez egy 2 neuronból álló lineáris aktivációs függvénnyel ellátott réteget használok. A lineáris aktivációs függvény azt jelenti, hogy a neuron kimenete az inputok lineáris kombinációja, ami lényegében nem végez átalakítást. Matematikailag ez így írható le:
+
+\[ \text{kimenet} = \text{bemenet} \cdot \text{súlyok} + \text{eltolás} \]
+
+A linear aktivációs függvény használatakor a réteg lényegében nem változtatja meg az bemeneti értékeket, csak a súlyokat és az eltolást alkalmazza.
+
+A modelt lefordításához, az $adam$ optimizálót használom, valamint az mse (mean squared error) vagyis az átlagos négyzetes hiba módszert. 
+Ez az összeállítás biztosítja, hogy a modell hatékonyan és gyorsan tudjon tanulni a bemeneti adatokból, minimalizálva az előrejelzések és a valós értékek közötti hibát.
+
+\subsection{A model betanítása}
+A model betanításához a korábbi fejezetben említett transzformált adatra lesz szükségem, valamint az aktuális következő lépések tömbjére. 50 epochon keresztül, ahol minden edzési lépés során 32 mintát dolgoz fel egy batch-ben. Ez a folyamat lehetővé teszi a modell számára, hogy fokozatosan javítson a teljesítményén az adatok ismételt bemutatása és a súlyok frissítése révén. 
+
+A betanított modelt egy $my_model.keras$ fájlba mentettem le, így könnyen fogom tudni használni, a játék játszásakor. 
+
+\section{Model használata}
+
+\subsection{Python Script API a model használatához}
+
+Ahhoz, hogy a modelt használni tudjam, egy API-t kellett írnom. Mivel a tesztadatokat is HTTP Request segítségével küldtem el, így logikusnak találtam, hogy ezt a megoldást használjam itt is. 
+
+A Flask használatával készítettem egy webalkamlazást (\ref{code:use_model}. ábra), melynek egyetlen belépési pontja van, a $\/predict$. A Memoria játék ide küldi a $POST$ http kérését, mely tartalmazza a játék aktuális állását. Vagyis az aktuális és az összes eddigi lépést. 
+\begin{figure}[h]
+    \center
+    \includegraphics[width=0.75\textwidth]{img/use_model.png}
+    \caption{Kód részlet. A model használata api}
+    \label{code:use_model}
+\end{figure}
+
+\subsection{API használata}
+
+Az API indításkor betölti a $my_model.keras$ fájlból a betanított modellünket, ez percekig is eltart, majd várja a fogadó kéréseket. 
+Amikor egy kérés érkezik, a fogadott JSON adatra ráfuttatjuk a már korábban használt SHA256 konvertáló scriptet (\ref{code:json_to_hash}).
+Az így kapott 256 hosszú bitsorozattal csinálunk egy "jóslást", vagyis használjuk a modelt-nek a predict függvényét. Ebből a jóslatból visszakapunk egy két elemű vektort, melynek elemei nem egész számok.
+ Mivel nekünk két koordinátára van szükségünk, ezér kerekítjük őket, és HTTP válaszként visszadjuk a kapott két egész számot. 
+
+\subsection{Játék kódjában való változtatások}
+
+A játékot, ahhoz hogy működjön a mesterséges inteligenciával, először át kellett alakítanom, hogy minden lépésem után az AI következzen. A változtatás egyszerű volt, egy változóba tárolom, hogy a játékos, vagy az AI köre van soron, és minden pár fordítása után cserélem. 
+
+Ahhoz, hogy az AI is tudjon kártyát választani, készítettem egy \lstinline{get_ai_cards} függvényt (\ref{code:get_ai_card}. ábra). A függvény meghívja a \lstinline{\prediction} endpointot, a \lstinline{HttpClient} segítségével. A visszakapott koordinátákból kiválasztja a kártyát az asztalon. 
+Ha ez a kártya nem elérhető, mert már levették az asztalról, vagy a koordináták nem létező kártyára mutatnak, akkor a legelső elérhető kártyát fogja választani a mesterséges inteligencia. 
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}[language=GDScript]
+func get_ai_cards():
+        var output;
+        waiting_for_card=true;
+        if data.card_selections:
+            output = HttpClient.post_JSON_tensor(data.card_selections);
+            waiting_for_card=false
+            if output:
+                var coord_x:int=output["prediction"][0]
+                var coord_y:int=output["prediction"][1]
+                var Card=cards[0];
+                for c in cards:
+                    if c.table_x==coord_x && c.table_y==coord_y:
+                        Card=c
+                return Card
+    \end{lstlisting}
+    \caption{Kód részlet: Az AI kártya választó függvénye GDScript-ben.}
+    \label{code:get_ai_card}
 \end{figure}
