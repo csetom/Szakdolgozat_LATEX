@@ -30,7 +30,9 @@
 \usepackage{listings}
 \usepackage{subcaption}
 \usepackage[section]{placeins}
-
+\usepackage{tikz}
+\usepackage{adjustbox}
+\usetikzlibrary{positioning, calc}
 \lstdefinelanguage{GDScript}{
   morekeywords={
     onready, tool, signal, extends, func, var, const, return,
@@ -226,6 +228,9 @@
 	\include{mysubtex/Fejezet3}
 	\include{mysubtex/Fejezet4}
 	\include{mysubtex/Fejezet5}
+
+	\include{mysubtex/Fejezet6}
+
 	%Irodalomjegyzék generálása a dolgozatba a következő sorok hatására történik, szerkeszteni nem kell. A hivatkozott források gyűjteményét a mybib.bib nevű fájlban kell kialakítani
 	\bibliography{mybib}
 	\pagestyle{plain}
