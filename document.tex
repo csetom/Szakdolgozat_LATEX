@@ -231,6 +231,10 @@
 
 	\include{mysubtex/Fejezet6}
 
+	\include{mysubtex/Fejezet7}
+
+	\include{mysubtex/Fejezet8}
+
 	%Irodalomjegyzék generálása a dolgozatba a következő sorok hatására történik, szerkeszteni nem kell. A hivatkozott források gyűjteményét a mybib.bib nevű fájlban kell kialakítani
 	\bibliography{mybib}
 	\pagestyle{plain}
@@ -238,7 +242,7 @@
 	%megjelenés sorrendjében építi fel az irodalomjegyzéket
 	\bibliographystyle{ieeetr}
 	% a következő sor a dolgozat digitális mellékletének a tartalmát csatolja a dolgozathoz, ezt a fájllistát a files.tex fájlban kell megírni
-	%\include{subtex/files}
+	\include{subtex/files}
 	% a dolgozatban az ábrajegyzéket el kell helyezni, ezt a TeX automatikusan előállítja és a következő sor határása elhelyezi a dokumentumban
 	\listoffigures
 	%Ha vannak táblázatok is, akkor ezeket is listába gyűjtjük, és a következő utasítással az ábrajegyzéket követően a dolgozatba legeneráltatjuk. Ha nincs rá szükség, a százalék jellel a sor elején érvénytelenítjük a parancsot vagy töröljük a sort

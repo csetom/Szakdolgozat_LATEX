@@ -9,7 +9,7 @@ a neurális hálózat hasonlítható, így ezt fogom én is használni a projekt
 
 
 \section{Tensorflow}
-Python nyelven szerettem volna elkészíteni az AI-t. tanításához az algoritmust. Ehhez a legjobbnak a TensorFlow-t \cite{tensorflow2015-whitepaper} találtam. A TensorFlow weboldalán ingyenesen elérhető dokumentációkból és tanító anyagokból indultam ki. 
+Python nyelven szerettem volna elkészíteni az AI tanításához az algoritmust. Ehhez a legjobbnak a TensorFlow-t \cite{tensorflow2015-whitepaper} találtam. A TensorFlow weboldalán ingyenesen elérhető dokumentációkból és tanító anyagokból indultam ki. 
 
 A dokumentáció szerint, minden felhasználónak alapvetően a Keras API használatát javasolják, így hát én is azt használtam. 
 
@@ -18,7 +18,7 @@ Az elképzelésem szerint, egy Sequential, azaz szekvenciális modelt használok
 
 Az én esetemben a bemeneti tensor a játék jelenlegi állása, a kimenet pedig a következő felfordítandó kártya lesz. Mivel a tensornak a típusa nem változik, pusztán az értéke, ezért nekem ez tökéletesen megfelelő. 
 
-A modelt be kell tanítanom a gyűjtött adatokkal. Ehhez a legegyszerűbb, ha az adataimat egy JSON file-ba összefűzöm, így a scriptnek elég ezt az egy file-t beolvasnia. 
+A modellt be kell tanítanom a gyűjtött adatokkal. Ehhez a legegyszerűbb, ha az adataimat egy JSON file-ba összefűzöm, így a scriptnek elég ezt az egy file-t beolvasnia. 
 
 Minél jobban le tudom egyszerűsíteni a bemeneti rétegem, úgy, hogy a lehetőleg ne legyen benne adatvesztés, annál gyorsabban véghez tudom vinni a tanítást. 
 Ha bonyolult az input layer, akkor a tanulás lelassul, és számomra fontos perceket, órákat, de akár napokat is veszíthetek, egy hibás modell esetén. 
