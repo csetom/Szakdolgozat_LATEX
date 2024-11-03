@@ -9,7 +9,7 @@ a neurális hálózat hasonlítható, így ezt fogom én is használni a projekt
 
 
 \section{Tensorflow}
-Terveim szerint, python nyelven akartam elkészíteni az MI. tanításához az algoritmust. Ehhez a legjobbnak a TensorFlow-t \cite{tensorflow2015-whitepaper} találtam. A TensorFlow weboldalán ingyenesen elérhető dokumentációkból és tanító anyagokból  könnyedén ki tudtam indulni. 
+Python nyelven szerettem volna elkészíteni az AI-t. tanításához az algoritmust. Ehhez a legjobbnak a TensorFlow-t \cite{tensorflow2015-whitepaper} találtam. A TensorFlow weboldalán ingyenesen elérhető dokumentációkból és tanító anyagokból indultam ki. 
 
 A dokumentáció szerint, minden felhasználónak alapvetően a Keras API használatát javasolják, így hát én is azt használtam. 
 
@@ -18,21 +18,23 @@ Az elképzelésem szerint, egy Sequential, azaz szekvenciális modelt használok
 
 Az én esetemben a bemeneti tensor a játék jelenlegi állása, a kimenet pedig a következő felfordítandó kártya lesz. Mivel a tensornak a típusa nem változik, pusztán az értéke, ezért nekem ez tökéletesen megfelelő. 
 
-A modelt be kell tanítanom a gyüjtött adatokkal. Ehhez a legegyszerűbb, ha az adataimat egy JSON file-ba összefűzöm, így a scriptnek elég ezt az egy file-t beolvasnia. 
+A modelt be kell tanítanom a gyűjtött adatokkal. Ehhez a legegyszerűbb, ha az adataimat egy JSON file-ba összefűzöm, így a scriptnek elég ezt az egy file-t beolvasnia. 
 
 Minél jobban le tudom egyszerűsíteni a bemeneti rétegem, úgy, hogy a lehetőleg ne legyen benne adatvesztés, annál gyorsabban véghez tudom vinni a tanítást. 
-Ha bonyolult az input layer, akkor a tanulás lelassul, és számomra fontos perceket, órákat, de akár napokat is veszíthetek, egy hibás model esetén. 
+Ha bonyolult az input layer, akkor a tanulás lelassul, és számomra fontos perceket, órákat, de akár napokat is veszíthetek, egy hibás modell esetén. 
 
-Példának okért, tegyük fel, hogy nem tarnszformálom át a gyüjtött adatoka és a játék $N$ lépésből áll. Mivel mind az $N$ esetben, az előző $N-1$ lépést is oda kell adnom a tanító algoritmusnak, és 1.-től $N$-dik lépésig az összes lépést megtanítom a modelnek, így 
+Példának okért, tegyük fel, hogy nem tarnszformálom át a gyűjtött adatokat és a játék $N$ lépésből áll.
+Mivel mind az $N$ esetben, az előző $N-1$ lépést is oda kell adnom a tanító algoritmusnak, és 1.-től $N.$-ik lépésig az összes lépést megtanítom a modelnek, így 
 egy $N$ lépésből álló játéknak a tanításhoz felhasznált adatmennyisége:
 
 \[\frac{N(N+1)}{2} = \frac{N^2+N}{2}\]
 
-Tehát látható, hogy négyzetesen nő az adatok mennyisége. Annak érdekében, hogy ezt elkerüljem, a következő ötlettel áltam elő:
+Látható, hogy négyzetesen nő az adatok mennyisége. Annak érdekében, hogy ezt elkerüljem, a következő ötlettel áltam elő:
 
-A hash-függvényeket az informatikában az 1980-as évek óta alkalmazzák arra, hogy bármilyen méretű adatot rögzített hosszúságúra alakítsanak át. Gyakorlati felhasználási területük például a fájlok ellenőrzése, mivel ha két fájl tartalma teljesen megegyezik, akkor az azokból képzett hash is azonos lesz. Ez különösen hasznos, amikor dokumentumokat töltünk fel egy fájlszerverre, mivel így könnyen ellenőrizhető, hogy a fájl már létezik-e a szerveren, és elkerülhető a duplikált tárolás.
+A hash-függvényeket az informatikában az 1980-as évek óta alkalmazzák arra, hogy bármilyen méretű adatot rögzített hosszúságúra alakítsanak át. 
+Gyakorlati felhasználási területük például a fájlok ellenőrzése. Ha két fájl tartalma teljesen megegyezik, akkor az azokból képzett hash is azonos lesz. Ez különösen hasznos, amikor dokumentumokat töltünk fel egy fájlszerverre, így könnyen ellenőrizhető, hogy a fájl már létezik-e a szerveren, és elkerülhető a duplikált tárolás.
 
-A hash-függvények segítségével, képes lehetek minden lépést és az őt megelőző összes eddigi lépés eggyüttesét  fix hosszú bit vektorrá alakítom, így szignifikáns mennyiségű adatmennyiséget tudok spórólni. 
+A hash-függvények segítségével képes lehetek minden lépést és az őt megelőző összes eddigi lépés együttesét  fix hosszú bit vektorrá alakítom, így szignifikáns mennyiségű adatmennyiséget tudok spórólni. 
 Természetesen így lehetségessé válik, hogy nem lesz teljesen pontos a betanított modellem, azonban ez a kockázat minden transzformáció esetén előfordulhat. 
 
 \begin{figure}[h]
@@ -89,13 +91,13 @@ Természetesen így lehetségessé válik, hogy nem lesz teljesen pontos a betan
     \caption{Neurális háló, egy bemeneti két rejtett és egy kimeneti réteggel}
 \end{figure}
 
-\section{Adatok transformálása}
+\section{Adatok transzformálása}
 
-Az adatok transformálását a program futása közben, felhasználás előtt készítem elő. Ez azért lesz hasznos, mivel a játék közben, a kész model felhasználásakor is dinamikusan kell az adatokat hash-függvénnyel leképeznem.
+Az adatok transzformálását a program futása közben, felhasználás előtt készítem elő. Ez azért lesz hasznos, mivel a játék közben, a kész modell felhasználásakor is dinamikusan kell az adatokat hash-függvénnyel leképeznem.
 
 \begin{itemize}
     \item Beolvasom a JSON állományt. 
-    \item Végigmegyek az adatokon, és létrehozok egy szöveges változót. Ez a változó tartalmazza a JSON-ban található aktuális és az összes előző lépést  (\ref{code:json_to_hash}. ábra). 
+    \item Végigmegyek az adatokon, és létrehozok egy szöveges változót. Ez a változó tartalmazza a JSON-ban található aktuális valamint az összes előző lépést  (\ref{code:json_to_hash}. ábra). 
     \item A python hashlib csomagja segítségével ezt a változót leképezem az SHA256 függvényt használva egy hexadecimális stringgé. 
     \item A leképezett hexadecimális stringet tovább transzformálom. 
     Végigmegyek az összes karakterén, minden karakter egy hexadecimális szám. Ezen számokat leképezem egy decimális számmá, majd tovább konvertálom egy 4 bit hosszú binárissá. Ezen 4 számjegyű számokat összefűzöm egy stringgé, majd átkonvertálom, hogy egy darab 256 bitből álló NumPy tömböt kapjak, melyet fel fogok tudni használni a tanításhoz (\ref{code:hash_to_bit}. ábra). 
@@ -117,11 +119,11 @@ Az adatok transformálását a program futása közben, felhasználás előtt k�
 
 \section{A tanító algoritmus}
 
-\subsection{A model elkészítése}
-A TensorFlow része a Keras API, mely segítségével könnyedén és egyszerűen létre tudok hozni szekvenciális modelt (\ref{code:tensor}. ábra). A model bemeneti rétege egy 256 nagyságú tömböt vár, melyben bitek találhatók. 
+\subsection{A modell elkészítése}
+A TensorFlow része a Keras API, mely segítségével könnyedén és egyszerűen létre tudok hozni szekvenciális modelt (\ref{code:tensor}. ábra). A modell bemeneti rétege egy 256 nagyságú tömböt vár, melyben bitek találhatók. 
 
 A következő két réteghez egy 128 és egy 64 neuront tartalmazó teljesen kapcsolodó (Dense) réteget használok. Dense layer azt jelenti, hogy a réteg összes neuronja kapcsolodik az előző réteg összes neuronjával. Ez a neuron típus gyarkan használt előre csatolt neurális hálóknál.
-Az aktivációs függvény amit ezekhez a rétegekhez használok az az úgynevezett 
+Az aktivációs függvény, amit ezekhez a rétegekhez használok, az az úgynevezett 
 ReLU (Rectified Linear Unit) függvény, mely a következő képpen néz ki:
 \[ \text{ReLU}(x) = \max(0, x) \]
 ami azt jelenti, hogy ha bemeneti érték, vagyis $x$ pozitív, akkor $x$-et adja vissza, ha negatív, akkor 0-t. 
@@ -146,14 +148,16 @@ A linear aktivációs függvény használatakor a réteg lényegében nem válto
 A modelt lefordításához, az $adam$ optimizálót használom, valamint az mse (mean squared error) vagyis az átlagos négyzetes hiba módszert. 
 Ez az összeállítás biztosítja, hogy a modell hatékonyan és gyorsan tudjon tanulni a bemeneti adatokból, minimalizálva az előrejelzések és a valós értékek közötti hibát.
 
-\subsection{A model betanítása}
-A model betanításához a korábbi fejezetben említett transzformált adatra lesz szükségem, valamint az aktuális következő lépések tömbjére. 50 epochon keresztül, ahol minden edzési lépés során 32 mintát dolgoz fel egy batch-ben. Ez a folyamat lehetővé teszi a modell számára, hogy fokozatosan javítson a teljesítményén az adatok ismételt bemutatása és a súlyok frissítése révén. 
+\subsection{A modell betanítása}
+A modell betanításához a korábbi fejezetben említett transzformált adatra lesz szükségem,
+valamint 50 epochon keresztül az aktuális követkető lépések tömbjére, ahol minden edzési lépés során 32 mintát dolgoz fel egy batch-ben. 
+Ez a folyamat lehetővé teszi a modell számára, hogy fokozatosan javítson a teljesítményén az adatok ismételt bemutatása és a súlyok frissítése révén. 
 
 A betanított modelt egy $my_model.keras$ fájlba mentettem le, így könnyen fogom tudni használni, a játék játszásakor. 
 
 \section{Model használata}
 
-\subsection{Python Script API a model használatához}
+\subsection{Python Script API a modell használatához}
 
 Ahhoz, hogy a modelt használni tudjam, egy API-t kellett írnom. Mivel a tesztadatokat is HTTP Request segítségével küldtem el, így logikusnak találtam, hogy ezt a megoldást használjam itt is. 
 
@@ -161,7 +165,7 @@ A Flask használatával készítettem egy webalkamlazást (\ref{code:use_model}.
 \begin{figure}[h]
     \center
     \includegraphics[width=0.75\textwidth]{img/use_model.png}
-    \caption{Kód részlet. A model használata api}
+    \caption{Kód részlet. A modell használata api}
     \label{code:use_model}
 \end{figure}
 

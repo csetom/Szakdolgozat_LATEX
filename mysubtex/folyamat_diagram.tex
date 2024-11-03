@@ -7,11 +7,9 @@
         \node [block] (kutatomunka) {Kutatómunka};
         \node [block, below of=kutatomunka, node distance=3cm] (tervezes) {Játék megtervezése};
         \node [block, below of=tervezes, node distance=3cm] (jatek_megirasa) {Játék fejlesztése};
-        \node [block, below of=jatek_megirasa, node distance=3cm] (adatgyujtes) {Adatgyűjtés};
-        \node [block, below of=adatgyujtes, node distance=3cm] (AI) {AI betanítása};
-        \node [block, below of=AI, node distance=3cm] (AI_game) {AI játszatása};
-        \node [block, right of=AI_game, node distance=5cm] (AI_ember) {AI játszatása ember ellen};
-        \node [block, right of=adatgyujtes, node distance=5cm] (VR) {VR támogatás};
+        \node [block, below of=jatek_megirasa, node distance=3cm] (adatgyujtes) {Adatgyűjtés webalkalmazás segítségével};
+        \node [block, below of=adatgyujtes, node distance=3cm] (AI) {AI modell betanítása};
+        \node [block, below of=AI, node distance=3cm] (AI_ember) {AI játszatása ember ellen};
 
         % \node [block, right of=section1, node distance=4cm] (subsection1) {Subsection 1};
         % \node [block, right of=section2, node distance=4cm] (subsection2) {Subsection 2};
@@ -19,10 +17,8 @@
         % Arrows
         \path [line] (kutatomunka) -- (tervezes);
         \path [line] (tervezes) -- (jatek_megirasa);
-        \path [line] (jatek_megirasa) -- (VR);
         \path [line] (jatek_megirasa) -- (adatgyujtes);
-        \path [line] (adatgyujtes) -- (AI);
-        \path [line] (AI) -- (AI_game);
+        \path [line] (adatgyujtes) -- (AI); 
         \path [line] (AI) -- (AI_ember);
 
     \end{tikzpicture}

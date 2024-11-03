@@ -13,7 +13,7 @@ Egy adott játékfolyamat az alábbi lépésekből áll:
 \item A kártya felfordítása után a játékos megtudja, milyen betű található a kártyán.
 \item Az így megszerzett információ és a korábbi tudása alapján a játékos kiválasztja a következő kártyát a táblán. Itt két lehetősége van:
 \begin{itemize}
-\item A játékos tudja, vagy nagy valószínűséggel sejti, melyik kártya párja az előzőnek.
+\item A játékos tudja, vagy nagy valószínűséggel sejti, melyik kártya a párja az előzőnek.
 \item A játékos nem tudja, vagy kis valószínűséggel sejti, hol található a párja, ezért olyan kártyát fordít fel, amiről még nincs információja, azaz felfedezi a pályát.
 \end{itemize}
 \item Ha a felfordított kártyák párt alkotnak, azok eltűnnek a tábláról.
@@ -92,18 +92,39 @@ Két fő lehetőségem volt, amelyekkel komolyabban foglalkoztam:
 
 A játékhoz készítettem egy \lstinline{http_client.gd} szkriptet, amelynek egyetlen feladata egy \lstinline{HTTP POST} kérés elküldése egy weboldalnak. A HTTP kérés törzsében helyeztem el a JSON fájlt. Ezt a szkriptet minden játék befejezése után aktiváltam.
 
-Annak érdekében, hogy a kérés mindig sikeres legyen, biztosítanom kellett, hogy ha egy játékosnak nincs ID-je, akkor ha üresen hagyja a beviteli mezőt, egy véletlenszerűen generált ID-t kapjon. Az ID-t a menü oldalon megjelenítettem, és másolhatóvá tettem. A játék állását, vagyis azt, hogy melyik játékkal mennyit játszott a játékos, a Godot automatikusan a böngésző lokális IndexedDB-jébe menti. Így ha egy játékos akkor játszik, amikor a szerver nem elérhető, később is el tudja küldeni a játszott játékainak statisztikáját.\begin{figure}[h]
+Annak érdekében, hogy a kérés mindig sikeres legyen, biztosítanom kellett, 
+hogy ha egy játékosnak nincs ID-je, akkor ha üresen hagyja a beviteli mezőt, 
+és egy véletlenszerűen generált ID-t kapjon. 
+Az ID-t a menü oldalon jelenítettem meg, és másolhatóvá tettem.
+A játék állását, vagyis azt, hogy melyik játékkal mennyit játszott a játékos, a Godot automatikusan a böngésző lokális IndexedDB-jébe menti.
+Így, ha egy játékos akkor játszik, amikor a szerver nem elérhető, később is el tudja küldeni a játszott játékainak statisztikáját.\begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{img/menu_remake.png}
     \caption{Az átlakaított menü: másolható ID mező, és egy küldés gomb}
     \label{img:menu_remake}  
 \end{figure}
 
+\subsection{Játék feltöltése itch.io-ra}
+
+A kész játékot kiexportáltam HTML5 formátumba, majd regisztráltam az itch.io oldalán. Itt létrehoztam egy weboldalt a játékomnak, és egy ChatGPT által generált leírást elhelyeztem rajta angolul.
+
+A játékot elérhetővé tettem \url{https://csetom.itch.io/the-memory-game} címen (\ref{img:itch.io}. ábra). 
+
+A beállítottam, hogy a "Run game" gombra kattintva a játékot "teljes képernyős" üzemmódban indítsa, hogy kitöltse a teljes weboldalt. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\textwidth]{img/Itch.io.png}
+  \caption{Memóriajátékom itch.io oldala, ahonnan egy kattintásra futtatható a játék}
+  \label{img:itch.io}  
+\end{figure}
+
+
 \section{File szerver megvalósítása}
 A fájlszerver megvalósításához JavaScriptet és NodeJS-t használtam.
 A szerver működtetésére az Express web framework-öt vettem igénybe, 
 A fájlszerver egyetlen végpontot biztosított, amely a \lstinline{/save_json} útvonalon volt elérhető. 
-Ez a végpont fogadta az érkező JSON formátumú adatokat, és a szerver feladata volt ezeknek az adatoknak a fájlrendszerbe történő mentése. 
+Ez a végpont fogadta az érkező JSON formátumú adatokat. A szerver feladata volt ezeknek az adatoknak a fájlrendszerbe történő mentése. 
 A mentési folyamat során az adatok az ID szerint kerültek elhelyezésre külön mappákba, ahol a mappa neve a játékos ID-ja volt. 
 Az egyes mappákban az aktuális időpont szerint elnevezett JSON fájlok kerültek tárolásra, például: \texttt{2023-10-21T12:34:56.json}. 
 Ez a struktúra biztosította az adatok könnyű visszakereshetőségét és rendszerezhetőségét.
@@ -147,20 +168,19 @@ Azonban, amikor megpróbáltam igénybe venni az Oracle VM ingyenes erőforrása
 
 
 \subsection{Fly.io}
-Miután az Oracle VM nem bizonyult járható útnak, úgy döntöttem, hogy kipróbálom a Fly.io szolgáltatását. A Fly.io egy modern felhőalapú platform, amely lehetővé teszi az alkalmazások globális szinten történő futtatását és skálázását. A szolgáltatás fő célja, hogy az alkalmazásokat közelebb hozza a felhasználókhoz, ezáltal csökkentve a késleltetést és javítva a teljesítményt. A Fly.io platformja rendkívül egyszerűen használható, és számos automatizált funkcióval rendelkezik, amelyek megkönnyítik az alkalmazások telepítését és kezelését.
+Miután az Oracle VM nem bizonyult járható útnak, úgy döntöttem, hogy kipróbálom a Fly.io szolgáltatását.
+A Fly.io egy modern felhőalapú platform, amely lehetővé teszi az alkalmazások globális szinten történő futtatását és skálázását. A szolgáltatás fő célja, hogy az alkalmazásokat közelebb hozza a felhasználókhoz, ezáltal csökkentve a késleltetést és javítva a teljesítményt. A Fly.io platformja rendkívül egyszerűen használható, és számos automatizált funkcióval rendelkezik, amelyek megkönnyítik az alkalmazások telepítését és kezelését.
 
 A Fly.io honlapja első ránézésre ígéretesnek tűnt, és úgy tűnt, hogy ingyenes használati lehetőséget is kínál. Ez különösen vonzó volt számomra, mivel szerettem volna minimalizálni a költségeket a projekt korai szakaszában. A Fly.io segítségével könnyedén létrehozhattam és kezelhettem a fájlszerveremet, és a platform egyszerűsége miatt gyorsan és hatékonyan tudtam dolgozni.
 
-Azonban, amikor elkezdtem a fájlszerver telepítését és k
-onfigurálását a Fly.io platformján, kiderült, hogy a szolgáltatás nem teljesen ingyenes.
+Azonban, amikor elkezdtem a fájlszerver telepítését és konfigurálását a Fly.io platformján, kiderült, hogy a szolgáltatás nem teljesen ingyenes.
 A Fly.io használatával kapcsolatos üzenetváltások darabszámára vonatkozó díjak jelentősen 
 megnövelték volna a költségeket. Ez komoly kihívást jelentett, és nem számítottam ilyen jellegű kiadásokra. 
 Az ingyenesnek tűnő szolgáltatásról kiderült, 
-hogy valójában nem az, ami csalódást okozott, 
-és újra arra kényszerített, hogy más megoldásokat keressek a fájlszerverem üzemeltetéséhez.
+hogy valójában nem az. Csalódtam, és ismét arra kényszerűltem, hogy más megoldásokat keressek a fájlszerverem üzemeltetéséhez.
 
-Mindkét esetben a szolgáltatások ígéretes lehetőségeket kínáltak, de végül nem feleltek meg az elvárásaimnak az ingyenes erőforrások és a rejtett költségek miatt. Azonban a tapasztalatok segítettek abban, hogy jobban megértsem a különböző felhőalapú platformok működését és költségstruktúráját, ami hasznos lesz a jövőbeni projektek tervezésénél és megvalósításánál.
+Mindkét esetben a szolgáltatások ígéretes lehetőségeket kínáltak, de végül nem feleltek meg az elvárásaimnak az ingyenes erőforrások hiánya és a rejtett költségek miatt. Azonban a tapasztalatok segítettek abban, hogy jobban megértsem a különböző felhőalapú platformok működését és költségstruktúráját, ami hasznos lesz a jövőbeni projektek tervezésénél és megvalósításánál.
 \section{Végleges megoldás}
-Mivel sajnos nem találtam más alternatívát, ami ingyenes lenne, így kénytelen voltam a helyi gépemen futtatni a docker containereket, és megkérni a játék tesztelőket, hogy akkor futtassák a játékot, amikor éppen üzemel a file szerver. 
+Mivel sajnos nem találtam más alternatívát, ami ingyenes lenne, így kénytelen voltam a helyi gépemen futtatni a docker containereket, és megkérni a játék tesztelőket, hogy akkor futtassák a játékot, amikor éppen üzemel a file szerver. A tesztelőknek elküldtem az itch.io weboldalt, így nem volt szükséges számukra, hogy telepítsék a saját számítógépükre az alkamazást.
 
-Ezzel sikerült 10 embertől megfelelő mennyiségű adatot szereznem, mellyel könnyedén be fogom tudni tanítani a mesterséges intelligenciát.
+Összesen tíz embertől sikerült megfelelő mennyiségű adatot szereznem,melynek segítségével tanítottam be a mesterséges intelligenciát.
