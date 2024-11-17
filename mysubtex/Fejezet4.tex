@@ -4,7 +4,7 @@
 \pagestyle{fancy}
 \section{Játék ismertetése}
 
-A játék melyet elkészítettem, a közismert memória játék.
+A játék melyet fejlesztettem, a közismert memória játék.
 
 A játékban az asztalon meghatározott számú kártya pár található, képpel lefelé fordítva, ahogyan az a \ref{img:asztal}. ábrán is látható.
 \begin{figure}[h]
@@ -12,7 +12,7 @@ A játékban az asztalon meghatározott számú kártya pár található, képpe
     \caption{4x4-es memóriajáték kezdő állapota}
     \label{img:asztal}
 \end{figure}
-A kártyák előlapján különböző betűk találhatók, minden betűből egy pár. A játékos célja, hogy minél kevesebb kártyapár megfordításából megtalálja az összes memória párt.
+A kártyák előlapján különböző betűk találhatók, minden betűből egy pár. A játékos célja, hogy minél kevesebb kártyapár megfordításából megtalálja az összes párt.
 
 
 A kártya megfordításához a játékosnak rá kell kattintania az adott kártyára. 
@@ -32,6 +32,8 @@ Az első választott/megfordított kártyához választani kell egy másikat. A 
 \end{subfigure}
 \caption{4x4-es játék, példa kör, amikor nem egy párt húzunk fel}
 \end{figure}
+
+
 Ha a felfordított kártyák nem alkotnak párt, akkor a kártyák maguktól visszafordulnak pár másodperc elteltével. Ez után végrehajtunk egy újabb fordítást.
 Ha párt alkotnak (\ref{img:pair}. ábra), akkor a kártyák eltűnnek a játékmezőről  (\ref{img:pair_gone}. ábra).
 \begin{figure}[H]
@@ -59,12 +61,12 @@ A játékba több nehézségi szintet tettünk, melyet a menüből érhetünk el
 \end{figure}
 
 \section{Struktúrális felépítés}
-A memória játék a Godot elveinek megfelelően Node-okból és Scene-ekből \cite{godotengineNodesScenes} áll. A Scene-ek struktúrája a következő.
+A memória játék a Godot elveinek megfelelően Node-okból(Csomópont-elem) és Scene-ekből (Jelenet) \cite{godotengineNodesScenes} áll. A Scene-ek struktúrája a következő.
 \subsection{Menü}
 
 
-A Játék menüje (\ref{img:menu_scene}. ábra), a következő módon épül fel. A Gombok olyan MeshInstance3D Node-ok \cite{godotengineMeshInstance3D}, melyekre ha a játékos rákattint, akkor emittálnak egy \lstinline{button_pressed()} signal-t (\ref{code:button_pressed_signal}. ábra).
-A MenuScene kódjában hallgatózunk erre a signal-ra, külön külön minden gombokra. A megfelelő gomb megnyomásával beállítjuk a \lstinline{Constant.CARD_PMIR_NUMBER} globális változót, melynek segítségével létrehozzuk a \lstinline{basic_scene}-t.
+A Játék menüje (\ref{img:menu_scene}. ábra), a következő módon épül fel. A Gombok olyan MeshInstance3D Node-ok \cite{godotengineMeshInstance3D}, melyekre ha a játékos rákattint, akkor kibocsájtanak egy \lstinline{button_pressed()} jelet (\ref{code:button_pressed_signal}. ábra).
+A MenuScene kódjában hallgatózunk erre a jelre, külön külön minden gombokra. A megfelelő gomb megnyomásával beállítjuk a \lstinline{Constant.CARD_PMIR_NUMBER} globális változót, melynek segítségével létrehozzuk a \lstinline{basic_scene}-t.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{img/menu_scene_tree.png}
@@ -83,13 +85,13 @@ A MenuScene kódjában hallgatózunk erre a signal-ra, külön külön minden go
     func set_number_label_text(new_label_text: String):
         number_label.text = new_label_text;
     \end{lstlisting}
-    \caption{A menü gombja  \lstinline{button_pressed} signal-t emittál}
+    \caption{A menü gombja  \lstinline{button_pressed} jelet kibocsátja}
     \label{code:button_pressed_signal}
 \end{figure}
 
-\subsection{Basic Scene}
+\subsection{Alap Jelenet (Basic Scene)}
 
-A Basic Scene (\ref{img:basic_scene}. ábra) struktúrája dinamikusan épül fel a \lstinline{Card} Scene-ekből, melyet a \lstinline|Deck| globális objektum ad oda a \lstinline|Basic Scene| -nek. 
+A Basic Scene (\ref{img:basic_scene}. ábra), magyarul alap jelenet,  struktúrája \lstinline{Card Scene}-ekből, azaz kártya jelenetekből  dinamikusan épül fel, melyet a \lstinline|Deck| vagyis pakli globális objektum ad oda a \lstinline|Basic Scene| -nek. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{img/basic_field_scene_structure.png}
@@ -97,7 +99,7 @@ A Basic Scene (\ref{img:basic_scene}. ábra) struktúrája dinamikusan épül fe
     \label{img:basic_scene}  
 \end{figure}
 
-A scene kiszámolja, az előre beállított kártyaszélesség, -magasság és -margó konstansok alapján, hogy a megkapott darabszámú kártyát, a \lstinline|CardMarker| -höz képest hova kell lerakni (\ref{code:calculate_coordinate}. ábra)
+A jelenet kiszámolja, az előre beállított kártyaszélesség, -magasság és -margó konstansok alapján, hogy a megkapott darabszámú kártyát, a \lstinline|CardMarker|, magyarul kártya jelölő, \lstinline|Marker3D| (3D jelölő) csomóponthoz \cite{Marker3D69:online} képest hova kell lerakni (\ref{code:calculate_coordinate}. ábra)
 \begin{figure}[H]
     \centering
     \begin{lstlisting}[language=GDScript]
@@ -111,13 +113,14 @@ A scene kiszámolja, az előre beállított kártyaszélesség, -magasság és -
     \caption{Kártyák koordinátájának kiszámítása}
     \label{code:calculate_coordinate}
 \end{figure}
-Amint a \lstinline|Deck| objektum elküldi a \lstinline{cards_empty} signal-t, vagyis a játék végét, vagy ha a játékos megnyomja a Menü gombot, a játék visszatér a menübe. 
+
+Amint a \lstinline|Deck| objektum elküldi a \lstinline{cards_empty} jelet, vagyis a játék végét, vagy ha a játékos megnyomja a Menü gombot, a játék visszatér a menübe. 
 
 Más feladata nincs. 
 
 
-\subsection{Deck}
-A \lstinline|Deck| egy olyan globális objektum, mely a program futása során bármikor elérhető. A feladatai: 
+\subsection{Pakli (Deck)}
+A \lstinline|Deck|, magyarul pakli, egy olyan globális objektum, mely Godot szaknyelvén mondva autoloadolva van, azaz előre be van töltve, így a program futása során bármikor elérhető. A feladatai: 
 \begin{enumerate}
 \item Létrehozni a kártyákat, a játék kezdetekor (\ref{code:make_deck}. ábra)
 \item Folyamatosan figyeli, hogy mely \lstinline|Card|-ok vannak még játékban a lstinline|cards| tömbben.
@@ -174,8 +177,8 @@ func talalat():
 \end{figure}
 
 
-\subsection{Card}
-A kártyák vagyis Card scene (\ref{img:card_tree}. ábra) rendelkezik egy \lstinline|labellel| amelyet a \lstinline|Deck| ad neki, a kártya létrehozásakor. Ez meghatározza, hogy milyen kártya. 
+\subsection{Kártya (Card)}
+A kártyák vagyis Card scene (\ref{img:card_tree}. ábra) rendelkezik egy \lstinline|labellel| (címke), amelyet a \lstinline|Deck| ad neki, a kártya létrehozásakor. Ez meghatározza, hogy milyen kártya. 
 Egy játékmezőn pontosan két egyforma labellel rendelkező kártya szerepel(\ref{img:cards_has_pairs}. ábra).
 
 \begin{figure}[H]
@@ -193,13 +196,21 @@ Egy játékmezőn pontosan két egyforma labellel rendelkező kártya szerepel(\
     \end{minipage}
 \end{figure}
 
-A kártya rendelkezik animációval is, melyet az AnimationTree (\ref{img:animation_tree}. ábra) kezel. 
-Ha rákattintunk a kártyára, akkor lefut a \lstinline|card_flip_animation| function, vagyis az AnimationTree State Machine-nek odaadjuk azt az információt, mely szerint meg kell fordítani a kártyát. Az objektum elküldi önmagát a \lstinline|Deck|-nek, mint kiválasztott kártya. 
+A kártya rendelkezik animációval is, melyet az AnimationTree \cite{Animatio38:online}, magyarul animációs fa, csomópont kezel (\ref{img:animation_tree}. ábra). 
+Ha rákattintunk a kártyára, akkor lefut a \lstinline|card_flip_animation| függvény. Ekkor az \lstinline|AnimationNodeStateMachine|-nek \cite{Animatio50:online}, vagyis az animációs csomópont állapot gépnek odaadjuk azt az információt, mely szerint meg kell fordítani a kártyát (\ref{img:state_machine}. ábra).
+Az objektum elküldi önmagát a \lstinline|Deck|-nek, mint kiválasztott kártya. 
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{img/animation_tree.png}
     \caption{A Card animáció fája}
     \label{img:animation_tree}  
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{img/allapotgep.png}
+    \caption{Az animáció állapotgépe}
+    \label{img:state_machine}  
 \end{figure}
 
 
