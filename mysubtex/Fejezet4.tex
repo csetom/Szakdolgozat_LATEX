@@ -64,7 +64,7 @@ A memória játék a Godot elveinek megfelelően Node-okból és Scene-ekből \c
 
 
 A Játék menüje (\ref{img:menu_scene}. ábra), a következő módon épül fel. A Gombok olyan MeshInstance3D Node-ok \cite{godotengineMeshInstance3D}, melyekre ha a játékos rákattint, akkor emittálnak egy \lstinline{button_pressed()} signal-t (\ref{code:button_pressed_signal}. ábra).
-A MenuScene kódjában hallgatózunk erre a signal-ra, külön külön minden gombokra. A megfelelő gomb megnyomásával beállítjuk a \lstinline{Constant.CARD_PAIR_NUMBER} globális változót, melynek segítségével létrehozzuk a \lstinline{basic_scene}-t.
+A MenuScene kódjában hallgatózunk erre a signal-ra, külön külön minden gombokra. A megfelelő gomb megnyomásával beállítjuk a \lstinline{Constant.CARD_PMIR_NUMBER} globális változót, melynek segítségével létrehozzuk a \lstinline{basic_scene}-t.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{img/menu_scene_tree.png}

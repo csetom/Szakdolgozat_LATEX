@@ -9,7 +9,7 @@ a neurális hálózat hasonlítható, így ezt fogom én is használni a projekt
 
 
 \section{Tensorflow}
-Python nyelven szerettem volna elkészíteni az AI tanításához az algoritmust. Ehhez a legjobbnak a TensorFlow-t \cite{tensorflow2015-whitepaper} találtam. A TensorFlow weboldalán ingyenesen elérhető dokumentációkból és tanító anyagokból indultam ki. 
+Python nyelven szerettem volna elkészíteni az MI tanításához az algoritmust. Ehhez a legjobbnak a TensorFlow-t \cite{tensorflow2015-whitepaper} találtam. A TensorFlow weboldalán ingyenesen elérhető dokumentációkból és tanító anyagokból indultam ki. 
 
 A dokumentáció szerint, minden felhasználónak alapvetően a Keras API használatát javasolják, így hát én is azt használtam. 
 
@@ -178,9 +178,9 @@ Az így kapott 256 hosszú bitsorozattal csinálunk egy "jóslást", vagyis hasz
 
 \subsection{Játék kódjában való változtatások}
 
-A játékot, ahhoz hogy működjön a mesterséges inteligenciával, először át kellett alakítanom, hogy minden lépésem után az AI következzen. A változtatás egyszerű volt, egy változóba tárolom, hogy a játékos, vagy az AI köre van soron, és minden pár fordítása után cserélem. 
+A játékot, ahhoz hogy működjön a mesterséges inteligenciával, először át kellett alakítanom, hogy minden lépésem után az MI következzen. A változtatás egyszerű volt, egy változóba tárolom, hogy a játékos, vagy az MI köre van soron, és minden pár fordítása után cserélem. 
 
-Ahhoz, hogy az AI is tudjon kártyát választani, készítettem egy \lstinline{get_ai_cards} függvényt (\ref{code:get_ai_card}. ábra). A függvény meghívja a \lstinline{\prediction} endpointot, a \lstinline{HttpClient} segítségével. A visszakapott koordinátákból kiválasztja a kártyát az asztalon. 
+Ahhoz, hogy az MI is tudjon kártyát választani, készítettem egy \lstinline{get_ai_cards} függvényt (\ref{code:get_ai_card}. ábra). A függvény meghívja a \lstinline{\prediction} endpointot, a \lstinline{HttpClient} segítségével. A visszakapott koordinátákból kiválasztja a kártyát az asztalon. 
 Ha ez a kártya nem elérhető, mert már levették az asztalról, vagy a koordináták nem létező kártyára mutatnak, akkor a legelső elérhető kártyát fogja választani a mesterséges inteligencia. 
 
 \begin{figure}[H]
@@ -201,6 +201,6 @@ func get_ai_cards():
                         Card=c
                 return Card
     \end{lstlisting}
-    \caption{Kód részlet: Az AI kártya választó függvénye GDScript-ben.}
+    \caption{Kód részlet: Az MI kártya választó függvénye GDScript-ben.}
     \label{code:get_ai_card}
 \end{figure}
