@@ -3,40 +3,39 @@
 \pagestyle{fancy}
 
 
-A célom az, hogy a mesterséges intelgiencia játéka, amit használni fogok, a lehető legjobban hasonlítson az emberi gondolkodáshoz. Az emberi agy működéséhez a legjobban 
-a neurális hálózat hasonlítható, így ezt fogom én is használni a projektemhez. 
+A célom az volt, hogy a mesterséges intelgiencia játéka, a lehető legjobban hasonlítson az emberi gondolkodáshoz. Az emberi agy működéséhez a legjobban 
+a neurális hálózat hasonlítható, így ezt használtam én is használni a projektemhez. 
 
 
 
 \section{Tensorflow}
 Python nyelven szerettem volna elkészíteni az MI tanításához az algoritmust. Ehhez a legjobbnak a TensorFlow-t \cite{tensorflow2015-whitepaper} találtam. A TensorFlow weboldalán ingyenesen elérhető dokumentációkból és tanító anyagokból indultam ki. 
 
-A dokumentáció szerint, minden felhasználónak alapvetően a Keras API használatát javasolják, így hát én is azt használtam. 
+A dokumentáció szerint, minden felhasználónak alapvetően a Keras API \cite{chollet2015keras} használatát javasolják, így hát én is azt használtam. 
 
 \section{Tervezés}
-Az elképzelésem szerint, egy Sequential, azaz szekvenciális modelt használok. A szekvenciális modelben pontosan egyetlen bemeneti tensor és egyetlen kimeneti tensor található. 
+Az elképzelésem szerint, egy Sequential, azaz szekvenciális modellt használtam. A szekvenciális modellben pontosan egyetlen bemeneti tensor és egyetlen kimeneti tensor található.
 
-Az én esetemben a bemeneti tensor a játék jelenlegi állása, a kimenet pedig a következő felfordítandó kártya lesz. Mivel a tensornak a típusa nem változik, pusztán az értéke, ezért nekem ez tökéletesen megfelelő. 
+Az én esetemben a bemeneti tensor a játék jelenlegi állása volt, a kimenet pedig a következő felfordítandó kártya lett. Mivel a tensornak a típusa nem változott, pusztán az értéke, ezért nekem ez tökéletesen megfelelő volt.
 
-A modellt be kell tanítanom a gyűjtött adatokkal. Ehhez a legegyszerűbb, ha az adataimat egy JSON fájlba összefűzöm, így a scriptnek elég ezt az egy fájlt beolvasnia. 
+A modellt be kellett tanítanom a gyűjtött adatokkal. Ehhez a legegyszerűbb volt, ha az adataimat egy JSON fájlba összefűztem, így a scriptnek elég volt ezt az egy fájlt beolvasnia.
 
-Minél jobban le tudom egyszerűsíteni a bemeneti rétegem, úgy, hogy a lehetőleg ne legyen benne adatvesztés, annál gyorsabban véghez tudom vinni a tanítást. 
-Ha bonyolult az input layer, akkor a tanulás lelassul, és számomra fontos perceket, órákat, de akár napokat is veszíthetek, egy hibás modell esetén. 
+Minél jobban le tudtam egyszerűsíteni a bemeneti rétegem, úgy, hogy a lehetőleg ne legyen benne adatvesztés, annál gyorsabban véghez tudtam vinni a tanítást. 
+Ha bonyolult volt az input layer, akkor a tanulás lelassult, és számomra fontos perceket, órákat, de akár napokat is veszíthettem egy hibás modell esetén.
 
-Példának okért, tegyük fel, hogy nem tarnszformálom át a gyűjtött adatokat és a játék $N$ lépésből áll.
-Mivel mind az $N$ esetben, az előző $N-1$ lépést is oda kell adnom a tanító algoritmusnak, és 1.-től $N.$-ik lépésig az összes lépést megtanítom a modelnek, így 
-egy $N$ lépésből álló játéknak a tanításhoz felhasznált adatmennyisége:
+Példának okáért, tegyük fel, hogy nem transformáltam át a gyűjtött adatokat, és a játék $N$ lépésből állt. 
+Mivel mind az $N$ esetben az előző $N-1$ lépést is oda kellett adnom a tanító algoritmusnak, és 1.-től $N.$-ik lépésig az összes lépést megtanítottam a modellnek, 
+így egy $N$ lépésből álló játéknak a tanításhoz felhasznált adatmennyisége:
 
-\[\frac{N(N+1)}{2} = \frac{N^2+N}{2}\]
+\begin{equation}\label{eq:1}
+\frac{N(N+1)}{2} = \frac{N^2+N}{2}
+\end{equation}
 
-Látható, hogy négyzetesen nő az adatok mennyisége. Annak érdekében, hogy ezt elkerüljem, a következő ötlettel áltam elő:
+Látható volt, hogy négyzetesen nőtt az adatok mennyisége. Annak érdekében, hogy ezt elkerüljem, a következő ötlettel álltam elő:
 
-A hash-függvényeket az informatikában az 1980-as évek óta alkalmazzák arra, hogy bármilyen méretű adatot rögzített hosszúságúra alakítsanak át. 
-Gyakorlati felhasználási területük például a fájlok ellenőrzése. Ha két fájl tartalma teljesen megegyezik, akkor az azokból képzett hash is azonos lesz. Ez különösen hasznos, amikor dokumentumokat töltünk fel egy fájlszerverre, így könnyen ellenőrizhető, hogy a fájl már létezik-e a szerveren, és elkerülhető a duplikált tárolás.
+A hash-függvényeket az informatikában az 1980-as évek óta alkalmazzák arra, hogy bármilyen méretű adatot rögzített hosszúságúra alakítsanak át. Gyakorlati felhasználási területük például a fájlok ellenőrzése. Ha két fájl tartalma teljesen megegyezik, akkor az azokból képzett hash is azonos lesz. Ez különösen hasznos, amikor dokumentumokat töltünk fel egy fájlszerverre, így könnyen ellenőrizhető volt, hogy a fájl már létezett-e a szerveren, és elkerülhető volt a duplikált tárolás.
 
-A hash-függvények segítségével képes leszek minden lépést és az őt megelőző összes eddigi lépés együttesét fix hosszú bit vektorrá átalakítani, így szignifikáns mennyiségű adatmennyiséget tudok spórólni. 
-Természetesen így lehetségessé válik, hogy nem lesz teljesen pontos a betanított modellem, azonban ez a kockázat minden transzformáció esetén előfordulhat. 
-
+A hash-függvények segítségével képes voltam minden lépést és az őt megelőző összes eddigi lépés együttesét fix hosszú bit vektorrá átalakítani, így szignifikáns mennyiségű adatmennyiséget tudtam spórolni. Természetesen így lehetségessé vált, hogy nem lett teljesen pontos a betanított modellem, azonban ez a kockázat minden transzformáció esetén előfordulhatott.
 \begin{figure}[h]
     \centering
     \begin{adjustbox}{width=0.75\textwidth}
@@ -93,7 +92,7 @@ Természetesen így lehetségessé válik, hogy nem lesz teljesen pontos a betan
 
 \section{Adatok transzformálása}
 
-Az adatok transzformálását a program futása közben, felhasználás előtt készítem elő. Ez azért lesz hasznos, mivel a játék közben, a kész modell felhasználásakor is dinamikusan kell az adatokat hash-függvénnyel leképeznem.
+Az adatok transzformálását a program futása közben, felhasználás előtt készítettem elő. Ez azért volt hasznos, mivel a játék közben, a kész modell felhasználásakor is dinamikusan kellett az adatokat hash-függvénnyelleképeznem.
 
 \begin{itemize}
     \item Beolvasom a JSON állományt. 
@@ -125,13 +124,17 @@ A TensorFlow része a Keras API, mely segítségével könnyedén és egyszerűe
 A következő két réteghez egy 128 és egy 64 neuront tartalmazó teljesen kapcsolodó (Dense) réteget használok. Dense layer azt jelenti, hogy a réteg összes neuronja kapcsolodik az előző réteg összes neuronjával. Ez a neuron típus gyarkan használt előre csatolt neurális hálóknál.
 Az aktivációs függvény, amit ezekhez a rétegekhez használok, az az úgynevezett 
 ReLU (Rectified Linear Unit) függvény, mely a következő képpen néz ki:
-\[ \text{ReLU}(x) = \max(0, x) \]
+\begin{equation}\label{eq:2}
+\text{ReLU}(x) = \max(0, x) 
+\end{equation}
+
 ami azt jelenti, hogy ha bemeneti érték, vagyis $x$ pozitív, akkor $x$-et adja vissza, ha negatív, akkor 0-t. 
 
 
 \begin{figure}[h]
     \includegraphics[width=0.75\textwidth]{img/Tensor.png}
     \caption{Kód részlet. A tanító algoritmus}
+    \center
     \label{code:tensor}
 \end{figure}
 
@@ -140,8 +143,10 @@ Ha nem használnánk aktivációs függvényeket, a modell kimenete csak az inpu
 A ReLU ezért olyan népszerű a mélytanulásban, mert csökkenti a gradientek eltűnésének problémáját, így gyorsabb tanulást és jobb teljesítményt tesz lehetővé.
 
 A kimeneti réteghez egy 2 neuronból álló lineáris aktivációs függvénnyel ellátott réteget használok. A lineáris aktivációs függvény azt jelenti, hogy a neuron kimenete az inputok lineáris kombinációja, ami lényegében nem végez átalakítást. Matematikailag ez így írható le:
-
-\[ \text{kimenet} = \text{bemenet} \cdot \text{súlyok} + \text{eltolás} \]
+\begin{equation}\label{eq:3}
+\text{kimenet} = \text{bemenet} \cdot \text{súlyok} + \text{eltolás}
+\end{equation}
+    
 
 A linear aktivációs függvény használatakor a réteg lényegében nem változtatja meg az bemeneti értékeket, csak a súlyokat és az eltolást alkalmazza.
 
