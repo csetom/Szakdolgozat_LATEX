@@ -18,7 +18,7 @@ Az elképzelésem szerint, egy Sequential, azaz szekvenciális modelt használok
 
 Az én esetemben a bemeneti tensor a játék jelenlegi állása, a kimenet pedig a következő felfordítandó kártya lesz. Mivel a tensornak a típusa nem változik, pusztán az értéke, ezért nekem ez tökéletesen megfelelő. 
 
-A modellt be kell tanítanom a gyűjtött adatokkal. Ehhez a legegyszerűbb, ha az adataimat egy JSON file-ba összefűzöm, így a scriptnek elég ezt az egy file-t beolvasnia. 
+A modellt be kell tanítanom a gyűjtött adatokkal. Ehhez a legegyszerűbb, ha az adataimat egy JSON fájlba összefűzöm, így a scriptnek elég ezt az egy fájlt beolvasnia. 
 
 Minél jobban le tudom egyszerűsíteni a bemeneti rétegem, úgy, hogy a lehetőleg ne legyen benne adatvesztés, annál gyorsabban véghez tudom vinni a tanítást. 
 Ha bonyolult az input layer, akkor a tanulás lelassul, és számomra fontos perceket, órákat, de akár napokat is veszíthetek, egy hibás modell esetén. 

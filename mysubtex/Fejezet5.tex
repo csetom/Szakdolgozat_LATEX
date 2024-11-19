@@ -28,7 +28,7 @@ A játék teljes megértéséhez és a mesterséges intelligencia betanításáh
 \item A kártyafordítások sorrendje: melyik sor és oszlop kártyái lettek felfordítva, valamint mi szerepelt a memória kártyán.
 \end{itemize}
 
-A következő adatszerkezetet fogom használni: 
+A következő adatszerkezetet használtam: 
 
 \begin{figure}[h]
 \centering
@@ -68,7 +68,7 @@ A következő adatszerkezetet fogom használni:
 
 A \ref{saveJson} ábra magyarázata a következő:
 \begin{description}
-    \item[id] A játékos ID-je melyet megkap a játék elindításakor. 
+    \item[azonosító (id)] A játékos ID-je melyet megkap a játék elindításakor. 
     \item[Played\_games] Játszott játékok, ahol a kulcs a kártyapárok száma.
     \item[6\:] Egy tömb, amely az adott kártyaszámú játékokat tartalmazza.
     \item[card\_labels\:] A kártyák lehetséges címkéi. Ezek száma megegyezik a \lstinline{card_pair_number} értékével.
@@ -78,8 +78,8 @@ A \ref{saveJson} ábra magyarázata a következő:
     \item[label\:] A kártyán szereplő betű.
     \item[X,Y\:] A kártya sor- és oszlopkoordinátái.
 \end{description}
-\subsection{Játék felkészítése}
-A tervek szerint a játékot a lehető legtöbb emberhez szeretném eljuttatni, ezért a legkézenfekvőbb megoldásnak a HTML5-be történő exportálást láttam. Ehhez néhány vizuális módosítást kellett végrehajtanom.
+\subsection{Játék előkészítése}
+A tervek szerint a játékot a lehető legtöbb emberhez akartam eljuttatni, ezért a legkézenfekvőbb megoldásnak a HTML5-be történő exportálást láttam \cite{Exportin97:online}. Ehhez néhány vizuális módosítást kellett végrehajtanom.
 Két fő lehetőségem volt, amelyekkel komolyabban foglalkoztam:
 \begin{enumerate}
     \item 	Játék és HTML sablon átalakítása: A játékot és a hozzá tartozó HTML sablont átírni úgy, hogy a weboldal JavaScriptje segítségével a JSON fájlt lementsem, amit aztán valamilyen online felületen keresztül el tudnak küldeni nekem.
@@ -96,7 +96,10 @@ Annak érdekében, hogy a kérés mindig sikeres legyen, biztosítanom kellett,
 hogy ha egy játékosnak nincs ID-je, akkor ha üresen hagyja a beviteli mezőt, 
 és egy véletlenszerűen generált ID-t kapjon. 
 Az ID-t a menü oldalon jelenítettem meg, és másolhatóvá tettem.
-A játék állását, vagyis azt, hogy melyik játékkal mennyit játszott a játékos, a Godot automatikusan a böngésző lokális IndexedDB-jébe menti.
+A játék állását, vagyis azt, hogy melyik játékkal mennyit játszott a játékos, a Godot automatikusan a böngésző lokális IndexedDB-jébe \cite{Exportin97:online} menti.
+Az IndexedDB \cite{UsingInd44:online} egy böngésző alapú adatbázis, amely lehetővé teszi nagy mennyiségű strukturált adat tárolását, beleértve fájlokat és bináris adatokat is. Ez egy NoSQL adatbázis, ami azt jelenti, hogy kulcs-érték párokkal dolgozik, nem pedig táblázatokkal, mint egy relációs adatbázis. 
+Az IndexedDB segítségével a memoriajáték elmentheti az adatait a böngészőbe, így később hozzáférhet és láthatja a játékos, hogy melyik nehézségi szinten mennyit játszott a játékkal.
+
 Így, ha egy játékos akkor játszik, amikor a szerver nem elérhető, később is el tudja küldeni a játszott játékainak statisztikáját.\begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{img/menu_remake.png}
@@ -106,8 +109,8 @@ A játék állását, vagyis azt, hogy melyik játékkal mennyit játszott a já
 
 \subsection{Játék feltöltése itch.io-ra}
 
-A kész játékot kiexportáltam HTML5 formátumba, majd regisztráltam az itch.io oldalán.
-Itt létrehoztam egy weboldalt a játékomnak, és egy ChatGPT által generált leírást helyeztem el rajta angolul.
+A kész játékot exportáltam HTML5 formátumba, majd regisztráltam az itch.io oldalán.
+Itt létrehoztam egy weboldalt a játékomnak, és elhelyeztem rajta egy rövidke leírást angolul.
 
 A játékot elérhetővé tettem \url{https://csetom.itch.io/the-memory-game} címen (\ref{img:itch.io}. ábra). 
 
@@ -121,20 +124,20 @@ A beállítottam, hogy a "Run game" gombra kattintva a játék "teljes képerny�
 \end{figure}
 
 
-\section{File szerver megvalósítása}
+\section{Fájl szerver megvalósítása}
 A fájlszerver megvalósításához JavaScriptet és NodeJS-t használtam.
-A szerver működtetésére az Express web framework-öt vettem igénybe, 
+A szerver működtetésére az Express web framework-öt \cite{ExpressN40:online} vettem igénybe, 
 A fájlszerver egyetlen végpontot biztosított, amely a \lstinline{/save_json} útvonalon volt elérhető. 
 Ez a végpont fogadta az érkező JSON formátumú adatokat. A szerver feladata volt ezeknek az adatoknak a fájlrendszerbe történő mentése. 
 A mentési folyamat során az adatok az ID szerint kerültek elhelyezésre külön mappákba, ahol a mappa neve a játékos ID-ja volt. 
 Az egyes mappákban az aktuális időpont szerint elnevezett JSON fájlok kerültek tárolásra, például: \texttt{2023-10-21T12:34:56.json}. 
 Ez a struktúra biztosította az adatok könnyű visszakereshetőségét és rendszerezhetőségét.
 
-Annak érdekében, hogy a szerver domain néven keresztül is elérhető legyen, a Cloudflare Tunnel szolgáltatást alkalmaztam. 
+Annak érdekében, hogy a szerver domain néven keresztül is elérhető legyen, a Cloudflare Tunnel \cite{TunnelZe60:online} szolgáltatást alkalmaztam. 
 
-A rendszer kényelmes használata és virtuális gépen történő telepítése érdekében a szervert és a Cloudflare-t is külön-külön Docker konténerben futtattam.
+A rendszer kényelmes használata és virtuális gépen történő telepítése érdekében a szervert és a Cloudflare-t is \cite{WhyCloud84:online} külön-külön Docker \cite{DockerAc99:online} konténerben futtattam.
 A konténerek használata egyszerűvé teszi a telepítést és a menedzselést, mivel az alkalmazások és azok függőségei elszigetelten futnak. 
-A Docker Compose segítségével pedig könnyedén integrálhattam és menedzselhettem a többkonténeres alkalmazásokat, ami lehetővé tette a szerver és a Cloudflare Tunnel együttes futtatását és összehangolt működését.
+A Docker Compose \cite{DockerCo66:online} segítségével pedig könnyedén integrálhattam és menedzselhettem a többkonténeres alkalmazásokat, ami lehetővé tette a szerver és a Cloudflare Tunnel együttes futtatását és összehangolt működését.
 
 \begin{figure}[h]
     \centering
@@ -161,7 +164,7 @@ cloudflair:
 
 
 \subsection{Oracle Cloud}
-A fájlszerver telepítéséhez először az Oracle VM-et szerettem volna használni. Az Oracle VM egy rendkívül megbízható és skálázható megoldás, amely lehetővé teszi, hogy virtuális gépeket hozzunk létre és futtassunk különböző platformokon. Az Oracle VM számos előnnyel rendelkezik, mint például a magas teljesítmény, a robusztus biztonsági funkciók, és a kiváló támogatás. Ezen kívül számos operációs rendszerrel kompatibilis, ami megkönnyíti a különféle alkalmazások és szolgáltatások telepítését és futtatását.
+A fájlszerver telepítéséhez először az Oracle VM-et \cite{CloudInf58:online} szerettem volna használni. Az Oracle VM egy rendkívül megbízható és skálázható megoldás, amely lehetővé teszi, hogy virtuális gépeket hozzunk létre és futtassunk különböző platformokon. Az Oracle VM számos előnnyel rendelkezik, mint például a magas teljesítmény, a robusztus biztonsági funkciók, és a kiváló támogatás. Ezen kívül számos operációs rendszerrel kompatibilis, ami megkönnyíti a különféle alkalmazások és szolgáltatások telepítését és futtatását.
 
 Az Oracle VM-en keresztül kívántam a fájlszerveremet üzemeltetni, mivel reméltem, hogy a szolgáltatás rugalmassága és skálázhatósága előnyös lesz a projekt szempontjából. Az Oracle VM felületén könnyedén konfigurálhatók a virtuális gépek, és a hálózati beállítások is egyszerűen kezelhetők. Emellett a szolgáltatás integrálhatósága más Oracle termékekkel és szolgáltatásokkal további előnyöket kínál.
 
@@ -169,7 +172,7 @@ Azonban, amikor megpróbáltam igénybe venni az Oracle VM ingyenes erőforrása
 
 
 \subsection{Fly.io}
-Miután az Oracle VM nem bizonyult járható útnak, úgy döntöttem, hogy kipróbálom a Fly.io szolgáltatását.
+Miután az Oracle VM nem bizonyult járható útnak, úgy döntöttem, hogy kipróbálom a Fly.io \cite{Deployap0:online} szolgáltatását.
 A Fly.io egy modern felhőalapú platform, amely lehetővé teszi az alkalmazások globális szinten történő futtatását és skálázását. A szolgáltatás fő célja, hogy az alkalmazásokat közelebb hozza a felhasználókhoz, ezáltal csökkentve a késleltetést és javítva a teljesítményt. A Fly.io platformja rendkívül egyszerűen használható, és számos automatizált funkcióval rendelkezik, amelyek megkönnyítik az alkalmazások telepítését és kezelését.
 
 A Fly.io honlapja első ránézésre ígéretesnek tűnt, és úgy tűnt, hogy ingyenes használati lehetőséget is kínál. Ez különösen vonzó volt számomra, mivel szerettem volna minimalizálni a költségeket a projekt korai szakaszában. A Fly.io segítségével könnyedén létrehozhattam és kezelhettem a fájlszerveremet, és a platform egyszerűsége miatt gyorsan és hatékonyan tudtam dolgozni.
