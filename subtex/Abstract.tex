@@ -18,22 +18,25 @@
 % A tartalmi összefoglaló terjedelme nem lehet több egy A4-es oldalnál.\par
 % Az összefoglalót magyar és angol nyelven kell készíteni. Sorrendben a dolgozat nyelvével megegyező kerül előrébb. A cím Title stílusú, formázása: Times New Roman/ Computer Modern, nagybetű, 14 pt, félkövér, középre igazított; az összefoglaló szövege Normál stílusú, formázása: Times New Roman, 12 pt, sorkizárt, 1.5-ös sortávolság.
 
-A témám egy 3D memóriajáték mesterséges intelligenciával. A projektemben létrehoztam egy 3D-s memóriajátékot a Godot Engine nevű játékmotorban, a saját nyelvének, a GDScriptnek a felhasználásával. A játékot kiexportáltam HTML5 formátumba, és az itch.io nevű tartalommegosztó oldalra telepítettem.
-
+A témám egy 3D memóriajáték mesterséges intelligenciával.
+A projektemben létrehoztam egy 3D memóriajátékot a Godot Engine nevű játékmotorban, a saját nyelvének, a GDScriptnek a felhasználásával. A játékba lefejlesztettem választható nehézségi szinteket, a kártyákon pedig véletlenszerű betűpárok voltak találhatók.
+A játékot exportáltam HTML5 formátumba, és az itch.io nevű tartalommegosztó oldalra telepítettem.
 Ezután létrehoztam egy fájlszervert. Erre a fájlszerverre elküldtem a játékosok adatait egy HTTP Request segítségével minden játék után. Ehhez a Cloudflare-t, a Zero Tunnelt és a saját domainnevemet használtam, hogy fix néven érjem el a szerveremet.
-
-A szerver NodeJS-ben íródott, ExpressJS-t használva. A fájlszerver célja az volt, hogy a kapott adatokat lementsem. A fájlszerver és a Zero Tunnel Docker-konténerben futottak közös Docker-hálózaton.
-
+A szerver NodeJS-ben íródott, ExpressJS-t használva. A fájlszerver célja az volt, hogy a kapott adatokat lementsem a számítógépemre.
+A fájlszerver és a Zero Tunnel Docker-konténerben futottak közös Docker-hálózaton.
 A játék itch.io URL-jét elküldtem ismerősöknek, hogy minél több adatot gyűjtsek.
-
-A gyűjtött adatokkal betanítottam egy neurális hálót a TensorFlow Python-alapú szoftvercsomag felhasználásával. Ehhez egy 4 rétegű neurális hálót használtam, ahol a bemeneti réteg a játék során előforduló összes kártya leképezése volt egy SHA256 hashfüggvénnyel. A kimeneti réteg a következő felfordítandó kártya volt, amelyet az AI a legjobbnak ítélt.
-
-Ezután összekötöttem a játékot a betanított MI-modellel egy Flask Python-webszerver segítségével. A játékot leteszteltem tizenegy emberrel. A felhasználói élményükről egy SUS és egy UEQ kérdőívet kitöltettem velük, melynek végeredményben kiértékeltem.
+Az adatok tartalmazták a játékosok általuk megadott vagy generáltan kapott azonosítóját, valamint azt, hogy melyik nehézségi szinten, milyen leosztásban, melyik kártyákat választották.
+A gyűjtött adatokkal betanítottam egy neurális hálót a TensorFlow Python-alapú szoftvercsomag felhasználásával.
+Ehhez egy 4 rétegű neurális hálót használtam, ahol a bemeneti réteg a játék során előforduló összes kártya leképezése volt egy SHA256 hashfüggvénnyel.
+A kimeneti réteg 2 neuronból állt, mely megadta  a következő felfordítandó kártya X és Y koordinátáját az asztalon, amelyet az AI a legjobbnak ítélt.
+A két rejtett réteghez egy 128 és egy 64 node-ból álló dense réteget használtam, ReLU aktivációs függvénnyel.
+Ezután összekötöttem a játékot a betanított MI-modellel egy Flask Python-webszerver segítségével. A játékos húzása után, elküldtem minden eddigi válaszott kártyát a modellnek, és így megkaptam az MI lépését.
+A játékot leteszteltem tizenegy emberrel. A felhasználói élményükről egy SUS és egy UEQ kérdőívet kitöltettem velük, melynek végeredményben kiértékeltem.
 \vspace{8pt}
 
 
 
-\textbf{Kulcsszavak: }3D memóriajáték, mesterséges intelligencia, Godot Engine, GDScript, HTML5, itch.io, fájlszerver, HTTP Request, Cloudflare, Zero Tunnel, NodeJS, ExpressJS, Docker, neurális háló, TensorFlow, SHA256, Flask, SUS, UEQ, tesztelés, adatgyűjtés
+\textbf{Kulcsszavak: }3D memóriajáték, mesterséges intelligencia, Godot Engine, Cloudflare, neurális háló, TensorFlow
 \newpage
 
 
@@ -44,19 +47,22 @@ Ezután összekötöttem a játékot a betanított MI-modellel egy Flask Python-
 \pagestyle{fancy}
 
 \vspace{8pt}
-
-My topic is a 3D memory game with artificial intelligence. In my project, I created a 3D memory game using the Godot Engine game engine, utilizing its own language, GDScript. I exported the game into HTML5 format and deployed it on a content-sharing site called itch.io.
-
-After that, I created a file server. I sent the players’ data to this file server using an HTTP request after each game. To achieve a fixed name for accessing my server, I used Cloudflare, Zero Tunnel, and my own domain name.
-
-The server was written in NodeJS using ExpressJS. The purpose of the file server was to save the received data. Both the file server and Zero Tunnel ran in Docker containers on a shared Docker network.
-
-I sent the itch.io URL of the game to acquaintances to collect as much data as possible.
-
-Using the collected data, I trained a neural network with the TensorFlow Python-based software package. For this, I used a 4-layer neural network where the input layer was a mapping of all cards occurring during the game using an SHA256 hash function. The output layer was the next card to be flipped, which the AI deemed the best.
-
-Then I connected the game with the trained AI model using a Flask Python web server. I tested the game with eleven people and wrote an evaluation of their user experience. In the end, I analyzed this data.
+My topic is a 3D memory game with artificial intelligence.
+In my project, I created a 3D memory game using the Godot Engine game engine, utilizing its own language, GDScript. I developed selectable difficulty levels in the game, and the cards featured random pairs of letters.
+I exported the game in HTML5 format and deployed it on the content-sharing site called itch.io.
+Next, I created a file server. The memory game sent automaticly the player data to this file server via an HTTP Request after each game. I used Cloudflare, Zero Tunnel, and my own domain name to access my server at a fixed address.
+The server was written in NodeJS, using ExpressJS. The purpose of the file server was to save the received data to my computer.
+Both the file server and Zero Tunnel ran in Docker containers on a shared Docker network.
+I sent the game’s itch.io URL to acquaintances to gather as much data as possible.
+The data included the players’ provided or auto-generated IDs, as well as which difficulty level they played, the card layouts, and which cards they selected.
+Using the collected data, I trained a neural network with the TensorFlow Python-based software package.
+I used a 4-layer neural network for this, where the input layer was a mapping of all the cards that was selected during the game using an SHA256 hash function.
+The output layer consisted of 2 neurons, which provided the X and Y coordinates of the next card to flip on the table that the AI deemed best.
+For the two hidden layers, I used dense layers with 128 and 64 nodes, employing the ReLU activation function.
+Then I connected the game with the trained AI model using a Flask Python web server.
+After the player’s move, I sent all the previously selected cards to the model, and thus obtained the AI’s move.
+I tested the game with eleven people. I had them fill out an SUS and a UEQ questionnaire about their user experience, which I ultimately evaluated.
 \vspace{8pt}
 
 
-\textbf{Keywords: }3D memory game, artificial intelligence, Godot Engine, GDScript, HTML5, itch.io, file server, HTTP Request, Cloudflare, Zero Tunnel, NodeJS, ExpressJS, Docker, neural network, TensorFlow, SHA256, Flask, SUS, UEQ, testing, data collection.
+\textbf{Keywords: }3D memory game, artificial intelligence, Godot Engine, Cloudflare, neural network, TensorFlow
