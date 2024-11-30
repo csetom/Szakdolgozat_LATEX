@@ -82,8 +82,8 @@ A \ref{saveJson} ábra magyarázata a következő:
 A tervek szerint a játékot a lehető legtöbb emberhez akartam eljuttatni, ezért a legkézenfekvőbb megoldásnak a HTML5-be történő exportálást láttam \cite{Exportin97:online}. Ehhez néhány vizuális módosítást kellett végrehajtanom.
 Két fő lehetőségem volt, amelyekkel komolyabban foglalkoztam:
 \begin{enumerate}
-    \item 	Játék és HTML sablon átalakítása: A játékot és a hozzá tartozó HTML sablont átírni úgy, hogy a weboldal JavaScriptje segítségével a JSON fájlt lementsem, amit aztán valamilyen online felületen keresztül el tudnak küldeni nekem.
-\item	Fájl szerver létrehozása: Készítek egy fájl szervert, ahova a JSON-t minden sikeres játék után elküldöm egy HTTP kérés formájában.
+    \item  Játék és HTML sablon átalakítása: A játékot és a hozzá tartozó HTML sablont átírni úgy, hogy a weboldal JavaScriptje segítségével a JSON fájlt lementsem, amit aztán valamilyen online felületen keresztül el tudnak küldeni nekem.
+    \item	Fájl szerver létrehozása: Készítek egy fájl szervert, ahova a JSON-t minden sikeres játék után elküldöm egy HTTP kérés formájában.
 
 \end{enumerate}
 
@@ -93,12 +93,12 @@ Két fő lehetőségem volt, amelyekkel komolyabban foglalkoztam:
 A játékhoz készítettem egy \lstinline{http_client.gd} szkriptet, amelynek egyetlen feladata egy \lstinline{HTTP POST} kérés elküldése egy weboldalnak. A HTTP kérés törzsében helyeztem el a JSON fájlt. Ezt a szkriptet minden játék befejezése után aktiváltam.
 
 Annak érdekében, hogy a kérés mindig sikeres legyen, biztosítanom kellett, 
-hogy ha egy játékosnak nincs ID-je, akkor ha üresen hagyja a beviteli mezőt, 
-és egy véletlenszerűen generált ID-t kapjon. 
+hogy ha egy játékosnak nincs ID-je és a beviteli mezőt üresen hagyta, akkor egy véletlenszerűen generált ID-t kapjon. 
 Az ID-t a menü oldalon jelenítettem meg, és másolhatóvá tettem.
-A játék állását, vagyis azt, hogy melyik játékkal mennyit játszott a játékos, a Godot automatikusan a böngésző lokális IndexedDB-jébe \cite{Exportin97:online} menti.
+A játék állását, vagyis azt, hogy melyik játékkal mennyit játszott a játékos, a Godot automatikusan a böngésző lokális IndexedDB-jébe \cite{Exportin97:online} mentette.
+
 Az IndexedDB \cite{UsingInd44:online} egy böngésző alapú adatbázis, amely lehetővé teszi nagy mennyiségű strukturált adat tárolását, beleértve fájlokat és bináris adatokat is. Ez egy NoSQL adatbázis, ami azt jelenti, hogy kulcs-érték párokkal dolgozik, nem pedig táblázatokkal, mint egy relációs adatbázis. 
-Az IndexedDB segítségével a memoriajáték elmentheti az adatait a böngészőbe, így később hozzáférhet és láthatja a játékos, hogy melyik nehézségi szinten mennyit játszott a játékkal.
+Az IndexedDB segítségével a memoriajáték elmenti az adatait a böngészőbe, így később hozzáférhet és láthatja a játékos, hogy melyik nehézségi szinten mennyit játszott a játékkal.
 
 Így, ha egy játékos akkor játszik, amikor a szerver nem elérhető, később is el tudja küldeni a játszott játékainak statisztikáját.\begin{figure}[h]
     \centering
@@ -158,7 +158,7 @@ cloudflair:
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{img/cloudflair-censored.jpg}
-    \caption{Cloudflair tunne konfiguráció}
+    \caption{Cloudflair Tunnel konfiguráció}
     \label{img:cloudflair-config}  
 \end{figure}
 
