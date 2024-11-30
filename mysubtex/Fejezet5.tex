@@ -83,14 +83,14 @@ A tervek szerint a játékot a lehető legtöbb emberhez akartam eljuttatni, ez�
 Két fő lehetőségem volt, amelyekkel komolyabban foglalkoztam:
 \begin{enumerate}
     \item  Játék és HTML sablon átalakítása: A játékot és a hozzá tartozó HTML sablont átírni úgy, hogy a weboldal JavaScriptje segítségével a JSON fájlt lementsem, amit aztán valamilyen online felületen keresztül el tudnak küldeni nekem.
-    \item	Fájl szerver létrehozása: Készítek egy fájl szervert, ahova a JSON-t minden sikeres játék után elküldöm egy HTTP kérés formájában.
+    \item	Fájl szerver létrehozása: Készítek egy fájl szervert, ahova a JSON-t minden sikeres játék után elküldöm egy HTTP-kérés formájában.
 
 \end{enumerate}
 
 
 Átgondolva a lehetőségeimet, a fájl szerver mellett döntöttem, mivel így az összes tesztadat biztosan és automatikusan eljut hozzám.
 
-A játékhoz készítettem egy \lstinline{http_client.gd} szkriptet, amelynek egyetlen feladata egy \lstinline{HTTP POST} kérés elküldése egy weboldalnak. A HTTP kérés törzsében helyeztem el a JSON fájlt. Ezt a szkriptet minden játék befejezése után aktiváltam.
+A játékhoz készítettem egy \lstinline{http_client.gd} szkriptet, amelynek egyetlen feladata egy \lstinline{HTTP POST} kérés elküldése egy weboldalnak. A HTTP-kérés törzsében helyeztem el a JSON fájlt. Ezt a szkriptet minden játék befejezése után aktiváltam.
 
 Annak érdekében, hogy a kérés mindig sikeres legyen, biztosítanom kellett, 
 hogy ha egy játékosnak nincs ID-je és a beviteli mezőt üresen hagyta, akkor egy véletlenszerűen generált ID-t kapjon. 
@@ -168,14 +168,20 @@ A fájlszerver telepítéséhez először az Oracle VM-et \cite{CloudInf58:onlin
 
 Az Oracle VM-en keresztül kívántam a fájlszerveremet üzemeltetni, mivel reméltem, hogy a szolgáltatás rugalmassága és skálázhatósága előnyös lesz a projekt szempontjából. Az Oracle VM felületén könnyedén konfigurálhatók a virtuális gépek, és a hálózati beállítások is egyszerűen kezelhetők. Emellett a szolgáltatás integrálhatósága más Oracle termékekkel és szolgáltatásokkal további előnyöket kínál.
 
-Azonban, amikor megpróbáltam igénybe venni az Oracle VM ingyenes erőforrásait, sajnálatos módon azt tapasztaltam, hogy ezek nem voltak elérhetők. Az ingyenes erőforrások hiánya miatt kénytelen voltam alternatív megoldást keresni, mivel nem tudtam megfelelően kihasználni az Oracle VM által nyújtott lehetőségeket. Ez komoly csalódást okozott, mivel úgy gondoltam, hogy az Oracle VM ideális lenne a fájlszerverem futtatására, de az ingyenes hozzáférés hiánya miatt további megoldásokat kellett keresnem.
+Azonban, amikor megpróbáltam igénybe venni az Oracle VM ingyenes erőforrásait, sajnálatos módon azt tapasztaltam, hogy ezek nem voltak elérhetők. 
+Az ingyenes erőforrások hiánya miatt kénytelen voltam alternatív megoldást keresni.
+ Ez komoly csalódást okozott, mivel úgy gondoltam, hogy az Oracle VM ideális lenne a fájlszerverem futtatására.
 
 
 \subsection{Fly.io}
 Miután az Oracle VM nem bizonyult járható útnak, úgy döntöttem, hogy kipróbálom a Fly.io \cite{Deployap0:online} szolgáltatását.
-A Fly.io egy modern felhőalapú platform, amely lehetővé teszi az alkalmazások globális szinten történő futtatását és skálázását. A szolgáltatás fő célja, hogy az alkalmazásokat közelebb hozza a felhasználókhoz, ezáltal csökkentve a késleltetést és javítva a teljesítményt. A Fly.io platformja rendkívül egyszerűen használható, és számos automatizált funkcióval rendelkezik, amelyek megkönnyítik az alkalmazások telepítését és kezelését.
+A Fly.io egy modern felhőalapú platform, amely lehetővé teszi az alkalmazások globális szinten történő futtatását és skálázását.
+A szolgáltatás fő célja, hogy az alkalmazásokat közelebb hozza a felhasználókhoz, ezáltal csökkentve a késleltetést és javítva a teljesítményt.
+A Fly.io platformja rendkívül egyszerűen használható, és számos automatizált funkcióval rendelkezik, amelyek megkönnyítik az alkalmazások telepítését és kezelését.
 
-A Fly.io honlapja első ránézésre ígéretesnek tűnt, és úgy tűnt, hogy ingyenes használati lehetőséget is kínál. Ez különösen vonzó volt számomra, mivel szerettem volna minimalizálni a költségeket a projekt korai szakaszában. A Fly.io segítségével könnyedén létrehozhattam és kezelhettem a fájlszerveremet, és a platform egyszerűsége miatt gyorsan és hatékonyan tudtam dolgozni.
+A Fly.io honlapja első ránézésre ígéretesnek tűnt, és úgy tűnt, hogy ingyenes használati lehetőséget is kínál.
+Ez különösen vonzó volt számomra, mivel szerettem volna minimalizálni a költségeket a projekt korai szakaszában.
+A Fly.io segítségével könnyedén létrehozhattam és kezelhettem a fájlszerveremet, és a platform egyszerűsége miatt gyorsan és hatékonyan tudtam dolgozni.
 
 Azonban, amikor elkezdtem a fájlszerver telepítését és konfigurálását a Fly.io platformján, kiderült, hogy a szolgáltatás nem teljesen ingyenes.
 A Fly.io használatával kapcsolatos üzenetváltások darabszámára vonatkozó díjak jelentősen 

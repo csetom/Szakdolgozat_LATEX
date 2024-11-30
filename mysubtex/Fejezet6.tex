@@ -4,38 +4,43 @@
 
 
 A célom az volt, hogy a mesterséges intelgiencia játéka, a lehető legjobban hasonlítson az emberi gondolkodáshoz. Az emberi agy működéséhez a legjobban 
-a neurális hálózat hasonlítható, így ezt használtam én is használni a projektemhez. 
+a neurális hálózat hasonlítható, így ezt használtam én is a projektemhez. 
 
 
 
 \section{TensorFlow}
-Python nyelven szerettem volna elkészíteni az MI tanításához az algoritmust. Ehhez a legjobbnak a TensorFlow-t \cite{tensorflow2015-whitepaper} találtam. A TensorFlow weboldalán ingyenesen elérhető dokumentációkból és tanító anyagokból indultam ki. 
+Python nyelven terveztem elkészíteni az MI tanításához az algoritmust. Ehhez a legjobbnak a TensorFlow-t \cite{tensorflow2015-whitepaper} találtam.
+A TensorFlow weboldalán ingyenesen elérhető dokumentációkból és tanító anyagokból indultam ki. 
 
 A dokumentáció szerint, minden felhasználónak alapvetően a Keras API \cite{chollet2015keras} használatát javasolják, így hát én is azt használtam. 
 
 \section{Tervezés}
-Az elképzelésem szerint, egy Sequential, azaz szekvenciális modellt használtam. A szekvenciális modellben pontosan egyetlen bemeneti tensor és egyetlen kimeneti tensor található.
+Az elképzelésem szerint, egy Sequential, azaz szekvenciális modellt használtam. A szekvenciális modellben pontosan egyetlen egy bemeneti tensor és egyetlen egy kimeneti tensor található.
 
 Az én esetemben a bemeneti tensor a játék jelenlegi állása volt, a kimenet pedig a következő felfordítandó kártya lett. Mivel a tensornak a típusa nem változott, pusztán az értéke, ezért nekem ez tökéletesen megfelelő volt.
 
-A modellt be kellett tanítanom a gyűjtött adatokkal. Ehhez a legegyszerűbb volt, ha az adataimat egy JSON fájlba összefűztem, így a scriptnek elég volt ezt az egy fájlt beolvasnia.
+A modellt be kellett tanítanom a gyűjtött adatokkal. Ehhez a legegyszerűbb az volt, ha az adataimat egy JSON fájlba összefűztem, így a scriptnek elég volt ezt az egy fájlt beolvasnia.
 
 Minél jobban le tudtam egyszerűsíteni a bemeneti rétegem, úgy, hogy a lehetőleg ne legyen benne adatvesztés, annál gyorsabban véghez tudtam vinni a tanítást. 
-Ha bonyolult volt az input layer, akkor a tanulás lelassult, és számomra fontos perceket, órákat, de akár napokat is veszíthettem egy hibás modell esetén.
+Ha bonyolult volt az input layer, akkor a tanulás lelassult, és számomra fontos perceket, órákat, de akár napokat is veszíthettem volna egy hibás modell esetén.
 
-Példának okáért, tegyük fel, hogy nem transformáltam át a gyűjtött adatokat, és a játék $N$ lépésből állt. 
-Mivel mind az $N$ esetben az előző $N-1$ lépést is oda kellett adnom a tanító algoritmusnak, és 1.-től $N.$-ik lépésig az összes lépést megtanítottam a modellnek, 
+Példának okáért, tegyük fel, hogy nem transformálom át a gyűjtött adatokat, és a játék $N$ lépésből áll. 
+Mivel mind az $N$ esetben az előző $N-1$ lépést is oda kell adnom a tanító algoritmusnak, és 1.-től $N.$-ik lépésig az összes lépést meg kell tanítanom a modellnek, 
 így egy $N$ lépésből álló játéknak a tanításhoz felhasznált adatmennyisége:
 
 \begin{equation}\label{eq:1}
 \frac{N(N+1)}{2} = \frac{N^2+N}{2}
 \end{equation}
 
-Látható volt, hogy négyzetesen nőtt az adatok mennyisége. Annak érdekében, hogy ezt elkerüljem, a következő ötlettel álltam elő:
+Látható, hogy négyzetesen nő az adatok mennyisége. Annak érdekében, hogy ezt elkerüljem, a következő ötlettel álltam elő:
 
-A hash-függvényeket az informatikában az 1980-as évek óta alkalmazzák arra, hogy bármilyen méretű adatot rögzített hosszúságúra alakítsanak át. Gyakorlati felhasználási területük például a fájlok ellenőrzése. Ha két fájl tartalma teljesen megegyezik, akkor az azokból képzett hash is azonos lesz. Ez különösen hasznos, amikor dokumentumokat töltünk fel egy fájlszerverre, így könnyen ellenőrizhető volt, hogy a fájl már létezett-e a szerveren, és elkerülhető volt a duplikált tárolás.
+A hash-függvényeket az informatikában az 1980-as évek óta alkalmazzák arra, hogy bármilyen méretű adatot rögzített hosszúságúra alakítsanak át. Gyakorlati felhasználási területük például a fájlok ellenőrzése. 
+Ha két fájl tartalma teljesen megegyezik, akkor az azokból képzett hash is azonos lesz. 
+Ez különösen hasznos, amikor dokumentumokat töltünk fel egy fájlszerverre, így könnyen ellenőrizhető, hogy a fájl már létezett-e a szerveren, és elkerülhető a duplikált tárolás.
 
-A hash-függvények segítségével képes voltam minden lépést és az őt megelőző összes eddigi lépés együttesét fix hosszú bit vektorrá átalakítani, így szignifikáns mennyiségű adatmennyiséget tudtam spórolni. Természetesen így lehetségessé vált, hogy nem lett teljesen pontos a betanított modellem, azonban ez a kockázat minden transzformáció esetén előfordulhatott.
+A hash-függvények segítségével képes voltam minden lépést és az őt megelőző összes eddigi lépés együttesét fix hosszú bit vektorrá átalakítani, így szignifikáns mennyiségű adatmennyiséget tudtam spórolni.
+Természetesen fennállt annak a lehetősége, hogy a betanított modellem nem lett teljesen pontos, azonban ez a kockázat minden transzformációs folyamat során előfordulhat.
+
 \begin{figure}[h]
     \centering
     \begin{adjustbox}{width=0.75\textwidth}
@@ -87,12 +92,12 @@ A hash-függvények segítségével képes voltam minden lépést és az őt meg
         
         \end{tikzpicture}
     \end{adjustbox}
-    \caption{Neurális háló, egy bemeneti két rejtett és egy kimeneti réteggel}
+    \caption{Neurális háló, egy bemeneti, két rejtett és egy kimeneti réteggel}
 \end{figure}
 
 \section{Adatok transzformálása}
 
-Az adatok transzformálását a program futása közben, felhasználás előtt készítettem elő. Ez azért volt hasznos, mivel a játék közben, a kész modell felhasználásakor is dinamikusan kellett az adatokat hash-függvénnyelleképeznem.
+Az adatok transzformálását a program futása közben, felhasználás előtt készítettem elő. Ez azért volt hasznos, mivel a játék közben, a kész modell felhasználásakor is dinamikusan kellett az adatokat hash-függvénnyel leképeznem.
 
 \begin{itemize}
     \item Beolvasom a JSON állományt. 
@@ -105,7 +110,7 @@ Az adatok transzformálását a program futása közben, felhasználás előtt k
 \begin{figure}[h]
     \center
     \includegraphics[width=0.75\textwidth]{img/JSON_TO_SHA256.png}
-    \caption{Kód részlet, amely leképezi a $key$ által megadott játék lépéseit egy hash tömbbé. A hash-ek mellett a következő lépéssel tér vissza.}
+    \caption{Kód részlet, amely leképezi a $key$ által megadott játék lépéseit egy hash tömbbé. A hash-ek mellett a következő lépéseket tartalmazó tömbbel tér vissza.}
     \label{code:json_to_hash}
 \end{figure}
 
@@ -119,7 +124,7 @@ Az adatok transzformálását a program futása közben, felhasználás előtt k
 \section{A tanító algoritmus}
 
 \subsection{A modell elkészítése}
-A TensorFlow része a Keras API, mely segítségével könnyedén és egyszerűen létre tudok hozni szekvenciális modelt (\ref{code:tensor}. ábra). A modell bemeneti rétege egy 256 nagyságú tömböt vár, melyben bitek találhatók. 
+A TensorFlow része a Keras API, mely segítségével könnyedén és egyszerűen létre tudok hozni szekvenciális modellt (\ref{code:tensor}. ábra). A modell bemeneti rétege egy 256 nagyságú tömböt vár, melyben bitek találhatók. 
 
 A következő két réteghez egy 128 és egy 64 neuront tartalmazó teljesen kapcsolodó (Dense) réteget használok. Dense layer azt jelenti, hogy a réteg összes neuronja kapcsolodik az előző réteg összes neuronjával. Ez a neuron típus gyarkan használt előre csatolt neurális hálóknál.
 Az aktivációs függvény, amit ezekhez a rétegekhez használok, az az úgynevezett 
@@ -140,7 +145,7 @@ ami azt jelenti, hogy ha bemeneti érték, vagyis $x$ pozitív, akkor $x$-et adj
 
 Az aktivációs függvények célja, hogy nemlinearitást vigyenek a modellbe, lehetővé téve a bonyolult mintázatok felismerését az adatokban. 
 Ha nem használnánk aktivációs függvényeket, a modell kimenete csak az inputok egyszerű lineáris kombinációja lenne, ami korlátozná a modell képességeit a komplex kapcsolatok megragadásában.
-A ReLU ezért olyan népszerű a mélytanulásban, mert csökkenti a gradientek eltűnésének problémáját, így gyorsabb tanulást és jobb teljesítményt tesz lehetővé.
+A ReLU ezért olyan népszerű a mélytanulásban, mert csökkenti gradiensek eltűnésének problémáját, így gyorsabb tanulást és jobb teljesítményt tesz lehetővé.
 
 A kimeneti réteghez egy 2 neuronból álló lineáris aktivációs függvénnyel ellátott réteget használok. A lineáris aktivációs függvény azt jelenti, hogy a neuron kimenete az inputok lineáris kombinációja, ami lényegében nem végez átalakítást. Matematikailag ez így írható le:
 \begin{equation}\label{eq:3}
@@ -148,29 +153,30 @@ A kimeneti réteghez egy 2 neuronból álló lineáris aktivációs függvénnye
 \end{equation}
     
 
-A linear aktivációs függvény használatakor a réteg lényegében nem változtatja meg az bemeneti értékeket, csak a súlyokat és az eltolást alkalmazza.
+A linear aktivációs függvény használatakor a réteg lényegében nem változtatja meg a bemeneti értékeket, csak a súlyokat és az eltolást alkalmazza.
 
-A modelt lefordításához, az $adam$ optimizálót használom, valamint az mse (mean squared error) vagyis az átlagos négyzetes hiba módszert. 
+A modell lefordításához, az $adam$ optimizálót használom, valamint az mse (mean squared error) vagyis az átlagos négyzetes hiba módszert. 
 Ez az összeállítás biztosítja, hogy a modell hatékonyan és gyorsan tudjon tanulni a bemeneti adatokból, minimalizálva az előrejelzések és a valós értékek közötti hibát.
 
 \subsection{A modell betanítása}
-A modell betanításához a korábbi fejezetben említett transzformált adatra lesz szükségem,
-valamint 50 epochon keresztül az aktuális követkető lépések tömbjére, ahol minden edzési lépés során 32 mintát dolgoz fel egy batch-ben. 
+A modell betanításához szükségem van a hash tömbbé alakított adatokra, valamint ötven tanítási cikluson keresztül az aktuális következő lépések tömbjére. 
+Minden edzési lépés során a modell harminckét mintát tartalmazó adatcsomagot dolgoz fel.
 Ez a folyamat lehetővé teszi a modell számára, hogy fokozatosan javítson a teljesítményén az adatok ismételt bemutatása és a súlyok frissítése révén. 
 
-A betanított modelt egy $my_model.keras$ fájlba mentettem le, így könnyen fogom tudni használni, a játék játszásakor. 
+A betanított modellt egy $my_model.keras$ fájlba mentettem le, így könnyen tudtam használni, a játék futtatásakor. 
 
-\section{Model használata}
+\section{Modell használata}
 
 \subsection{Python Script API a modell használatához}
 
-Ahhoz, hogy a modelt használni tudjam, egy API-t kellett írnom. Mivel a tesztadatokat is HTTP Request segítségével küldtem el, így logikusnak találtam, hogy ezt a megoldást használjam itt is. 
+Ahhoz, hogy a modellt használni tudjam, egy API-t kellett írnom. Mivel a tesztadatokat is HTTP-kérés segítségével küldtem el, így logikusnak találtam, hogy ezt a megoldást használjam itt is. 
 
-A Flask használatával készítettem egy webalkamlazást (\ref{code:use_model}. ábra), melynek egyetlen belépési pontja van, a $\/predict$. A Memoria játék ide küldi a $POST$ http kérését, mely tartalmazza a játék aktuális állását. Vagyis az aktuális és az összes eddigi lépést. 
+A Flask használatával készítettem egy webalkalmazást (\ref{code:use_model}. ábra), melynek egyetlen belépési pontja van, a $\/predict$. A Memoria játék ide küldi a $POST$ HTTP kérését, mely tartalmazza a játék aktuális állását. 
+Vagyis az aktuális és az összes eddigi lépést. 
 \begin{figure}[h]
     \center
     \includegraphics[width=0.75\textwidth]{img/use_model.png}
-    \caption{Kód részlet. A modell használata api}
+    \caption{Kód részlet. A modellt használó API}
     \label{code:use_model}
 \end{figure}
 
@@ -178,14 +184,15 @@ A Flask használatával készítettem egy webalkamlazást (\ref{code:use_model}.
 
 Az API indításkor betölti a $my_model.keras$ fájlból a betanított modellünket, ez percekig is eltart, majd várja a fogadó kéréseket. 
 Amikor egy kérés érkezik, a fogadott JSON adatra ráfuttatjuk a már korábban használt SHA256 konvertáló scriptet (\ref{code:json_to_hash}).
-Az így kapott 256 hosszú bitsorozattal csinálunk egy "jóslást", vagyis használjuk a modelt-nek a predict függvényét. Ebből a jóslatból visszakapunk egy két elemű vektort, melynek elemei nem egész számok.
- Mivel nekünk két koordinátára van szükségünk, ezér kerekítjük őket, és HTTP válaszként visszadjuk a kapott két egész számot. 
+Az így kapott 256 hosszú bitsorozattal csinálunk egy "jóslást", vagyis használjuk a modellnek a predict függvényét. Ebből a jóslatból visszakapunk egy két elemű vektort, melynek elemei nem egész számok.
 
+Mivel két pozitív egész számra, azaz koordinátára van szükségünk, a kapott értékeket kerekítjük, majd HTTP-válaszként visszaküldjük a két egész számot.
 \subsection{Játék kódjában való változtatások}
 
-A játékot, ahhoz hogy működjön a mesterséges inteligenciával, először át kellett alakítanom, hogy minden lépésem után az MI következzen. A változtatás egyszerű volt, egy változóba tárolom, hogy a játékos, vagy az MI köre van soron, és minden pár fordítása után cserélem. 
+A játékot, ahhoz hogy működjön a mesterséges inteligenciával, először át kellett alakítanom, hogy minden lépésem után az MI következzen. A változtatás egyszerű volt: egy változóba tárolom, hogy a játékos, vagy az MI köre van soron, és minden pár fordítása után cserélem. 
 
-Ahhoz, hogy az MI is tudjon kártyát választani, készítettem egy \lstinline{get_ai_cards} függvényt (\ref{code:get_ai_card}. ábra). A függvény meghívja a \lstinline{\prediction} endpointot, a \lstinline{HttpClient} segítségével. A visszakapott koordinátákból kiválasztja a kártyát az asztalon. 
+Ahhoz, hogy az MI is tudjon kártyát választani, készítettem egy \lstinline{get_ai_cards} függvényt (\ref{code:get_ai_card}. ábra). A függvény meghívja a \lstinline{\prediction} végpontot, a \lstinline{HttpClient} segítségével.
+A visszakapott koordinátákból kiválasztja a kártyát az asztalon. 
 Ha ez a kártya nem elérhető, mert már levették az asztalról, vagy a koordináták nem létező kártyára mutatnak, akkor a legelső elérhető kártyát fogja választani a mesterséges inteligencia. 
 
 \begin{figure}[H]

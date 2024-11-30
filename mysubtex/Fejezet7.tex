@@ -3,12 +3,11 @@
 \thispagestyle{fancy}
 \pagestyle{fancy}
 
-A témavezetőm segítségével a kész projektemet sikerült az egyetem hallgatóival teszteltetni.
+A témavezetőm segítségével a kész projektemet, mely már tartalmazta a mesterséges inteligenciát is,  sikerült az egyetem hallgatóival teszteltetni.
 A teszt eredményeit a User Experience Questionnaire (Felhasználói Élmény Kérdőív, röviden UEQ) adat-elemző eszközzel, valamint a System Usability Scale (Rendszer Használhatósági Skála, azaz SUS) segítségével értékeltük ki. 
 
 \section{Demográfiai adatok}
-A szakdolgozatom tesztelése során a programot egyetemi hallgatókkal végeztük el. A demográfiai adatok a \ref{tab:demografia} táblázatban láthatók. A tesztelés célja az alkalmazás funkcionalitásának és használhatóságának értékelése volt. A résztvevők visszajelzéseit gyűjtöttük, és ezen észrevételek alapján a jövőben tervezzük a program finomítását. Ez biztosítja, hogy a szoftver tovább fejlődjön és még jobban támogassa a kutatási célkitűzéseinket.
-
+A szakdolgozatom tesztelő egyetemi hallgatók demográfiai adatok a \ref{tab:demografia} táblázatban láthatók. A tesztelés célja az alkalmazás funkcionalitásának és használhatóságának értékelése volt. A résztvevők visszajelzéseit gyűjtöttük, és ezen észrevételek alapján a jövőben tervezzük a program finomítását.
 \begin{table}[!h]
     \caption{Demográfiai adatok}
     \label{tab:demografia}
@@ -43,7 +42,7 @@ A szakdolgozatom tesztelése során a programot egyetemi hallgatókkal végeztü
 \section{UEQ - User Experience Questionnaire}
 
 
-Az \textit{User Experience Questionnaire} (UEQ) egy gyakran használt eszköz, amely lehetővé teszi a termékek és szolgáltatások használói élményének mérését. Az UEQ kifejezetten úgy lett kialakítva, hogy gyorsan és hatékonyan nyújtson visszajelzést a felhasználói élmény különböző aspektusairól, mint például a használhatóság, az esztétika és az érzelmi hatások.
+A \textit{User Experience Questionnaire} (UEQ) egy gyakran használt eszköz, amely lehetővé teszi a termékek és szolgáltatások felhasználói élményének mérését. Az UEQ kifejezetten úgy lett kialakítva, hogy gyorsan és hatékonyan nyújtson visszajelzést a felhasználói élmény különböző aspektusairól, mint például a használhatóság, az esztétika és az érzelmi hatások.
 
 \subsection{Kérdőív felépítése és dimenziói}
 
@@ -73,10 +72,10 @@ A következő megállapításokat tehetjük a különböző értékelésekről �
 \subsection{Kiértékelés}
 \begin{table}[h]
     \centering
-    \caption{UEQ skála, Átlag és változat}
+    \caption{UEQ skála, Átlag és szórás}
     \begin{tabular}{|l|c|c|}
         \hline
-        \textbf{Skála} & \textbf{Átlag} & \textbf{Változat} \\ \hline
+        \textbf{Skála} & \textbf{Átlag} & \textbf{Szórás} \\ \hline
         Kellem & 1.167 & 0.53 \\ \hline
         Áttekinthetőség & 2.364 & 0.74 \\ \hline
         Hatékonyság & 0.750 & 0.59 \\ \hline
@@ -97,7 +96,8 @@ A következő megállapításokat tehetjük a különböző értékelésekről �
 A \ref{tab:ueq_scales} táblázat adatai alapján, a hatból 4 dimenzióban jól teljesített  programom, Áttekinthetősségben kiemelkedően, és csak a Hatékonyság és az Újszerűség az, ahol neutrálisak az értékek. A \ref{diag:ueq}. ábra jól szemlélteti ezt. 
 
 
-A UEQ skáláit a következő két fő kategóriába sorolhatjuk: pragmatikus minőség (amely magában foglalja az Áttekinthetőséget, Hatékonyságot és Megbízhatóságot) és hedonikus minőség (Ösztönzés és Újszerűség). Míg a pragmatikus minőség a feladatokhoz kapcsolódó minőségi szempontokat értékeli, addig a hedonikus minőség a nem feladatorientált minőségi tényezőkre fókuszál.
+A UEQ skáláit a következő két fő kategóriába sorolhatjuk: pragmatikus minőség (amely magában foglalja az Áttekinthetőséget, Hatékonyságot és Megbízhatóságot) és hedonikus minőség (Ösztönzés és Újszerűség). 
+Míg a pragmatikus minőség a feladatokhoz kapcsolódó minőségi szempontokat értékeli, addig a hedonikus minőség a nem feladatorientált minőségi tényezőkre fókuszál.
 
 A \ref{tab:pragmatic_hedonic_quality}. táblázatban a \textit{kellemes} a három \textit{pragmatikus} és a két \textit{hedonikus} minőség szempont átlagértéke kerül kiszámításra. 
 
@@ -114,11 +114,11 @@ A \ref{tab:pragmatic_hedonic_quality}. táblázatban a \textit{kellemes} a háro
     \label{tab:pragmatic_hedonic_quality}
 \end{table}
 
-Megvizsgálva az értékeket, boldogan tapasztaltam, hogy mind a három csoportban pozitív eredményt érhettem el, noha a Hedonikus értékekben épp csak megütöttem a 0.83-al. Ezt a \ref{diag:pragmatic_hedonic}. ábra is tökéletesen szemlélteti. 
+Megvizsgálva az értékeket, boldogan tapasztaltam, hogy mind a három csoportban pozitív eredményt érhettem el, noha a Hedonikus értékekben épp csak megütöttem a 0.83-al. Ezt a \ref{diag:pragmatic_hedonic}. ábrában is láthattuk.
 
-Kimagaslóan jó eredményem lett a pragmatikus minőségekből, amiből én arra következtetek, hogy a programom a feladatát megfelelően végzi el. 
+Kimagaslóan jó eredményem lett a pragmatikus minőségekből, amiből én arra következtettem, hogy a programom a feladatát megfelelően végzi el. 
 
-Amin a jövőben javíti kell a memória játékon, az az újszerűség, mely a hedonikus minőségen is javítani tud. Ezt valamilyen innovatív megoldással tudnám a legkönnyebben elérni. 
+A memóriajáték fejlesztése során a jövőben kiemelt figyelmet kell fordítani az újszerűségre, mivel ez hozzájárulhat a hedonikus minőség javításához is. Ezt valamilyen innovatív megoldással tudnám a legkönnyebben elérni.
 
 \begin{figure}[h]
     \center
@@ -129,7 +129,8 @@ Amin a jövőben javíti kell a memória játékon, az az újszerűség, mely a 
 
 \section{SUS - System Usability Scale}
 
-A SUS (System Usability Scale) egy rövid, 10 kérdésből álló kérdőív, amely a rendszerek, termékek vagy szolgáltatások használhatóságának gyors és hatékony értékelésére szolgál. A kérdőív célja, hogy visszajelzést adjon a felhasználói élményről és az általános elégedettségről.
+A SUS (System Usability Scale), magyarul Rendszerhasználhatósági Skála, egy rövid, tíz kérdésből álló kérdőív, amely a rendszerek, termékek vagy szolgáltatások használhatóságának gyors és hatékony értékelésére szolgál. 
+A kérdőív célja, hogy visszajelzést adjon a felhasználói élményről és az általános elégedettségről.
 
 \subsection{Működési Elv}
 \begin{enumerate}
@@ -137,13 +138,13 @@ A SUS (System Usability Scale) egy rövid, 10 kérdésből álló kérdőív, am
     
     \item \textbf{Értékelés:} A válaszadók 5 pontos skálán (1-től 5-ig) értékelik az állításokat. A skála 1 = ``Teljesen nem értek egyet'' és 5 = ``Teljesen egyetértek'' közötti értékeket használja.
     
-    \item \textbf{Számítás:} A válaszok értékelése során a pozitív állításoknál 1-gyel csökkentik a választ, majd ezt az értéket kivonják 5-ből. A negatív állításoknál a választ egyszerűen levonják 1-ből. A végső pontszám kiszámításához az összes állítás eredményeit összeadják, majd ezt az értéket megszorozzák 2.5-tel, így egy 0-tól 100-ig terjedő skálán kaphatunk eredményt.
+    \item \textbf{Számítás:} A válaszok értékelése során a pozitív állításoknál 1-gyel csökkentik a adott értékelést, majd ezt az értéket kivonják 5-ből. A negatív állításoknál az értékelést egyszerűen levonják 1-ből. A végső pontszám kiszámításához az összes állítás eredményeit összeadják, majd ezt az értéket megszorozzák 2.5-tel, így egy 0-tól 100-ig terjedő skálán kaphatunk eredményt.
     
-    \item \textbf{Értelmezés:} Az így kapott pontszám segít a termék vagy rendszer használhatóságának általános értékelésében. A 68-as átlagpontszám körüli értékek a használhatóság jónak számítanak, míg az ennél alacsonyabb értékek problémákat jelezhetnek.
+    \item \textbf{Értelmezés:} Az eredményként kapott pontszám a termék vagy rendszer általános használhatóságának értékelését szolgálja. A 68 körüli átlagpontszám jó használhatóságot jelez, míg az ennél alacsonyabb értékek esetében problémákra lehet következtetni.
 \end{enumerate}
 
 \subsection{Kérdések és a válaszok}
-A tíz kérdészem/kijelentésem, melyre pontot kellett adniuk, a következők voltak:
+A tíz kérdésem/kijelentésem, a következők voltak:
 
 \begin{enumerate}
     \item Azt hiszem, szeretném gyakran használni ezt a rendszert.
@@ -179,9 +180,8 @@ A tíz kérdészem/kijelentésem, melyre pontot kellett adniuk, a következők v
     \label{tab:sus_data}
 \end{table}
 
-A kiértékeléshez a System Usability Scale Analysis Toolkit-et \cite{SUSAnaly62:online} használtam, mellyel a következő analízisek jöttek ki a \ref{tab:sus_data}. táblázat eredményeire. 
+A kiértékeléshez a System Usability Scale Analysis Toolkit-et \cite{SUSAnaly62:online} használtam, mellyel a következő eredmények jöttek ki a \ref{tab:sus_data}. táblázat értékeire. 
 
-Az eredmények a következők: 
 \begin{itemize}
     \item \textbf{SUS Tanulmány Pontszám:} 82.5
     \item \textbf{Medián:} 87.5
@@ -199,10 +199,15 @@ Az eredmények a következők:
     \label{diag:sus_result}
 \end{figure}
 
-A diagrammon (\ref{diag:sus_result}. ábra) egyértelműen látszik, hogy az első és az ötödik kérdésekben a memória játékom alul teljesített. Az első kérdés, amely arra vonatkozik, hogy a felhasználók mennyire szeretnék gyakran használni a játékot, azt mutatja, hogy a válaszadók viszonylag alacsony érdeklődést mutatnak a rendszer rendszeres használata iránt. Ez aggasztó, mivel a gyakori használat egy fontos indikátora lehet a játék élvezhetőségének és vonzerejének.
+A diagrammon (\ref{diag:sus_result}. ábra) jól látszik, hogy az első és az ötödik kérdésekben a memória játékom alul teljesített. Az első kérdés, amely arra vonatkozik, hogy a felhasználók mennyire szeretnék gyakran használni a játékot, azt mutatja, hogy a válaszadók viszonylag alacsony érdeklődést mutatnak a rendszer rendszeres használata iránt.
+ Ez aggasztó, mivel a gyakori használat egy fontos indikátora lehet a játék élvezhetőségének és vonzerejének.
 
-Az ötödik kérdés kapcsán a felhasználók átlagos minőségűnek ítélték a megvalósítást, ami arra utal, hogy a játék nem hagyott maradandó benyomást, és nem tudta felkelteni a felhasználók érdeklődését olyan mértékben, hogy kiemelkedő minőséget mutasson. Ez a fajta közepes értékelés azt jelzi, hogy bár a játék elér egy bizonyos szintet, van még lehetőség a fejlődésre.
+Az ötödik kérdés kapcsán a felhasználók átlagos minőségűnek ítélték a megvalósítást, ami arra utal, hogy a játék nem hagyott maradandó benyomást, és nem tudta felkelteni a felhasználók érdeklődését olyan mértékben, hogy kiemelkedő minőséget mutasson.
+ Ez a fajta közepes értékelés azt jelzi, hogy bár a játék elér egy bizonyos szintet, van még lehetőség a fejlődésre.
 
-Mindkét területen – a felhasználói élmény fokozásában és a játék minőségének javításában – jelentős potenciál rejlik. Fontos lenne részletesen elemezni, hogy mik azok a konkrét elemek, amelyek nem nyerték el a felhasználók tetszését. Lehetséges, hogy a játékmenet, a grafika vagy akár a hangzásvilág is hozzájárulhat ehhez az érzéshez. A felhasználói visszajelzések figyelembevételével, valamint alapos tesztelésekkel képesek lehetünk a szükséges módosításokat végrehajtani, így a játék vonzereje és használhatósága jelentősen javulhat.
+Mindkét területen – a felhasználói élmény fokozásában és a játék minőségének javításában – jelentős potenciál rejlik.
+Fontos lenne részletesen elemezni, hogy mik azok a konkrét elemek, amelyek nem nyerték el a felhasználók tetszését.
+Lehetséges, hogy a játékmenet, a grafika vagy akár a hangzásvilág is hozzájárulhat ehhez az érzéshez.
+A felhasználói visszajelzések figyelembevételével, valamint alapos tesztelésekkel képesek lehetünk a szükséges módosításokat végrehajtani, így a játék vonzereje és használhatósága jelentősen javulhat.
 
-Ezeket a problémákat kezelve, a jövőbeni fejlesztések során érdemes lenne a felhasználói élményt középpontba állítani, hiszen egy élvezetes és vonzó játék ösztönözheti a felhasználókat a rendszeres visszatérésre és a játék gyakori használatára
+Ezeket a problémákat kezelve, a jövőbeni fejlesztések során érdemes lenne a felhasználói élményt a középpontba állítani, hiszen egy élvezetes és vonzó játék ösztönzi a felhasználókat a rendszeres visszatérésre és a játék gyakori használatára

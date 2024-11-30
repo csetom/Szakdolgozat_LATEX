@@ -21,7 +21,7 @@
 A témám egy 3D memóriajáték mesterséges intelligenciával.
 A projektemben létrehoztam egy 3D memóriajátékot a Godot Engine nevű játékmotorban, a saját nyelvének, a GDScriptnek a felhasználásával. A játékba lefejlesztettem választható nehézségi szinteket, a kártyákon pedig véletlenszerű betűpárok találhatók.
 A játékot exportáltam HTML5 formátumba, és az itch.io nevű tartalommegosztó oldalra telepítettem.
-Ezután létrehoztam egy fájlszervert. Erre a fájlszerverre elküldtem a játékosok adatait egy HTTP kérés segítségével minden játék után. Ehhez a Cloudflare-t, a Zero Tunnelt és a saját domainnevemet használtam, hogy fix néven érjem el a szerveremet.
+Ezután létrehoztam egy fájlszervert. Erre a fájlszerverre elküldtem a játékosok adatait egy HTTP-kérés segítségével minden játék után. Ehhez a Cloudflare-t, a Zero Tunnelt és a saját domainnevemet használtam, hogy fix néven érjem el a szerveremet.
 A szerver Node.js-ben íródott, ExpressJS-t használva. A fájlszerver célja az volt, hogy a kapott adatokat lementsem a számítógépemre.
 A fájlszerver és a Zero Tunnel Docker-konténerben futottak közös Docker-hálózaton.
 A játék itch.io URL-jét elküldtem ismerősöknek, hogy minél több adatot gyűjtsek.
