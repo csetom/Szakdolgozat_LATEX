@@ -61,12 +61,15 @@ A játékba több nehézségi szintet tettünk, melyet a menüből érhetünk el
 \end{figure}
 
 \section{Struktúrális felépítés}
-A memória játék a Godot elveinek megfelelően Node-okból(Csomópont-elem) és Scene-ekből (Jelenet) \cite{godotengineNodesScenes} áll. A Scene-ek struktúrája a következő.
+A memória játék a Godot elveinek megfelelően Node-okból (Csomópont-elem) és Scene-ekből (Jelenet) \cite{godotengineNodesScenes} áll. A Scene-ek struktúrája a következő.
 \subsection{Menü}
 
 
-A Játék menüje (\ref{img:menu_scene}. ábra), a következő módon épül fel. A Gombok olyan MeshInstance3D Node-ok \cite{godotengineMeshInstance3D}, melyekre ha a játékos rákattint, akkor kibocsájtanak egy \lstinline{button_pressed()} jelet (\ref{code:button_pressed_signal}. ábra).
-A MenuScene kódjában hallgatózunk erre a jelre, külön külön minden gombokra. A megfelelő gomb megnyomásával beállítjuk a \lstinline{Constant.CARD_PMIR_NUMBER} globális változót, melynek segítségével létrehozzuk a \lstinline{basic_scene}-t.
+A Játék menüje (\ref{img:menu_scene}. ábra), a következő módon épül fel.
+A Gombok olyan MeshInstance3D Node-ok \cite{godotengineMeshInstance3D}, melyekre ha a játékos rákattint, akkor kibocsájtanak egy \lstinline{button_pressed} jelet (\ref{code:button_pressed_signal}. ábra).
+A MenuScene kódjában hallgatózunk erre a jelre, külön külön minden gombra.
+A megfelelő gomb megnyomásával beállítjuk a \lstinline{Constant.CARD_PMIR_NUMBER} globális változót, melynek segítségével létrehozzuk a \lstinline{basic_scene}-t.
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{img/menu_scene_tree.png}
@@ -85,7 +88,7 @@ A MenuScene kódjában hallgatózunk erre a jelre, külön külön minden gombok
     func set_number_label_text(new_label_text: String):
         number_label.text = new_label_text;
     \end{lstlisting}
-    \caption{A menü gombja  \lstinline{button_pressed} jelet kibocsátja}
+    \caption{A menü gombja a \lstinline{button_pressed} jelet bocsátja ki}
     \label{code:button_pressed_signal}
 \end{figure}
 
@@ -178,8 +181,8 @@ func talalat():
 
 
 \subsection{Kártya (Card)}
-A kártyák vagyis Card scene (\ref{img:card_tree}. ábra) rendelkezik egy \lstinline|labellel| (címke), amelyet a \lstinline|Deck| ad neki, a kártya létrehozásakor. Ez meghatározza, hogy milyen kártya. 
-Egy játékmezőn pontosan két egyforma labellel rendelkező kártya szerepel(\ref{img:cards_has_pairs}. ábra).
+A kártyák vagyis Card scene (\ref{img:card_tree}. ábra) rendelkezik egy \lstinline|label|- el (címke), amelyet a \lstinline|Deck| ad neki, a kártya létrehozásakor. Ez meghatározza, hogy milyen kártya. 
+Egy játékmezőn pontosan két egyforma \lstinline|label|-el rendelkező kártya szerepel(\ref{img:cards_has_pairs}. ábra).
 
 \begin{figure}[H]
     \centering
@@ -197,7 +200,8 @@ Egy játékmezőn pontosan két egyforma labellel rendelkező kártya szerepel(\
 \end{figure}
 
 A kártya rendelkezik animációval is, melyet az AnimationTree \cite{Animatio38:online}, magyarul animációs fa, csomópont kezel (\ref{img:animation_tree}. ábra). 
-Ha rákattintunk a kártyára, akkor lefut a \lstinline|card_flip_animation| függvény. Ekkor az \lstinline|AnimationNodeStateMachine|-nek \cite{Animatio50:online}, vagyis az animációs csomópont állapot gépnek odaadjuk azt az információt, mely szerint meg kell fordítani a kártyát (\ref{img:state_machine}. ábra).
+Ha rákattintunk a kártyára, akkor lefut a \lstinline|card_flip_animation| függvény.
+Ekkor az \lstinline|AnimationNodeStateMachine|-nek \cite{Animatio50:online}, vagyis az animációs csomópont állapotgépnek odaadjuk azt az információt, mely szerint meg kell fordítani a kártyát (\ref{img:state_machine}. ábra).
 Az objektum elküldi önmagát a \lstinline|Deck|-nek, mint kiválasztott kártya. 
 \begin{figure}[h]
     \centering
