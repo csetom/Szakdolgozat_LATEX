@@ -14,27 +14,28 @@ A Godot támogatja a kettő dimenziós (2D) és a három dimenziós (3D) játék
  
 A Godot-t széles körben használják különböző projektekben, beleértve az indie játékokat, oktatási alkalmazásokat, interaktív médiaalkotásokat. A motor aktív és elkötelezett fejlesztői közösséggel rendelkezik, amely folyamatosan hozzájárul az új funkciók, javítások és dokumentációk fejlesztéséhez.
 
-Megvizsgáltam a további lehetősségeimet is. Használhattam volna Unreal Engine-t \cite{unrealengine}, mely egy magas szintű 3D játékok fejlesztésére szakosodott játékmotor.
-Azonban túl nagy volt a rendszerkövetelménye. A másik lehetősségem a Unity volt.
-Összehasonlítottam a Unity-t \cite{UnityRea46:online} a Godot-al és arra jutottam, hogy a Godot GDScript nyelve sokkal könnyebben használható, mint a Unity C++ nyelve, így végül a Godot mellett döntöttem. 
+Átgondoltam a további lehetőségeimet is.
+Választhattam volna az Unreal Engine-t \cite{unrealengine}, amely egy fejlett, 3D játékok fejlesztésére specializálódott játékmotor. 
+Azonban a rendszerkövetelményei túl magasak voltak számomra. A másik opcióm a Unity \cite{UnityRea46:online} volt.
+Összehasonlítottam a Unity-t  a Godot-al és arra jutottam, hogy a Godot GDScript nyelve sokkal könnyebben használható, mint a Unity C++ nyelve, így végül a Godot mellett döntöttem. 
 
 \section{GDScript}
-A GDScript\cite{GDScript64:online} a Godot Engine saját szkriptelési nyelve, amelyet a játékfejlesztéshez terveztek. 
-Könnyen tanulható és használható nyelv, amelyet kifejezetten a Godot-hoz optimalizáltak, így tökéletesen illeszkedik a motor által nyújtott funkciókhoz és struktúrához.
+A GDScript\cite{GDScript64:online} a Godot Engine saját szkript nyelve, melyet játékfejlesztéshez terveztek, könnyen tanulható és használható nyelv. 
 
-A GDScript egy dinamikus típusú script nyelv, ezáltal egyszerűbb és rugalmasabb kódolási stílust tesz lehetővé, amely könnyen alkalmazható a játékfejlesztés során.
+A GDScript egy dinamikus típusú script nyelv, ami által egyszerűbb és rugalmasabb kódolási stílust tesz lehetővé.
 
-Támogatja az objektumorientált programozás alapvető elveit, mint például az osztályok, az öröklődés és a polimorfizmus. Emellett rendelkezik számos beépített funkcióval és osztállyal, melyek jelentősen megkönnyítik a játékprogram készítését.
+Támogatja az objektumorientált programozás alapvető elveit, mint például az osztályok, az öröklődés és a polimorfizmus. 
+Emellett rendelkezik számos beépített funkcióval és osztállyal, melyek jelentősen megkönnyítik a játékprogram készítését.
 
 \section{itch.io}
 Az itch.io \cite{Introduc10:online} (kisbetűs írásmóddal) egy web platform, ahol a felhasználók, és fejlesztők indie videojátékokat, szerepjátékokat, játékelemeket, képregényeket, és zeneszámokat oszthatnak meg, árusíthatnak és tölthetnek le. A weboldalt Leaf Corcoran indította 2013 márciusában, és 2023 áprilisi állapot szerint több mint 700,000 termék található rajta.
 
-Az itch.io támogatja, hogy HTML5-be kiexportált játékokat és feltöltött játékokat a böngészőből bárki játszhassa, egy gombnyomással.
+Az itch.io támogatja, hogy HTML5-be kiexportált és feltöltött játékokkal a böngészőből bárki játszhasson egy gombnyomással.
 
 \section{CloudFlair}
 Cloudflare \cite{WhyCloud84:online} egy biztonságos és megbízható megoldás, amely lehetővé teszi, hogy a helyi szervereket nyilvános domain név alatt érjük el, anélkül, hogy közvetlenül kinyitnánk a tűzfalat. Ez jelentősen növeli a biztonságot, mivel a szerver közvetlenül nem lesz kitéve az internet veszélyeinek, miközben a szolgáltatás könnyen elérhető marad.
 
-\section{NodeJS}
+\section{Node.js}
 A Node.js \cite{Nodejs—R76:online} egy nyílt forráskódú, platformfüggetlen JavaScript futtatókörnyezet, amely a V8 JavaScript motort használja. A Node.js lehetővé teszi a fejlesztők számára, hogy szerveroldali alkalmazásokat készítsenek JavaScript nyelven. Egyedülálló eseményvezérelt, nem-blokkoló I/O modellt alkalmaz, amely rendkívül hatékony és alkalmas adatintenzív valós idejű alkalmazások fejlesztésére. A Node.js ökoszisztémája rendkívül gazdag, köszönhetően a npm (Node Package Manager) csomagkezelőnek, amely több százezer ingyenesen elérhető modul közül válogathat.
 
 \section{Docker}
@@ -46,14 +47,17 @@ Az Express.js \cite{ExpressN40:online}, vagy egyszerűen Express, egy minimalist
 \section{Python 3}
 A Python 3 \cite{AboutPyt99:online} egy magas szintű, dinamikusan típusos programozási nyelv, amely 2008-ban jelent meg. Egyszerű és olvasható szintaxisával, valamint széleskörű könyvtáraival gyorsan népszerűvé vált. Támogatja az objektumorientált programozást és különböző alkalmazási területekhez, például webfejlesztéshez, adatfeldolgozáshoz és gépi tanuláshoz kínál eszközöket. Keresztplatformos működése miatt könnyen használható különböző operációs rendszereken, és aktív közössége folyamatosan bővíti és fejleszti.
 
-\section{Tensorflow}
-A TensorFlow \cite{tensorflow2015-whitepaper} egy nyílt forráskódú szoftverkönyvtár gépi tanuláshoz és mesterséges intelligenciához. Eredetileg a Google Brain csapat fejlesztette, és mára az egyik legnépszerűbb és legszélesebb körben használt keretrendszer a gépi tanulási modellek fejlesztéséhez és futtatásához. A TensorFlow rugalmas és moduláris architektúrája lehetővé teszi a különböző típusú neurális hálózatok könnyű fejlesztését és tréningezését. Különféle eszközöket és könyvtárakat kínál, amelyek támogatják a mély tanulási, természetes nyelvfeldolgozási, és kép-felismerési feladatokat. A TensorFlow-t széles körben használják kutatók és ipari szakemberek egyaránt a mesterséges intelligencia és gépi tanulás területén.
+\section{TensorFlow}
+A TensorFlow \cite{tensorflow2015-whitepaper} egy nyílt forráskódú szoftverkönyvtár gépi tanuláshoz és mesterséges intelligenciához.
+Eredetileg a Google Brain csapat fejlesztette, és mára az egyik legnépszerűbb és legszélesebb körben használt keretrendszer a gépi tanulási modellek fejlesztéséhez és futtatásához.
+A TensorFlow rugalmas és moduláris architektúrája lehetővé teszi a különböző típusú neurális hálózatok könnyű fejlesztését és tréningezését. Különféle eszközöket és könyvtárakat kínál, amelyek támogatják a mély tanulási, természetes nyelvfeldolgozási és kép-felismerési feladatokat.
+A TensorFlow-t széles körben használják kutatók és ipari szakemberek egyaránt a mesterséges intelligencia és gépi tanulás területén.
 
 \section{Keras}
 A Keras \cite{chollet2015keras} egy könnyen használható API, amely a TensorFlow alapjaira épül, és leegyszerűsíti a mélytanulási modellek fejlesztését. Segítségével gyorsan és egyszerűen lehet modelleket létrehozni, tesztelni és tanítani, ami különösen hasznos prototípusok készítésekor és kísérletezéskor. Kihasználja a TensorFlow erejét és rugalmasságát, miközben felhasználóbarát marad.
 
 \section{SHA256}
-Az SHA-256 \cite{rfc4634} egy hash-függvény, amely bármilyen méretű adatot 256 bites (32 bájtos) kóddá alakít. Széles körben használják biztonsági alkalmazásokban, például digitális aláírásokban és adatintegritás ellenőrzésére. Az SHA-256 az SHA-2 család tagja, és erős kriptográfiai tulajdonságai miatt nehéz visszafejteni vagy ütközéseket találni.
+Az SHA-256 \cite{rfc4634} egy hash-függvény, amely bármilyen méretű adatot 256 bites (32 bájtos) kóddá alakít. Széles körben használják biztonsági alkalmazásokban, például digitális aláírásokban és adatintegritás ellenőrzésére. Az SHA-256 az SHA-2 család tagja, és erős kriptográfiai tulajdonságai miatt nehéz visszafejteni.
 
 \section{Flask}
 A Flask \cite{grinberg2018flask} egy könnyű és rugalmas webkeretrendszer Python nyelvhez, amely lehetővé teszi gyors webalkalmazások fejlesztését. 2010-ben indult, és mikrokeretrendszerként minimalista alapokkal rendelkezik, de könnyen bővíthető különböző modulokkal. Fő jellemzői közé tartozik az egyszerűség, rugalmasság és a RESTful API-k támogatása. Ideális választás egyszerű webalkalmazásokhoz, prototípusokhoz és nagyobb projektekhez is a megfelelő bővítmények segítségével.
@@ -61,7 +65,7 @@ A Flask \cite{grinberg2018flask} egy könnyű és rugalmas webkeretrendszer Pyth
 \section{draw.io}
 A draw.io \cite{Aboutdra31:online} egy ingyenesen használható, webalapú diagramkészítő eszköz, amely lehetővé teszi a felhasználók számára, hogy könnyedén készítsenek és osszanak meg különböző diagramokat, folyamatábrákat, és vázlatokat. Ezzel készítettem több ábrámat is. 
 
-\section{\LaTeX}
+\section{LaTeX}
 A LaTeX egy nagy teljesítményű dokumentum-előkészítő rendszer, amely különösen népszerű tudományos és műszaki területeken; a szakdolgozatomat is ebben írtam, és az ábráim egy részét is ezzel a rendszerrel készítettem, mivel kiváló tipográfiai minőséget biztosít és hatékonyan kezeli a bonyolult elrendezéseket.
 
 \section{ChatGPT}
