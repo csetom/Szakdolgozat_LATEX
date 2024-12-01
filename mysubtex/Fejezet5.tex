@@ -23,7 +23,7 @@ Egy adott játékfolyamat az alábbi lépésekből áll:
 A játék teljes megértéséhez és a mesterséges intelligencia betanításához az alábbi adatokra van szükségünk:
 
 \begin{itemize}
-\item A táblán található kártyák száma. Mivel mindig egy $N \cdot N$ négyzetet használunk, ezt az értéket fixen ismerjük.
+\item A táblán található kártyák száma. Mivel mindig egy $N \cdot M$ téglalapot használunk, ezt az értéket fixen ismerjük.
 \item A leosztásban szereplő betűk.
 \item A kártyafordítások sorrendje: melyik sor és oszlop kártyái lettek felfordítva, valamint mi szerepelt a memória kártyán.
 \end{itemize}
@@ -98,12 +98,12 @@ Az ID-t a menü oldalon jelenítettem meg, és másolhatóvá tettem.
 A játék állását, vagyis azt, hogy melyik játékkal mennyit játszott a játékos, a Godot automatikusan a böngésző lokális IndexedDB-jébe \cite{Exportin97:online} mentette.
 
 Az IndexedDB \cite{UsingInd44:online} egy böngésző alapú adatbázis, amely lehetővé teszi nagy mennyiségű strukturált adat tárolását, beleértve fájlokat és bináris adatokat is. Ez egy NoSQL adatbázis, ami azt jelenti, hogy kulcs-érték párokkal dolgozik, nem pedig táblázatokkal, mint egy relációs adatbázis. 
-Az IndexedDB segítségével a memoriajáték elmenti az adatait a böngészőbe, így később hozzáférhet és láthatja a játékos, hogy melyik nehézségi szinten mennyit játszott a játékkal.
+Az IndexedDB segítségével a memóriajáték elmenti az adatait a böngészőbe, így később hozzáférhet és láthatja a játékos, hogy melyik nehézségi szinten mennyit játszott a játékkal.
 
 Így, ha egy játékos akkor játszik, amikor a szerver nem elérhető, később is el tudja küldeni a játszott játékainak statisztikáját.\begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{img/menu_remake.png}
-    \caption{Az átlakaított menü: másolható ID mező, és egy küldés gomb}
+    \caption{Az átalakított menü: másolható ID mező, és egy küldés gomb}
     \label{img:menu_remake}  
 \end{figure}
 
@@ -114,7 +114,7 @@ Itt létrehoztam egy weboldalt a játékomnak, és elhelyeztem rajta egy rövidk
 
 A játékot elérhetővé tettem \url{https://csetom.itch.io/the-memory-game} címen (\ref{img:itch.io}. ábra). 
 
-A beállítottam, hogy a "Run game" gombra kattintva a játék "teljes képernyős" üzemmódban induljon el, hogy kitöltse a teljes weboldalt. 
+Beállítottam, hogy a "Run game" gombra kattintva a játék "teljes képernyős" üzemmódban induljon el, hogy kitöltse a teljes weboldalt. 
 
 \begin{figure}[h]
   \centering
@@ -187,10 +187,19 @@ Azonban, amikor elkezdtem a fájlszerver telepítését és konfigurálását a 
 A Fly.io használatával kapcsolatos üzenetváltások darabszámára vonatkozó díjak jelentősen 
 megnövelték volna a költségeket. Ez komoly kihívást jelentett, és nem számítottam ilyen jellegű kiadásokra. 
 Az ingyenesnek tűnő szolgáltatásról kiderült, 
-hogy valójában nem az. Csalódtam, és ismét arra kényszerűltem, hogy más megoldásokat keressek a fájlszerverem üzemeltetéséhez.
+hogy valójában nem az. Csalódtam, és ismét arra kényszerültem, hogy más megoldásokat keressek a fájlszerverem üzemeltetéséhez.
 
 Mindkét esetben a szolgáltatások ígéretes lehetőségeket kínáltak, de végül nem feleltek meg az elvárásaimnak az ingyenes erőforrások hiánya és a rejtett költségek miatt. Azonban a tapasztalatok segítettek abban, hogy jobban megértsem a különböző felhőalapú platformok működését és költségstruktúráját, ami hasznos lesz a jövőbeni projektek tervezésénél és megvalósításánál.
 \section{Végleges megoldás}
-Mivel sajnos nem találtam más alternatívát, ami ingyenes lenne, így kénytelen voltam a helyi gépemen futtatni a docker containereket, és megkérni a játék tesztelőket, hogy akkor futtassák a játékot, amikor éppen üzemel a file szerver. A tesztelőknek elküldtem az itch.io weboldalt, így nem volt szükséges számukra, hogy telepítsék a saját számítógépükre az alkamazást.
+Mivel sajnos nem találtam más alternatívát, ami ingyenes lenne, így kénytelen voltam a helyi gépemen futtatni a Docker containereket, és megkérni a játék tesztelőket, hogy akkor futtassák a játékot, amikor éppen üzemel a file szerver (\ref{img:adatgyujtes}. ábra).
+A tesztelőknek elküldtem az itch.io weboldalt, így nem volt szükséges számukra, hogy telepítsék a saját számítógépükre az alkamazást.
 
-Összesen tíz embertől sikerült megfelelő mennyiségű adatot szereznem,melynek segítségével tanítottam be a mesterséges intelligenciát.
+Összesen tíz embertől sikerült elegendő adatot gyűjtenem, amelyet a mesterséges intelligencia betanításához használtam fel.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{img/adatgyujtes.png}
+  \caption{Végleges megoldás az adatgyűjtésre}
+  \label{img:adatgyujtes}  
+\end{figure}
+

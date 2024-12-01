@@ -1,9 +1,9 @@
-\chapter{Mesterséges intelgiencia betanítása és használata}
+\chapter{Mesterséges inteligencia betanítása és használata}
 \thispagestyle{fancy}
 \pagestyle{fancy}
 
 
-A célom az volt, hogy a mesterséges intelgiencia játéka, a lehető legjobban hasonlítson az emberi gondolkodáshoz. Az emberi agy működéséhez a legjobban 
+A célom az volt, hogy a mesterséges inteligencia játéka, a lehető legjobban hasonlítson az emberi gondolkodáshoz. Az emberi agy működéséhez a legjobban 
 a neurális hálózat hasonlítható, így ezt használtam én is a projektemhez. 
 
 
@@ -21,10 +21,10 @@ Az én esetemben a bemeneti tensor a játék jelenlegi állása volt, a kimenet 
 
 A modellt be kellett tanítanom a gyűjtött adatokkal. Ehhez a legegyszerűbb az volt, ha az adataimat egy JSON fájlba összefűztem, így a scriptnek elég volt ezt az egy fájlt beolvasnia.
 
-Minél jobban le tudtam egyszerűsíteni a bemeneti rétegem, úgy, hogy a lehetőleg ne legyen benne adatvesztés, annál gyorsabban véghez tudtam vinni a tanítást. 
+Minél jobban le tudtam egyszerűsíteni a bemeneti rétegem, úgy, hogy lehetőleg ne legyen benne adatvesztés, annál gyorsabban véghez tudtam vinni a tanítást. 
 Ha bonyolult volt az input layer, akkor a tanulás lelassult, és számomra fontos perceket, órákat, de akár napokat is veszíthettem volna egy hibás modell esetén.
 
-Példának okáért, tegyük fel, hogy nem transformálom át a gyűjtött adatokat, és a játék $N$ lépésből áll. 
+Példának okáért, tegyük fel, hogy nem transzformálom át a gyűjtött adatokat, és a játék $N$ lépésből áll. 
 Mivel mind az $N$ esetben az előző $N-1$ lépést is oda kell adnom a tanító algoritmusnak, és 1.-től $N.$-ik lépésig az összes lépést meg kell tanítanom a modellnek, 
 így egy $N$ lépésből álló játéknak a tanításhoz felhasznált adatmennyisége:
 
@@ -39,7 +39,7 @@ Ha két fájl tartalma teljesen megegyezik, akkor az azokból képzett hash is a
 Ez különösen hasznos, amikor dokumentumokat töltünk fel egy fájlszerverre, így könnyen ellenőrizhető, hogy a fájl már létezett-e a szerveren, és elkerülhető a duplikált tárolás.
 
 A hash-függvények segítségével képes voltam minden lépést és az őt megelőző összes eddigi lépés együttesét fix hosszú bit vektorrá átalakítani, így szignifikáns mennyiségű adatmennyiséget tudtam spórolni.
-Természetesen fennállt annak a lehetősége, hogy a betanított modellem nem lett teljesen pontos, azonban ez a kockázat minden transzformációs folyamat során előfordulhat.
+Természetesen fennállt annak a lehetősége, hogy a betanított modellem nem lesz teljesen pontos, azonban ez a kockázat minden transzformációs folyamat során előfordulhat.
 
 \begin{figure}[h]
     \centering
@@ -109,14 +109,14 @@ Az adatok transzformálását a program futása közben, felhasználás előtt k
 
 \begin{figure}[h]
     \center
-    \includegraphics[width=0.75\textwidth]{img/JSON_TO_SHA256.png}
-    \caption{Kód részlet, amely leképezi a $key$ által megadott játék lépéseit egy hash tömbbé. A hash-ek mellett a következő lépéseket tartalmazó tömbbel tér vissza.}
+    \includegraphics[width=0.50\textwidth]{img/JSON_TO_SHA256.png}
+    \caption{Kód részlet, amely leképezi a \lstinline{key} által megadott játék lépéseit egy hash tömbbé. A hash-ek mellett a következő lépéseket tartalmazó tömbbel tér vissza.}
     \label{code:json_to_hash}
 \end{figure}
 
 \begin{figure}[h]
     \center
-    \includegraphics[width=0.75\textwidth]{img/hash_to_bit.png}
+    \includegraphics[width=0.50\textwidth]{img/hash_to_bit.png}
     \caption{Kód részlet. Az SHA256 hash hexadecimális string bitsorozattá konvertálása.}
     \label{code:hash_to_bit}
 \end{figure}
@@ -128,7 +128,7 @@ A TensorFlow része a Keras API, mely segítségével könnyedén és egyszerűe
 
 A következő két réteghez egy 128 és egy 64 neuront tartalmazó teljesen kapcsolodó (Dense) réteget használok. Dense layer azt jelenti, hogy a réteg összes neuronja kapcsolodik az előző réteg összes neuronjával. Ez a neuron típus gyarkan használt előre csatolt neurális hálóknál.
 Az aktivációs függvény, amit ezekhez a rétegekhez használok, az az úgynevezett 
-ReLU (Rectified Linear Unit) függvény, mely a következő képpen néz ki:
+ReLU (Rectified Linear Unit) függvény, mely a következőképpen néz ki:
 \begin{equation}\label{eq:2}
 \text{ReLU}(x) = \max(0, x) 
 \end{equation}
@@ -137,9 +137,9 @@ ami azt jelenti, hogy ha bemeneti érték, vagyis $x$ pozitív, akkor $x$-et adj
 
 
 \begin{figure}[h]
+    \center
     \includegraphics[width=0.75\textwidth]{img/Tensor.png}
     \caption{Kód részlet. A tanító algoritmus}
-    \center
     \label{code:tensor}
 \end{figure}
 
@@ -163,7 +163,7 @@ A modell betanításához szükségem van a hash tömbbé alakított adatokra, v
 Minden edzési lépés során a modell harminckét mintát tartalmazó adatcsomagot dolgoz fel.
 Ez a folyamat lehetővé teszi a modell számára, hogy fokozatosan javítson a teljesítményén az adatok ismételt bemutatása és a súlyok frissítése révén. 
 
-A betanított modellt egy $my_model.keras$ fájlba mentettem le, így könnyen tudtam használni, a játék futtatásakor. 
+A betanított modellt egy \lstinline{my_model.keras} fájlba mentettem le, így könnyen tudtam használni, a játék futtatásakor. 
 
 \section{Modell használata}
 
@@ -171,8 +171,22 @@ A betanított modellt egy $my_model.keras$ fájlba mentettem le, így könnyen t
 
 Ahhoz, hogy a modellt használni tudjam, egy API-t kellett írnom. Mivel a tesztadatokat is HTTP-kérés segítségével küldtem el, így logikusnak találtam, hogy ezt a megoldást használjam itt is. 
 
-A Flask használatával készítettem egy webalkalmazást (\ref{code:use_model}. ábra), melynek egyetlen belépési pontja van, a $\/predict$. A Memoria játék ide küldi a $POST$ HTTP kérését, mely tartalmazza a játék aktuális állását. 
-Vagyis az aktuális és az összes eddigi lépést. 
+A folyamatot a \ref{code:modell_hasznalata}. ábrával szemléltetem.
+
+\begin{figure}[h]
+    \center
+    \includegraphics[width=\textwidth]{img/kiexportalt.drawio.png}
+    \caption{Diagram. A modell használata.}
+    \label{code:modell_hasznalata}
+\end{figure}
+
+
+A Flask használatával készítettem egy webalkalmazást (\ref{code:use_model}. ábra), melynek egyetlen belépési pontja van, a \lstinline{/predict}. A Memória játék ide küldi a \lstinline{POST} HTTP kérését, mely tartalmazza a játék aktuális állását. 
+Vagyis az aktuális és az összes eddigi lépést.
+
+
+
+
 \begin{figure}[h]
     \center
     \includegraphics[width=0.75\textwidth]{img/use_model.png}
@@ -182,7 +196,7 @@ Vagyis az aktuális és az összes eddigi lépést.
 
 \subsection{API használata}
 
-Az API indításkor betölti a $my_model.keras$ fájlból a betanított modellünket, ez percekig is eltart, majd várja a fogadó kéréseket. 
+Az API indításkor betölti a \lstinline{my_model.keras} fájlból a betanított modellünket, ez percekig is eltart, majd várja a fogadó kéréseket. 
 Amikor egy kérés érkezik, a fogadott JSON adatra ráfuttatjuk a már korábban használt SHA256 konvertáló scriptet (\ref{code:json_to_hash}).
 Az így kapott 256 hosszú bitsorozattal csinálunk egy "jóslást", vagyis használjuk a modellnek a predict függvényét. Ebből a jóslatból visszakapunk egy két elemű vektort, melynek elemei nem egész számok.
 
