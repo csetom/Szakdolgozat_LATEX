@@ -100,7 +100,7 @@ Természetesen fennállt annak a lehetősége, hogy a betanított modellem nem l
 Az adatok transzformálását a program futása közben, felhasználás előtt készítettem elő. Ez azért volt hasznos, mivel a játék közben, a kész modell felhasználásakor is dinamikusan kellett az adatokat hash-függvénnyel leképeznem.
 
 \begin{itemize}
-    \item Beolvasom a JSON állományt. 
+    \item Beolvasom a JSON (\ref{code:json_allomany}. ábra) állományt. 
     \item Végigmegyek az adatokon, és létrehozok egy szöveges változót. Ez a változó tartalmazza a JSON-ban található aktuális valamint az összes előző lépést  (\ref{code:json_to_hash}. ábra). 
     \item A python hashlib csomagja segítségével ezt a változót leképezem az SHA256 függvényt használva egy hexadecimális stringgé. 
     \item A leképezett hexadecimális stringet tovább transzformálom. 
@@ -109,14 +109,20 @@ Az adatok transzformálását a program futása közben, felhasználás előtt k
 
 \begin{figure}[h]
     \center
-    \includegraphics[width=0.50\textwidth]{img/JSON_TO_SHA256.png}
+    \includegraphics[width=0.60\textwidth]{img/JSON.png}
+    \caption{Gyűjtött adat JSON állomány részlet.}
+    \label{code:json_allomany}
+\end{figure}
+\begin{figure}[h]
+    \center
+    \includegraphics[width=0.60\textwidth]{img/JSON_TO_SHA256.png}
     \caption{Kód részlet, amely leképezi a \lstinline{key} által megadott játék lépéseit egy hash tömbbé. A hash-ek mellett a következő lépéseket tartalmazó tömbbel tér vissza.}
     \label{code:json_to_hash}
 \end{figure}
 
 \begin{figure}[h]
     \center
-    \includegraphics[width=0.50\textwidth]{img/hash_to_bit.png}
+    \includegraphics[width=0.60\textwidth]{img/hash_to_bit.png}
     \caption{Kód részlet. Az SHA256 hash hexadecimális string bitsorozattá konvertálása.}
     \label{code:hash_to_bit}
 \end{figure}
