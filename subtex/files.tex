@@ -5,49 +5,91 @@
 \thispagestyle{fancy}
 \pagestyle{fancy}
 
-
 \subsubsection{Beadott fájlok}
-mappaneve\_software mappa (a szoftver fájljai):\\
+\noindent 3D-memoria-jatek-mestereseges-inteligenciaval mappa (a szoftver fájljai):\\
 \begin{tabular}{l l}
-    \quad human\_training.csv & \quad A második dataset\\
-    \quad icon.png & \quad A szoftver ikonja\\
-    \quad main.py & \quad A GUI és az egész szoftver indítása\\
-    \quad neural.py & \quad A modelleket tartalmazó script\\
-    \quad new\_customer\_segmentation.csv & \quad Az első dataset\\
-    \quad outlier.py & \quad Az adattisztításért felelős script\\
-    \quad Roboto-Regular.ttf & \quad A design-hoz szükséges fájl
+    \quad icon.svg  & \quad Godot alapértelmezett ikonja a játékhoz \\ 
+    \quad icon.svg.import  & \quad Godot metaadat \\ 
+    \quad openxr\_action\_map.tres & \quad OpenXR metaadat \\ 
+    \quad project.godot  & \quad Godot projekt fájl \\ 
+\end{tabular}
+\\\\
+\noindent 3D-memoria-jatek-mestereseges-inteligenciaval/Animations mappa (a szoftver animációs fájlok):\\
+\begin{tabular}{l l}
+    \quad Idle.res  & \quad Kártya animáció \\ 
+    \quad Megfordit.res  & \quad Kártya megfordít animáció \\ 
+    \quad RESET.res  & \quad Kártya Reset animáció \\
+\end{tabular}
+\\\\
+\noindent 3D-memoria-jatek-mestereseges-inteligenciaval/Scenes mappa (a szoftver jelenetei):\\
+\begin{tabular}{l l} 
+    \quad MainScrenes  & \quad Fő jelenet\\ 
+    \quad MenuScene.tscn  & \quad Főmenü jelenet \\ 
+    \quad XrOrigin.tscn  & \quad XR kezdőjelenet \\ 
+    \quad button.tscn  & \quad Gomb jelenet \\ 
+    \quad plainField.tscn  & \quad Üres tér jelenet \\ 
+    \quad plain\_camera.tscn  & \quad Kamera jelenet \\ 
+    \quad basics.tscn  & \quad Alapok jelenet \\ 
+    \quad Card.gdshader  & \quad Kártya shader\\ 
+    \quad Card.tscn  & \quad Kártya jelenet\\ 
+    \quad Outline.gdshader  & \quad Kártya körvonal shader\\ 
 \end{tabular}
 
 \newpage
 
-\noindent ukh1a7\_tex mappa (tex fájlok és képek):\\
+\noindent 3D-memoria-jatek-mestereseges-inteligenciaval/Scripts mappa (a szoftver GDScript szkriptjei):\\
 \begin{tabular}{l l}
-    \quad 2.1.png & \quad\quad\quad 4.2.png\\
-    \quad 2.2.png & \quad\quad\quad Abstract.pdf\\
-    \quad 2.3.png & \quad\quad\quad Abstract.tex\\
-    \quad 2.4.png & \quad\quad\quad document.tex\\
-    \quad 2.6.png & \quad\quad\quad Fedlap.tex\\
-    \quad 3.1.png & \quad\quad\quad Fejezet1.tex\\
-    \quad 3.2.png & \quad\quad\quad Fejezet2.tex\\
-    \quad 3.3.png & \quad\quad\quad Fejezet3.tex\\
-    \quad 3.4.png & \quad\quad\quad Fejezet4.tex\\
-    \quad 3.5.png & \quad\quad\quad Fejezet5.tex\\
-    \quad 3.6.png & \quad\quad\quad files.tex\\
-    \quad 3.7.png & \quad\quad\quad Hallgatoi\_nyilatkozat.pdf\\
-    \quad 3.8.png & \quad\quad\quad Jelolesjegyzek.tex\\
-    \quad 3.9.png & \quad\quad\quad Koszonetnyilvanitas.tex\\
-    \quad 3.10.png & \quad\quad\quad mybib.bib\\
-    \quad 3.11.png & \quad\quad\quad Temakiiras.pdf\\
-    \quad 4.1.png & \quad\quad\quad Temavezetoi\_nyilatkozat.pdf\\
+    \quad Card.gd  & \quad Kártya jelenet szkriptje \\ 
+    \quad Deck.gd  & \quad Paklik jelenet szkriptje \\ 
+    \quad InputField.gd  & \quad Bemeneti mező szkript \\ 
+    \quad MenuScene.gd  & \quad Menü jelenet szkriptje \\ 
+    \quad VrScript.gd  & \quad VR specifikus szkript \\ 
+    \quad basics.gd  & \quad Alap jelent szrikptje \\ 
+    \quad button.gd  & \quad Gomb jelent szriptje \\ 
+    \quad constant.gd  & \quad Állandók definiálásra használt szkript \\ 
+    \quad deck\_timer.gd  & \quad Pakli időzítő szkript \\ 
+    \quad http\_client.gd  & \quad HTTP kérések kezelése szkript \\ 
+    \quad player\_data.gd  & \quad Játékos adatainak tárolására használt adatszerkezet definiáló szript \\ 
+    \quad scene\_manager.gd  & \quad Jelenet váltást kezelő szkript \\ 
+\end{tabular}
+\\\\
+\noindent 3D-memoria-jatek-mestereseges-inteligenciaval/Shaders mappa (A játék grafikai megjelenítését szolgáló fájlok): \\
+\begin{tabular}{l l}
+    \quad MenuScene.tres  & \quad Menű kinézetét szolgáló shader könyvtár\\ 
+    \quad cardTestLibary.tres  & \quad Egy teszt saját shader könyvtár tesztje \\ 
+    \quad new\_standard\_material\_3d.tres  & \quad A Gombokhoz használt shader könyvtár \\     
+\end{tabular}
+\\\\
+\noindent 3D-memoria-jatek-mestereseges-inteligenciaval/Templates mappa: \\
+\begin{tabular}{l l}
+    \quad custom\_build\_template.html  & \quad A HTML exporthoz használt saját html template\\ 
+\end{tabular}
+\\
+\\
+\noindent 3D-memoria-jatek-mestereseges-inteligenciaval/fileServer mappa: (Adatok gyüjtését szolgáló fájlszerver) \\
+\begin{tabular}{l l}
+    \quad Dockerfile  & \quad Docker konténer buildelését szolgáló fájl \\ 
+    \quad docker-compose.yaml  & \quad Docker kontérek kezelését szolgáló compose fájl \\ 
+    \quad package-lock.json  & \quad Node.JS package-lock fájl, npm használja\\ 
+    \quad package.json  & \quad Node.JS package fájl, npm használja. \\ 
+    \quad server.js  & \quad Fájlszerver forráskódja \\ 
 \end{tabular}
 
+\newpage
+
+\noindent 3D-memoria-jatek-mestereseges-inteligenciaval/tensorflow: (Az MI modell használatához és tanításához szükséges fájlok.) \\
+\begin{tabular}{l l}
+    \quad json\_to\_sha256.py  & \quad JSON adatok SHA256 konvertálását szolgáló Python szkript \\ 
+    \quad my\_model.keras  & \quad A betanított és  mentett MI modell \\ 
+    \quad sha256\_to\_binary.py  & \quad SHA256 hash konvertálása bitekre Python szkript \\ 
+    \quad tensor.py  & \quad TensorFlow tanító algoritmus, MI betanítása szkript \\ 
+    \quad use\_model.py  & \quad Flask szerver, az MI modell használata Python szkript\\ 
+\end{tabular}
+
+
+\noindent p8mqg2\_tex mappa (tex fájlok és képek): \\
+\begin{tabular}{l l}
+
+\end{tabular}
 \vspace{28pt}
-
-\noindent mappanev\_forrasok mappa (internetes források, a fájlnevek megfelelnek az irodalomjegyzékbeli sorszámaiknak):\\
-\begin{tabular}{l l}
-    \quad 1.mhtml & \quad\quad\quad 7.mhtml\\
-    \quad 2.mhtml & \quad\quad\quad 11.mhtml\\
-    \quad 3.mhtml & \quad\quad\quad 12.mhtml\\
-
-\end{tabular}
 
